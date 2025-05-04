@@ -13,10 +13,6 @@ export default function HomePage({ theme }: { theme: "light" | "dark" }) {
       >
         {/* الجملة على الشمال */}
         <div className="space-y-6 text-left flex flex-col justify-center h-full">
-          <p className={cn("text-lg md:text-xl lg:text-2xl", theme === "light" ? "text-gray-700" : "text-gray-100")}>
-            Only one touch to change your life
-          </p>
-
           <motion.div
             className="space-y-4"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -56,10 +52,14 @@ export default function HomePage({ theme }: { theme: "light" | "dark" }) {
               </div>
             </motion.div>
           </motion.div>
+          <p className={cn("text-lg md:text-xl lg:text-2xl", theme === "light" ? "text-gray-700" : "text-gray-100")}>
+            Only one touch to change your life
+          </p>
+
         </div>
 
         {/* موديل اللابتوب على اليمين */}
-        <div className="w-[300px] md:w-[400px] lg:w-[668px] h-[432px] md:h-[500px] lg:h-[600px] ">
+        <div className="w-[300px] md:w-[400px] lg:w-[668px] h-[432px] md:h-[500px] lg:h-[600px] mx-auto">
           <Laptop />
         </div>
       </motion.div>
