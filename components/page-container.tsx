@@ -5,13 +5,14 @@ import { lazy, Suspense } from "react"
 import type { PageContainerProps } from "@/types"
 
 // Lazy load page components for better performance
-const HomePage = lazy(() => import("./pages/home-page"))
-const AboutPage = lazy(() => import("./pages/about-page"))
-const PartnersPage = lazy(() => import("./pages/partners-page"))
-const ClientsPage = lazy(() => import("./pages/clients-page"))
-const ProjectsPage = lazy(() => import("./pages/projects-page"))
-const AchievementsPage = lazy(() => import("./pages/achievements-page"))
-const ContactPage = lazy(() => import("./pages/contact-page"))
+const HomePage = lazy(() => import("@/app/home/page"))
+const AboutPage = lazy(() => import("@/app/about/page"))
+const PartnersPage = lazy(() => import("@/app/partners/page"))
+const ClientsPage = lazy(() => import("@/app/clients/page"))
+const ProjectsPage = lazy(() => import("@/app/projects/page"))
+const AchievementsPage = lazy(() => import("@/app/achievements/page"))
+const ContactPage = lazy(() => import("@/app/contact/page"))
+const ProductsPage = lazy(() => import("@/app/products/page"))
 
 // Loading fallback component
 export  const PageLoading = ({ theme }: { theme: "light" | "dark" }) => (
@@ -46,6 +47,7 @@ export default function PageContainer({ theme, currentPage = "home" }: PageConta
         {currentPage === "projects" && <ProjectsPage theme={theme} />}
         {currentPage === "achievements" && <AchievementsPage theme={theme} />}
         {currentPage === "contact" && <ContactPage theme={theme} />}
+        {currentPage === "products" && <ProductsPage  />}
       </Suspense>
     </div>
   )

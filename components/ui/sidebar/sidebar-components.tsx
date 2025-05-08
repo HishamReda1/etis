@@ -138,10 +138,12 @@ MobileSidebar.displayName = "MobileSidebar"
 export const SidebarLink = forwardRef<
   HTMLAnchorElement,
   {
+   
     link: NavigationLink
     className?: string
     theme?: "light" | "dark"
     onClick?: () => void
+    ariaLabel?: string
   }
 >(({ link, className, theme = "light", onClick, ...props }, ref) => {
   const { open, animate } = useSidebar()

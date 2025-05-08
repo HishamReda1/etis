@@ -13,6 +13,7 @@ import {
   PartnersIcon,
   ProjectsIcon,
   LanguageIcon,
+  ProductsIcon,
 } from "@/components/ui/icons";
 import { cn } from "@/lib/utils";
 import { navItems } from "@/data";
@@ -30,10 +31,10 @@ const SidebarContent = () => {
 
   // Handle page navigation
   const handleNavigation = (page: string) => {
-    const newPage = navigationService.navigateToPage(page);
-    setCurrentPage(newPage);
+    const newPage = navigationService.navigateToPage(page);  // هنا يتم التنقل إلى الصفحة مباشرة
+    setCurrentPage(newPage);  // تعيين صفحة جديدة
     if (window.innerWidth < 768) {
-      setOpen(false);
+      setOpen(false);  // غلق الشريط الجانبي إذا كانت الشاشة صغيرة
     }
   };
 
@@ -58,6 +59,8 @@ const SidebarContent = () => {
         return <MailIcon className={`h-5 w-5 shrink-0 ${activeClass}`} />;
       case "projects":
         return <ProjectsIcon className={`h-5 w-5 shrink-0 ${activeClass}`} />;
+      case "products":
+        return <ProductsIcon className={`h-5 w-5 shrink-0 ${activeClass}`} />;
       default:
         return <HomeIcon className={`h-5 w-5 shrink-0 ${activeClass}`} />;
     }
@@ -66,12 +69,14 @@ const SidebarContent = () => {
   const links: NavigationLink[] = navItems.map((item) => ({
     label: item.name,
     href: item.link,
+    ariaLabel: item.ariaLabel,
     icon: getIconForNavItem(item.name),
-    onClick: () => {
+    onClick: () => {  
+
       setActiveLink(item.name.toLowerCase());
-      handleNavigation(item.link.replace("#", ""));
+      handleNavigation(item.link.replace("#", ""));  // استبدال "#" بالقيمة الصحيحة للصفحة
     },
-    isActive: activeLink === item.name.toLowerCase(), // Add isActive property
+    isActive: activeLink === item.name.toLowerCase(),
   }));
 
   return (
@@ -89,13 +94,14 @@ const SidebarContent = () => {
           <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto">
             {open ? <Logo theme={theme} /> : <LogoIcon theme={theme} />}
             <div className="mt-8 flex flex-col gap-2">
-              {links.map((link, idx) => (
+              {links.map((link, idx ) => (
                 <SidebarLink
                   key={idx}
                   link={{
                     ...link,
                     icon: link.icon,
                     label: link.label,
+                    ariaLabel: link.ariaLabel,
                   }}
                   theme={theme}
                   className={cn(
@@ -110,6 +116,7 @@ const SidebarContent = () => {
           </div>
           <div className="flex flex-col gap-4">
             <button
+            aria-label="Toggle Theme"
               onClick={toggleTheme}
               className={cn(
                 "flex items-center gap-2 py-2 hover:translate-x-1 transition duration-150",
@@ -148,4 +155,3 @@ export default function SidebarDemo() {
     </ThemeProvider>
   );
 }
-

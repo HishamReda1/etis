@@ -1,18 +1,17 @@
-import { link } from "fs";
+
 
 export const navItems = [
   
-  { name: "Home", link: "#home" },
-  { name: "About", link: "#about" },
-  
-  { name: "Partners", link: "#partners" },
-{ name: "Clients", link: "#clients" },
-{ name: "Projects", link: "#projects" },
-{ name: "Achievements", link: "achievements" },
+  { name: "Home", ariaLabel: "Home", link: "#home" },
+  { name: "About", ariaLabel: "About", link: "#about" },
+  { name: "Products", ariaLabel: "Products", link: "#products" },
+  { name: "Partners", ariaLabel: "Partners", link: "#partners" },
+{ name: "Clients", ariaLabel: "Clients", link: "#clients" },
+{ name: "Projects", ariaLabel: "Projects", link: "#projects" },
+{ name: "Achievements", ariaLabel: "Achievements", link: "achievements" },
  
-  { name: "Contact", link: "#contact" },
-
-];
+  { name: "Contact", ariaLabel: "Contact", link: "#contact" },
+]
 
 export const companyHistory = [
   {
@@ -123,24 +122,7 @@ export const logoData = {
         reverse: true,
       },
     },
-    {
-      id: "schneider",
-      src: "/schinder-trans.png",
-      link: "https://www.se.com/ww/en/",
-      quote:
-        "Schneider Electric offers technologies for safe, reliable, efficient, and sustainable energy and process management.",
-      alt: "Schneider Electric",
-      width: 60,
-      height: 60,
-      className: "size-24 p-2 z-20",
-      position: "top-left",
-      beam: {
-        curvature: 50,
-        startXOffset: 20,
-        endXOffset: -20,
-        reverse: true,
-      },
-    },
+   
     {
       id: "abb",
       src: "/ABB_logo.png",
@@ -305,33 +287,29 @@ export const events = [
   {
     "id": 1,
     "title": "Being the GOLD Partner in the Egyptian Market for Honeywell Alerton BMS.",
+    "description": "Another Successful Milestone for Eits Automation Control Automation Contro Family in growing the business along with Honeywell in Egypt being recognized as “New Technology Partner ” for Honeywell Alerton BMS for 2022 results & being the GOLD Parter in the Egyptian Market.",
     "link": "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
     "thumbnails": [
-      "/contract.jpg",
-      "/partner of the year 2022.jpg",
-      "/golden.jpg"
+      "/contract.webp",
+      
+      "/ghazy.webp",
+      "/golden.webp"
     ]
   },
  
-  {
-    "id": 2,
-    "title": "Etis Oubor Factory",
-    "link": "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
-    "thumbnails": [
-      "/factory.png",
-      "/factory.jpg",
-    
-    ]
-  },
+
   {
     "id": 3,
     "title": "Eits Control Annual Event 2022",
+    "description": "Eits family got together at “ jewel sports city hotel “ to celebrate the achievements and successes of the year and to talk about future plans. What a great opportunity to end the year on such a high note.",
     "link": "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
-    "thumbnails": [
-      "/ahmed hamada.jpg",
-      "/engineer-Nabila.jpg",
-      "/hussenAbdulnasserEtis.jpg",
-      "/team.jpg",
+    "thumbnails": [  
+      "/team.webp",
+      "/ahmed hamada.webp",
+      "/engineer-Nabila.webp",
+      "/hussenAbdulnasserEtis.webp"
+      
+    ,
     ]
   },
 

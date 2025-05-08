@@ -6,19 +6,20 @@ export interface NavItem {
   link: string
 }
 
-export interface NavigationLink {
-  isActive: any
-  label: string
-  href: string
-  icon: ReactNode
-  onClick?: () => void
-}
+export type NavigationLink = {
+  label: string;
+  href: string;
+  ariaLabel: string;
+  onClick: () => void;
+  isActive: boolean;
+};
+
 
 export interface ThemeProps {
   theme: "light" | "dark"
 }
 
-export type PageType = "home" | "about" | "partners" | "clients" | "contact"| "achievements"| "projects"
+export type PageType = "home" | "about" | "partners" | "clients" | "contact"| "achievements"| "projects" | "products"
 
 export interface SidebarContextProps {
   open: boolean

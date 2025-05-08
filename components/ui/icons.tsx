@@ -1,5 +1,5 @@
 import type React from "react"
-import { LiaHandshakeSolid } from "react-icons/lia";
+import { LiaHandshakeSolid, LiaStoreAltSolid } from "react-icons/lia";
 
 // Base icon component for consistent styling
 const Icon = ({ children, className = "", ...props }: React.SVGProps<SVGSVGElement> & { className?: string }) => {
@@ -112,6 +112,11 @@ export const ProjectsIcon = (props: React.SVGProps<SVGSVGElement> & { className?
     <rect x="15" y="3" width="6" height="6" rx="1" />
     <rect x="9" y="15" width="6" height="6" rx="1" />
     <path d="M12 12h.01" />
+  </Icon>
+)
+export const ProductsIcon = (props: React.SVGProps<SVGSVGElement> & { className?: string }) => (
+  <Icon {...props}>
+    <LiaStoreAltSolid size="28" /> 
   </Icon>
 )
 
