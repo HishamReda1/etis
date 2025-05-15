@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { allProjects } from "@/data"
 import Link from "next/link"
+import { ChevronLeft } from "lucide-react"
+import { ChevronRight } from "lucide-react"
 
 export default function Projects({ theme }: { theme: "light" | "dark" }) {
   const [filter, setFilter] = useState("All")
@@ -200,21 +202,8 @@ export default function Projects({ theme }: { theme: "light" | "dark" }) {
                   : "border-[#56ab2f]/50 hover:border-[#56ab2f] hover:bg-[#56ab2f]/10 disabled:border-gray-200",
               )}
             >
-              <span className="hidden sm:inline mr-1">◀</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="sm:hidden"
-              >
-                <path d="m15 18-6-6 6-6" />
-              </svg>
+          <ChevronLeft className="h-5 w-5" />
+            
             </Button>
 
             <div className="flex items-center gap-1 sm:gap-2">
@@ -251,21 +240,8 @@ export default function Projects({ theme }: { theme: "light" | "dark" }) {
                   : "border-[#56ab2f]/50 hover:border-[#56ab2f] hover:bg-[#56ab2f]/10 disabled:border-gray-200",
               )}
             >
-              <span className="hidden sm:inline mr-1">▶</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="sm:hidden"
-              >
-                <path d="m9 18 6-6-6-6" />
-              </svg>
+          <ChevronRight className="h-5 w-5" />
+    
             </Button>
           </div>
         )}

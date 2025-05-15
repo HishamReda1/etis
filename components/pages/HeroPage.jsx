@@ -84,10 +84,16 @@ const YouTubeInterface = () => {
 
       {/* Video */}
       <div className="mb-4">
-        <video className="w-full rounded-xl" controls>
-          <source src="/intro.mp4" type="video/mp4" />
-          Your browser does not support HTML5 video.
-        </video>
+      <div className="relative" style={{ paddingTop: "56.25%" }}>
+  <iframe
+    src="https://player.vimeo.com/video/1084162752?badge=0&autopause=0&player_id=0&app_id=58479"
+    frameBorder="0"
+    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+    allowFullScreen
+    title="eits"
+    className="absolute top-0 left-0 w-full h-full rounded-xl"
+  ></iframe>
+</div>
       </div>
 
       {/* Like + Comment Input */}

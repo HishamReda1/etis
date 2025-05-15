@@ -1,3 +1,4 @@
+"use client"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import { logoData } from "@/data"
@@ -33,6 +34,7 @@ export default function PartnersPage({ theme }: { theme: "light" | "dark" }) {
               className="relative block w-full aspect-[3/1] overflow-hidden group-hover:scale-110 transition-transform"
             >
               <Image
+             
                 src={partner.src}
                 alt={partner.alt}
                 width={partner.width * 1.2} // زيادة الحجم

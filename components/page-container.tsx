@@ -13,7 +13,7 @@ const ProjectsPage = lazy(() => import("@/app/projects/page"))
 const AchievementsPage = lazy(() => import("@/app/achievements/page"))
 const ContactPage = lazy(() => import("@/app/contact/page"))
 const ProductsPage = lazy(() => import("@/app/products/page"))
-
+const TeamPage = lazy(() => import("@/app/team/page"))
 // Loading fallback component
 export  const PageLoading = ({ theme }: { theme: "light" | "dark" }) => (
   <div className="h-screen w-full flex items-center justify-center">
@@ -48,6 +48,7 @@ export default function PageContainer({ theme, currentPage = "home" }: PageConta
         {currentPage === "achievements" && <AchievementsPage theme={theme} />}
         {currentPage === "contact" && <ContactPage theme={theme} />}
         {currentPage === "products" && <ProductsPage  />}
+        {currentPage === "team" && <TeamPage  />}
       </Suspense>
     </div>
   )

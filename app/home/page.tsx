@@ -1,7 +1,9 @@
 import { cn } from "@/lib/utils";
-
+import Link from "next/link";
 import Laptop from "@/components/pages/Laptop";
-
+import { Button } from "@/components/ui/button";
+import { LiaLinkedin } from "react-icons/lia";
+import { FaFacebook } from "react-icons/fa6";
 export default function HomePage({ theme }: { theme: "light" | "dark" }) {
   return (
 <div className=" w-full h-screen relative overflow-hidden px-4">
@@ -25,11 +27,33 @@ export default function HomePage({ theme }: { theme: "light" | "dark" }) {
           <p className={cn("text-lg md:text-xl lg:text-2xl", theme === "light" ? "text-gray-700" : "text-gray-100")}>
             Only one touch to change your life
           </p>
+          <div className="flex items-center gap-4">
+  <Link target="_blank" href="https://www.linkedin.com/company/eits-automation-control">
+    <Button
+      variant="outline"
+      className="p-0 bg-transparent border-none hover:bg-transparent"
+    >
+      <div className="h-12 w-12 flex items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-md">
+        <LiaLinkedin className="h-11 w-11 text-slate-800 dark:text-white" />
+      </div>
+    </Button>
+  </Link>
 
+  <Link target="_blank" href="https://www.facebook.com/eitscontrol">
+    <Button
+      variant="outline"
+      className="p-0 bg-transparent border-none hover:bg-transparent"
+    >
+      <div className="h-12 w-12 flex items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-md">
+        <FaFacebook className="h-10 w-10 text-slate-800 dark:text-white" />
+      </div>
+    </Button>
+  </Link>
+</div>
         </div>
 
         {/* موديل اللابتوب على اليمين */}
-        <div className="w-[300px] md:w-[400px] lg:w-[668px] h-[432px] md:h-[500px] lg:h-[600px] mx-auto">
+        <div className="w-[300px] md:w-[400px] lg:w-[668px] h-[432px] md:h-[500px] lg:h-[600px]  ">
           <Laptop />
         </div>
       <div>

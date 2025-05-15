@@ -1,4 +1,4 @@
-
+"use client"
 import { companyHistory } from "@/data";
 import { cn } from "@/lib/utils";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";

@@ -1,0 +1,77 @@
+import React, { useEffect, useRef } from 'react'
+import { useGLTF, useAnimations } from '@react-three/drei'
+import { useGraph } from '@react-three/fiber'
+import { SkeletonUtils } from 'three-stdlib'
+import { useFBX } from '@react-three/drei'
+
+const Ahmed = ({ animationName = 'idle', ...props }) => {
+  const group = useRef()
+
+  // Load GLTF model
+  const { scene } = useGLTF('/models/ahmed.glb')
+  const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene])
+  const { nodes, materials } = useGraph(clone)
+
+  // Load animations from FBX file
+  const { animations: idleAnimation } = useFBX('/models/animations/Standing W_Briefcase Idle.fbx')
+
+  // Animation setup
+  const [animation] = idleAnimation
+  if (animation) animation.name = 'idle'
+
+  const { actions } = useAnimations(
+    animation ? [animation] : [],
+    group
+  )
+
+  useEffect(() => {
+    if (!actions || !animationName) return
+    
+    const action = actions[animationName]
+    if (action) {
+      action.reset().fadeIn(0.5).play()
+      return () => {
+        action.fadeOut(0.5)
+        action.reset()
+      }
+    }
+  }, [animationName, actions])
+
+  return (
+    <group ref={group} {...props} dispose={null}>
+    <group name="Scene">
+      <group name="Armature">
+        <primitive object={nodes.Hips} />
+        <skinnedMesh
+          name="avaturn_body"
+          geometry={nodes.avaturn_body.geometry}
+          material={materials.avaturn_body_material}
+          skeleton={nodes.avaturn_body.skeleton}
+        />
+        <skinnedMesh
+          name="avaturn_hair_0"
+          geometry={nodes.avaturn_hair_0.geometry}
+          material={materials.avaturn_hair_0_material}
+          skeleton={nodes.avaturn_hair_0.skeleton}
+        />
+        <skinnedMesh
+          name="avaturn_shoes_0"
+          geometry={nodes.avaturn_shoes_0.geometry}
+          material={materials.avaturn_shoes_0_material}
+          skeleton={nodes.avaturn_shoes_0.skeleton}
+        />
+        <skinnedMesh
+          name="avaturn_look_0"
+          geometry={nodes.avaturn_look_0.geometry}
+          material={materials.avaturn_look_0_material}
+          skeleton={nodes.avaturn_look_0.skeleton}
+        />
+      </group>
+    </group>
+  </group>
+  )
+}
+
+useGLTF.preload('/models/ahmed.glb')
+
+export default Ahmed;

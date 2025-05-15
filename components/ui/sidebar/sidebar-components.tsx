@@ -27,7 +27,7 @@ export const DesktopSidebar = forwardRef<HTMLDivElement, React.ComponentProps<ty
       <motion.div
         ref={ref}
         className={cn(
-          "h-full px-4 py-4 hidden md:flex md:flex-col w-[300px] shrink-0 rounded-2xl backdrop-blur-md border",
+          "h-full px-4 py-2 hidden md:flex md:flex-col w-[300px] shrink-0 rounded-2xl backdrop-blur-md border overflow-hidden scrollbar-hide",
           className,
         )}
         style={{
@@ -60,7 +60,7 @@ export const MobileSidebar = forwardRef<HTMLDivElement, React.ComponentProps<"di
         <div
           ref={ref}
           className={cn(
-            "h-14 px-4 py-4 flex flex-row md:hidden items-center justify-between w-full rounded-lg backdrop-blur-md border z-10",
+            "h-14 px-4 py-2 flex flex-row md:hidden items-center justify-between w-full rounded-lg backdrop-blur-md border z-10  overflow-hidden scrollbar-hide",
             className,
           )}
           style={{
@@ -103,7 +103,7 @@ export const MobileSidebar = forwardRef<HTMLDivElement, React.ComponentProps<"di
                 exit={{ x: "-100%" }}
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
                 className={cn(
-                  "fixed top-0 left-0 h-full w-[80%] max-w-[300px] p-6 z-50 flex flex-col justify-between md:hidden backdrop-blur-md border-r",
+                  "fixed top-0 left-0 h-full w-[80%] max-w-[300px] p-6 z-50 flex flex-col justify-between md:hidden backdrop-blur-md border-r overflow-hidden scrollbar-hide",
                   className,
                 )}
                 style={{
@@ -124,7 +124,7 @@ export const MobileSidebar = forwardRef<HTMLDivElement, React.ComponentProps<"di
                   </button>
                 </div>
 
-                <div className="mt-8 flex-1 overflow-y-auto">{children}</div>
+                <div className="mt-8 flex-1 overflow-y-hidden scrollbar-hide">{children}</div>
               </motion.div>
             </>
           )}
@@ -138,12 +138,11 @@ MobileSidebar.displayName = "MobileSidebar"
 export const SidebarLink = forwardRef<
   HTMLAnchorElement,
   {
-   
+    ariaLabel: string
     link: NavigationLink
     className?: string
     theme?: "light" | "dark"
     onClick?: () => void
-    ariaLabel?: string
   }
 >(({ link, className, theme = "light", onClick, ...props }, ref) => {
   const { open, animate } = useSidebar()
@@ -159,7 +158,7 @@ export const SidebarLink = forwardRef<
     <Link
       ref={ref}
       href={link.href}
-      className={cn("flex items-center justify-start gap-2 group/sidebar py-2", className)}
+      className={cn("flex items-center justify-start gap-2 group/sidebar py-1", className)}
       onClick={handleClick}
       {...props}
     >

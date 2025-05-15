@@ -1,11 +1,11 @@
-import * as THREE from 'three'
+"use client"
 import React, { Suspense, useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Html, Environment, useGLTF, ContactShadows, OrbitControls } from '@react-three/drei'
 import { useSpring, a } from '@react-spring/three'
 import HeroPage from './HeroPage'
 import CanvasLoader from './Loading'
-
+import * as THREE from 'three'
 function Model({ hinge, open }) {
   const group = useRef()
   const { nodes, materials } = useGLTF('./models/mac-draco.glb')
@@ -56,7 +56,7 @@ function Model({ hinge, open }) {
 }
 
 export default function Laptop() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
   const { hinge } = useSpring({
     hinge: open ? -0.425 : 1.575, // Open or closed
     config: { mass: 5, tension: 400, friction: 70 }
@@ -71,7 +71,7 @@ export default function Laptop() {
         </group>
         <Environment preset="city" />
       </Suspense>
-      <ContactShadows position={[0, -4.5, 0]} scale={20} blur={2} far={4.5} />
+      <ContactShadows position={[0, -2, 0]} scale={15} blur={2} far={4.5} />
       <OrbitControls enablePan={false} enableZoom={false} minPolarAngle={Math.PI / 2.2} maxPolarAngle={Math.PI / 2.2} />
     </Canvas>
   )

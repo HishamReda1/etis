@@ -9,9 +9,13 @@ export const navItems = [
 { name: "Clients", ariaLabel: "Clients", link: "#clients" },
 { name: "Projects", ariaLabel: "Projects", link: "#projects" },
 { name: "Achievements", ariaLabel: "Achievements", link: "achievements" },
- 
+{ name: "Team", ariaLabel: "Team", link: "team" },
   { name: "Contact", ariaLabel: "Contact", link: "#contact" },
 ]
+
+
+
+
 
 export const companyHistory = [
   {
@@ -88,7 +92,7 @@ export const logoData = {
     },
     {
       id: "alerton-honeywell",
-      src: "https://buildings.honeywell.com/content/dam/hbtbt/en/images/logos/Alerton-Logo-1424x950.jpg",
+      src: "/Alerton_Logo.png",
       link: "https://www.alerton.com/",
       quote:
         "Alerton, a Honeywell company, specializes in building automation systems integrating HVAC, lighting, and other systems.",
@@ -123,24 +127,8 @@ export const logoData = {
       },
     },
    
-    {
-      id: "abb",
-      src: "/ABB_logo.png",
-      link: "https://global.abb/",
-      quote:
-        "ABB leads in electrification and automation, connecting engineering and software for sustainable solutions.",
-      alt: "ABB",
-      width: 60,
-      height: 60,
-      className: "size-24 p-2 z-20",
-      position: "bottom-left",
-      beam: {
-        curvature: -50,
-        startXOffset: 20,
-        endXOffset: -20,
-        reverse: false,
-      },
-    },
+   
+   
     {
       id: "greystone",
       src: "https://greystoneenergy.com/wp-content/uploads/2024/10/Greystone-Energy-Logo-2024-main-v2.png",
@@ -280,29 +268,103 @@ export const clientLogos = [
   { img: "/petrojet-logo-white.svg", name: "Petrojet", title: "Petrojet" },
   { img: "/telecom-egypt.png", name: "Telecom Egypt", title: "Telecom Egypt" },
   { img: "/vox-cinema.png", name: "Vox Cinema", title: "Vox Cinema" },
+  { img: "/tanta.png", name: "Tanta Hospitals", title: "Tanta Hospitals" },
+  { img: "/ainshams.png", name: "Ain Shams Pediatric", title: "Ain Shams University Pediatric" },
+  { img: "/may.png", name: "15 May Hospital", title: "15 May Specialized Hospital" },
+  { img: "/helwan.png", name: "Helwan Hospital", title: "Helwan University Hospitals" },
+  { img: "/cairo.png", name: "Cairo University Hospitals", title: "Cairo University Hospitals" },
+  { img: "/helwan2.png", name: "Helwan National University", title: "Helwan National University" },
+  { img: "/ahlybank.png", name: "Ahly Bank Hospital", title: "Ahly Bank Hospital" },
+  { img: "/port.png", name: "Port Said University Hospitals", title: "Port Said University Hospitals" },
+  { img: "/aboelresh.png", name: "Abou El Reesh Hospital", title: "Abou El Reesh Pediatric Hospital" },
+  { img: "/demrdash.png", name: "Demerdash Hospital", title: "Demerdash Hospital" },
+  { img: "/mondelez.png", name: "Mondelez", title: "Mondelez International" },
+  { img: "/eftaa.png", name: "EFTAA", title: "EFTAA Medical Organization" },
 ];
+
 
 
 export const events = [
   {
     "id": 1,
-    "title": "Being the GOLD Partner in the Egyptian Market for Honeywell Alerton BMS.",
-    "description": "Another Successful Milestone for Eits Automation Control Automation Contro Family in growing the business along with Honeywell in Egypt being recognized as “New Technology Partner ” for Honeywell Alerton BMS for 2022 results & being the GOLD Parter in the Egyptian Market.",
+    "title": "Being the Platinum Partner in the Egyptian Market for Honeywell Alerton BMS.",
+    "description": "Another Successful Milestone for Eits Automation Control Automation Contro Family in growing the business along with Honeywell in Egypt being recognized as “New Technology Partner ” for Honeywell Alerton BMS for 2024 results & being the GOLD Parter in the Egyptian Market.",
     "link": "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
+    "location":"mauritius",
+   "thumbnails": [
+    "/platinum.jpeg",
+    "/platinum-6.jpeg",
+  "/platinum-1.jpeg",
+  "/platinum-2.jpeg",
+  "/platinum-3.jpeg",
+  "/platinum-4.jpeg",
+  "/platinum-5.jpeg",
+  
+  "/platinum-7.jpeg",
+  "/platinum-8.jpeg"
+]
+
+  },
+  {
+    "id": 2,
+    "title": "Being the GOLD Partner in the Egyptian Market for Honeywell Alerton BMS.",
+    "description": "Another Successful Milestone for Eits Automation Control Automation Contro Family in growing the business along with Honeywell in Egypt being recognized as “New Technology Partner ” for Honeywell Alerton BMS for 2023 results & being the GOLD Parter in the Egyptian Market.",
+    "link": "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
+    "location":"mauritius",
     "thumbnails": [
+      "/golden.webp",
       "/contract.webp",
       
       "/ghazy.webp",
-      "/golden.webp"
+      
     ]
   },
- 
-
   {
     "id": 3,
+    "title": "the presence of our CEO at Sontay's headquarters in the UK",
+    "description": "Another successful milestone for the EITS Automation Control family in expanding our presence in the Egyptian market. We are proud to be officially recognized as a 'New Technology Partner' by Sontay. This achievement was marked by the presence of our CEO at Sontay's headquarters in the UK, reflecting the strength of our partnership and our continuous commitment to bringing cutting-edge solutions to Egypt.",
+    "link": "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
+    "location":"UK",
+    "thumbnails": [
+      "/sontay3.jpeg",
+      "/sontay1.jpeg",
+      "/sontay2.jpeg"
+    ]
+  }
+  ,
+  {
+    "id": 7,
+    "title": "Our Managing Director Eng. Mohamed Ghazy with the Minister of Health and Honeywell's Executives in Egypt",
+    "description": "Our Managing Director, Eng. Mohamed Ghazy, met with the Minister of Health and Honeywell's senior executives in Egypt to discuss the latest achievements in advancing the healthcare sector and enhancing development efforts across the country.",
+    "link": "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
+    "location": "Egypt",
+    "thumbnails": [
+      "minstry.jpeg"
+    ]
+  }
+,
+
+  {
+    "id": 4,
+    "title": "Participation in Schneider Electric Event at Baron Hotel.",
+    "description": "EITS Automation Control had the honor to participate in the recent Schneider Electric event held at Baron Hotel. The event was highlighted by the attendance of a well-known TV presenter from the show 'El-Geda3an', showcasing the importance and growing recognition of our contributions in the automation and control sector.",
+    "link": "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
+    "location":"Egypt",
+    "thumbnails": [
+      
+      "/shnider1.jpeg",
+      "/shnider2.jpeg",
+      "/shnider3.jpeg"
+    ]
+  }
+  
+,
+  {
+    "id": 5,
     "title": "Eits Control Annual Event 2022",
     "description": "Eits family got together at “ jewel sports city hotel “ to celebrate the achievements and successes of the year and to talk about future plans. What a great opportunity to end the year on such a high note.",
     "link": "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
+    "location":"Egypt",
     "thumbnails": [  
       "/team.webp",
       "/ahmed hamada.webp",
@@ -312,6 +374,35 @@ export const events = [
     ,
     ]
   },
+  {
+    "id": 6,
+    "title": "Eits Control Annual Event 2024",
+    "description": "Eits family got together at “ Ain Elhayah resort hotel “ to celebrate the achievements and successes of the year and to talk about future plans. What a great opportunity to end the year on such a high note.",
+    "link": "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
+    "location":"Egypt",
+    "thumbnails": [
+  "/17.jpeg",
+  "/2.jpeg",
+  "/3.jpeg",
+  "/4.jpeg",
+  "/5.jpeg",
+  "/6.jpeg",
+  "/7.jpeg",
+  "/8.jpeg",
+  "/9.jpeg",
+  "/10.jpeg",
+  "/11.jpeg",
+  "/12.jpeg",
+  "/13.jpeg",
+  "/14.jpeg",
+  "/15.jpeg",
+  "/16.jpeg",
+]
+
+  }
+  ,
+
+  
 
 ];
 // Define the Project type for better type safety

@@ -1,3 +1,5 @@
+"use client"
+
 import { cn } from "@/lib/utils"
 import { clientLogos } from "@/data";
 import React from "react";

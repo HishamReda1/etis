@@ -3,16 +3,10 @@ import "@/app/globals.css";
 
 import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Montserrat } from "next/font/google";
 
 import { ToastProvider } from "@/components/ui/toast";
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-  display: "swap",
-  weight: ["400", "700"],
-});
+
 
 export const metadata: Metadata = {
   title: "EITS | BMS Systems, Lighting Control & Electrical Solutions in Egypt",
@@ -69,7 +63,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className={montserrat.className}>
+      <body >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

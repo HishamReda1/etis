@@ -61,6 +61,8 @@ const SidebarContent = () => {
         return <ProjectsIcon className={`h-5 w-5 shrink-0 ${activeClass}`} />;
       case "products":
         return <ProductsIcon className={`h-5 w-5 shrink-0 ${activeClass}`} />;
+      case "team":
+        return <UsersIcon className={`h-5 w-5 shrink-0 ${activeClass}`} />;
       default:
         return <HomeIcon className={`h-5 w-5 shrink-0 ${activeClass}`} />;
     }

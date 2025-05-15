@@ -120,7 +120,7 @@ export default function ProductShowcase() {
   // Function to handle contact via WhatsApp
   const handleContact = (productName: string) => {
     window.open(
-      `https://wa.me/+201555523663?text=I'm interested in your ${encodeURIComponent(productName)} solution.`,
+      `https://wa.me/+201090020981?text=I'm interested in your ${encodeURIComponent(productName)} solution.`,
       "_blank",
     )
   }
