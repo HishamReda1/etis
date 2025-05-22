@@ -4,6 +4,8 @@ import { useState, useRef } from "react";
 import { cn } from "@/lib/utils";
 import dynamic from "next/dynamic";
 import emailjs from "@emailjs/browser";
+import { useParams } from "next/navigation";
+import contactContent from "../../src/content/contact.content";
 
 const Map = dynamic(() => import("@/components/ui/map"), {
   ssr: false,
@@ -11,6 +13,11 @@ const Map = dynamic(() => import("@/components/ui/map"), {
 });
 
 export default function ContactPage({ theme }: { theme: "light" | "dark" }) {
+  const params = useParams();
+  const locale = params?.locale as string || "en";
+  const isRTL = locale === "ar";
+  const t = contactContent.content[locale as keyof typeof contactContent.content] || contactContent.content.en;
+
   const formRef = useRef<HTMLFormElement>(null);
   const otpRefs = useRef<(HTMLInputElement | null)[]>([]);
   const [formData, setFormData] = useState({
@@ -74,23 +81,23 @@ export default function ContactPage({ theme }: { theme: "light" | "dark" }) {
 
   const validateForm = () => {
     if (!formData.name.trim()) {
-      setErrorMessage("Please enter your name");
+      setErrorMessage(t.form.errors.name);
       return false;
     }
     if (!formData.email.trim()) {
-      setErrorMessage("Please enter your email");
+      setErrorMessage(t.form.errors.email);
       return false;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      setErrorMessage("Please enter a valid email address");
+      setErrorMessage(t.form.errors.emailInvalid);
       return false;
     }
     if (!formData.message.trim()) {
-      setErrorMessage("Please enter your message");
+      setErrorMessage(t.form.errors.message);
       return false;
     }
     if (!showCaptcha || !/^[a-zA-Z0-9]{4,6}$/.test(formData.captcha)) {
-      setErrorMessage("Security check failed. Please complete the captcha.");
+      setErrorMessage(t.form.errors.captcha);
       return false;
     }
     return true;
@@ -138,14 +145,14 @@ export default function ContactPage({ theme }: { theme: "light" | "dark" }) {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6" dir={isRTL ? "rtl" : "ltr"}>
       <h1
         className={cn(
           "text-4xl font-bold",
           theme === "light" ? "text-gray-800" : "text-white"
         )}
       >
-        Contact <span className="text-[#8DC63F] dark:text-[#00AEEF]">Us</span>
+        {t.title} <span className="text-[#8DC63F] dark:text-[#00AEEF]">{t.subtitle}</span>
       </h1>
 
       <p
@@ -154,7 +161,7 @@ export default function ContactPage({ theme }: { theme: "light" | "dark" }) {
           theme === "light" ? "text-gray-700" : "text-gray-100"
         )}
       >
-        Get in touch with our team for inquiries and support.
+        {t.description}
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
@@ -173,7 +180,7 @@ export default function ContactPage({ theme }: { theme: "light" | "dark" }) {
               theme === "light" ? "text-gray-800" : "text-white"
             )}
           >
-            Contact Information
+            {t.contactInfo.title}
           </h3>
           <div className="space-y-3">
             <p
@@ -181,30 +188,28 @@ export default function ContactPage({ theme }: { theme: "light" | "dark" }) {
                 theme === "light" ? "text-gray-700" : "text-gray-200"
               )}
             >
-              <strong>Address:</strong> 72 Street, 1st industrial district,
-              Obour city, Egypt
+              <strong>{t.contactInfo.address}:</strong> {t.contactInfo.addressValue}
             </p>
             <p
               className={cn(
                 theme === "light" ? "text-gray-700" : "text-gray-200"
               )}
             >
-              <strong>Phone:</strong> +20 109 002 0981, 02 44 891 304, +20 111
-              511 4445
+              <strong>{t.contactInfo.phone}:</strong> {t.contactInfo.phoneValue}
             </p>
             <p
               className={cn(
                 theme === "light" ? "text-gray-700" : "text-gray-200"
               )}
             >
-              <strong>Email:</strong> info@eits-egypt.com
+              <strong>{t.contactInfo.email}:</strong> {t.contactInfo.emailValue}
             </p>
             <p
               className={cn(
                 theme === "light" ? "text-gray-700" : "text-gray-200"
               )}
             >
-              <strong>Hours:</strong> Sunday-Thursday, 9:00 AM - 5:00 PM
+              <strong>{t.contactInfo.hours}:</strong> {t.contactInfo.hoursValue}
             </p>
           </div>
 
@@ -215,7 +220,7 @@ export default function ContactPage({ theme }: { theme: "light" | "dark" }) {
                 theme === "light" ? "text-gray-800" : "text-white"
               )}
             >
-              Our Location
+              {t.location.title}
             </h3>
             <div className="h-64 rounded-md overflow-hidden">
               <Map />
@@ -238,7 +243,7 @@ export default function ContactPage({ theme }: { theme: "light" | "dark" }) {
               theme === "light" ? "text-gray-800" : "text-white"
             )}
           >
-            Send a Message
+            {t.form.title}
           </h3>
 
           <form ref={formRef} className="space-y-4" onSubmit={handleSubmit}>
@@ -250,21 +255,21 @@ export default function ContactPage({ theme }: { theme: "light" | "dark" }) {
                   theme === "light" ? "text-gray-700" : "text-gray-200"
                 )}
               >
-                Name
+                {t.form.name}
               </label>
               <input
+                type="text"
                 id="name"
                 name="name"
-                type="text"
                 value={formData.name}
                 onChange={handleInputChange}
                 className={cn(
-                  "w-full p-2 rounded-md border bg-white/10 backdrop-blur-md focus:outline-none focus:ring-2",
+                  "w-full px-4 py-2 rounded-md border",
                   theme === "dark"
-                    ? "border-gray-600 text-white focus:ring-[#005b94]"
-                    : "border-gray-300 text-gray-800 focus:ring-[#56ab2f]"
+                    ? "bg-[#001e30] border-[#005b94] text-white"
+                    : "bg-white border-gray-300 text-gray-900"
                 )}
-                required
+                dir={isRTL ? "rtl" : "ltr"}
               />
             </div>
 
@@ -276,21 +281,21 @@ export default function ContactPage({ theme }: { theme: "light" | "dark" }) {
                   theme === "light" ? "text-gray-700" : "text-gray-200"
                 )}
               >
-                Email
+                {t.form.email}
               </label>
               <input
+                type="email"
                 id="email"
                 name="email"
-                type="email"
                 value={formData.email}
                 onChange={handleInputChange}
                 className={cn(
-                  "w-full p-2 rounded-md border bg-white/10 backdrop-blur-md focus:outline-none focus:ring-2",
+                  "w-full px-4 py-2 rounded-md border",
                   theme === "dark"
-                    ? "border-gray-600 text-white focus:ring-[#005b94]"
-                    : "border-gray-300 text-gray-800 focus:ring-[#56ab2f]"
+                    ? "bg-[#001e30] border-[#005b94] text-white"
+                    : "bg-white border-gray-300 text-gray-900"
                 )}
-                required
+                dir={isRTL ? "rtl" : "ltr"}
               />
             </div>
 
@@ -302,7 +307,7 @@ export default function ContactPage({ theme }: { theme: "light" | "dark" }) {
                   theme === "light" ? "text-gray-700" : "text-gray-200"
                 )}
               >
-                Message
+                {t.form.message}
               </label>
               <textarea
                 id="message"
@@ -311,152 +316,68 @@ export default function ContactPage({ theme }: { theme: "light" | "dark" }) {
                 onChange={handleInputChange}
                 rows={4}
                 className={cn(
-                  "w-full p-2 rounded-md border bg-white/10 backdrop-blur-md focus:outline-none focus:ring-2",
+                  "w-full px-4 py-2 rounded-md border",
                   theme === "dark"
-                    ? "border-gray-600 text-white focus:ring-[#005b94]"
-                    : "border-gray-300 text-gray-800 focus:ring-[#56ab2f]"
+                    ? "bg-[#001e30] border-[#005b94] text-white"
+                    : "bg-white border-gray-300 text-gray-900"
                 )}
-                required
+                dir={isRTL ? "rtl" : "ltr"}
               />
             </div>
 
-            <div>
-              {/* Checkbox for "I'm not a robot" */}
-              <div className="flex items-center space-x-2 mt-4">
-                <input
-                  type="checkbox"
-                  id="not-a-robot"
-                  checked={showCaptcha}
-                  onChange={() => setShowCaptcha(!showCaptcha)}
-                  className="w-5 h-5 text-[#56ab2f] border-gray-300 rounded focus:ring-[#56ab2f]"
-                />
+            {showCaptcha && (
+              <div>
                 <label
-                  htmlFor="not-a-robot"
                   className={cn(
-                    "text-lg font-medium",
+                    "block mb-1",
                     theme === "light" ? "text-gray-700" : "text-gray-200"
                   )}
                 >
-                  I'm not a robot
+                  {t.form.captcha}
                 </label>
-              </div>
-
-              {/* Captcha input field styled as OTP */}
-              {showCaptcha && (
-                <div className="space-y-4 mt-4">
-                  <label
-                    htmlFor="captcha"
-                    className={cn(
-                      "block mb-1 text-lg font-medium",
-                      theme === "light" ? "text-gray-700" : "text-gray-200"
-                    )}
-                  >
-                    Please complete the security check:
-                  </label>
-                  <p
-                    className={cn(
-                      "text-sm",
-                      theme === "light" ? "text-gray-600" : "text-gray-400"
-                    )}
-                  >
-                    Enter any 6 random numbers.
-                  </p>
-                  <div className="flex space-x-2 justify-center">
-                    {[...Array(6)].map((_, index) => (
-                      <input
-                        key={index}
-                        ref={(el) => {
-                          otpRefs.current[index] = el;
-                        }} // Store input references
-                        type="text"
-                        maxLength={1}
-                        value={otpValues[index]}
-                        className={cn(
-                          "w-12 h-12 text-center text-lg rounded-md border bg-white/10 backdrop-blur-md focus:outline-none focus:ring-2",
-                          theme === "dark"
-                            ? "border-gray-600 text-white focus:ring-[#005b94]"
-                            : "border-gray-300 text-gray-800 focus:ring-[#56ab2f]"
-                        )}
-                        onChange={(e) => handleOtpInputChange(e, index)}
-                        onKeyDown={(e) => handleOtpKeyDown(e, index)}
-                      />
-                    ))}
-                  </div>
+                <div className="flex gap-2">
+                  {Array.from({ length: 6 }, (_, i) => (
+                    <input
+                      key={i}
+                      ref={(el) => (otpRefs.current[i] = el)}
+                      type="text"
+                      maxLength={1}
+                      value={otpValues[i]}
+                      onChange={(e) => handleOtpInputChange(e, i)}
+                      onKeyDown={(e) => handleOtpKeyDown(e, i)}
+                      className={cn(
+                        "w-10 h-10 text-center rounded-md border",
+                        theme === "dark"
+                          ? "bg-[#001e30] border-[#005b94] text-white"
+                          : "bg-white border-gray-300 text-gray-900"
+                      )}
+                    />
+                  ))}
                 </div>
+              </div>
+            )}
+
+            {formStatus === "error" && (
+              <p className="text-red-500 text-sm">{errorMessage}</p>
+            )}
+
+            <button
+              type="submit"
+              disabled={formStatus === "sending"}
+              className={cn(
+                "w-full py-2 px-4 rounded-md font-medium transition-colors",
+                theme === "dark"
+                  ? "bg-[#005b94] text-white hover:bg-[#004b7a] disabled:bg-[#005b94]/50"
+                  : "bg-[#56ab2f] text-white hover:bg-[#4a9a2a] disabled:bg-[#56ab2f]/50"
               )}
-            </div>
-
-            {/* Send button */}
-            {!showCaptcha && (
-              <button
-                type="button"
-                onClick={() => setShowCaptcha(true)}
-                className={cn(
-                  "mt-4 px-4 py-2 rounded-md font-medium transition-colors w-full",
-                  theme === "dark"
-                    ? "bg-[#005b94] text-white hover:bg-[#004a7a]"
-                    : "bg-[#56ab2f] text-white hover:bg-[#489327]"
-                )}
-              >
-                Send
-              </button>
-            )}
-
-            {/* Final submit button (only shown after captcha is completed) */}
-            {showCaptcha && (
-              <button
-                type="submit"
-                disabled={formStatus === "sending"}
-                className={cn(
-                  "mt-4 px-4 py-2 rounded-md font-medium transition-colors w-full",
-                  theme === "dark"
-                    ? "bg-[#005b94] text-white hover:bg-[#004a7a]"
-                    : "bg-[#56ab2f] text-white hover:bg-[#489327]",
-                  formStatus === "sending" && "opacity-70 cursor-not-allowed"
-                )}
-              >
-                {formStatus === "sending" ? (
-                  <span className="flex items-center justify-center">
-                    <svg
-                      className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle
-                        className="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                      />
-                      <path
-                        className="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
-                      />
-                    </svg>
-                    Sending...
-                  </span>
-                ) : (
-                  "Submit"
-                )}
-              </button>
-            )}
+            >
+              {formStatus === "sending"
+                ? t.form.status.sending
+                : formStatus === "success"
+                ? t.form.status.success
+                : t.form.submit}
+            </button>
           </form>
-
-          {formStatus === "success" && (
-            <div className="mt-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded">
-              <p>Thank you! Your message has been sent successfully.</p>
-            </div>
-          )}
-
-          {formStatus === "error" && (
-            <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
-              <p>{errorMessage}</p>
-            </div>
-          )}
         </div>
       </div>
     </div>

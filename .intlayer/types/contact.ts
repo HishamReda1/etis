@@ -1,6 +1,5 @@
-import { type Dictionary } from "intlayer";
-
-const contactContent = {
+/* eslint-disable */
+export default {
   key: "contact",
   content: {
     en: {
@@ -159,7 +158,6 @@ const contactContent = {
         }
       }
     }
-  }
-} satisfies Dictionary;
-
-export default contactContent; 
+  },
+  filePath: "src\\content\\contact.content.ts"
+} as const;
