@@ -1,6 +1,5 @@
-import { type Dictionary } from "intlayer";
-
-const eventsContent = {
+/* eslint-disable */
+export default {
   key: "events",
   content: {
     en: {
@@ -16,7 +15,7 @@ const eventsContent = {
             "/honeywell2025-1.jpeg",
             "/honeywell2025-2.jpeg",
             "/honeywell2025-4.jpeg"
-          ],
+          ]
         },
         {
           id: 1,
@@ -33,8 +32,8 @@ const eventsContent = {
             "/platinum-4.jpeg",
             "/platinum-5.jpeg",
             "/platinum-7.jpeg",
-            "/platinum-8.jpeg",
-          ],
+            "/platinum-8.jpeg"
+          ]
         },
         {
           id: 6,
@@ -58,8 +57,8 @@ const eventsContent = {
             "/13.jpeg",
             "/14.jpeg",
             "/15.jpeg",
-            "/16.jpeg",
-          ],
+            "/16.jpeg"
+          ]
         },
         {
           id: 2,
@@ -67,7 +66,11 @@ const eventsContent = {
           description: "Another Successful Milestone for Eits Automation Control Automation Contro Family in growing the business along with Honeywell in Egypt being recognized as \"New Technology Partner\" for Honeywell Alerton BMS for 2023 results & being the GOLD Parter in the Egyptian Market.",
           link: "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
           location: "mauritius",
-          thumbnails: ["/golden.webp", "/contract.webp", "/ghazy.webp"],
+          thumbnails: [
+            "/golden.webp",
+            "/contract.webp",
+            "/ghazy.webp"
+          ]
         },
         {
           id: 3,
@@ -75,7 +78,11 @@ const eventsContent = {
           description: "Another successful milestone for the EITS Automation Control family in expanding our presence in the Egyptian market. We are proud to be officially recognized as a 'New Technology Partner' by Sontay. This achievement was marked by the presence of our CEO at Sontay's headquarters in the UK, reflecting the strength of our partnership and our continuous commitment to bringing cutting-edge solutions to Egypt.",
           link: "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
           location: "UK",
-          thumbnails: ["/sontay3.jpeg", "/sontay1.jpeg", "/sontay2.jpeg"],
+          thumbnails: [
+            "/sontay3.jpeg",
+            "/sontay1.jpeg",
+            "/sontay2.jpeg"
+          ]
         },
         {
           id: 7,
@@ -83,7 +90,9 @@ const eventsContent = {
           description: "Our Managing Director, Eng. Mohamed Ghazy, met with the Minister of Health and Honeywell's senior executives in Egypt to discuss the latest achievements in advancing the healthcare sector and enhancing development efforts across the country.",
           link: "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
           location: "Egypt",
-          thumbnails: ["minstry.jpeg"],
+          thumbnails: [
+            "minstry.jpeg"
+          ]
         },
         {
           id: 4,
@@ -91,7 +100,11 @@ const eventsContent = {
           description: "EITS Automation Control had the honor to participate in the recent Schneider Electric event held at Baron Hotel. The event was highlighted by the attendance of a well-known TV presenter from the show 'El-Geda3an', showcasing the importance and growing recognition of our contributions in the automation and control sector.",
           link: "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
           location: "Egypt",
-          thumbnails: ["/shnider1.jpeg", "/shnider2.jpeg", "/shnider3.jpeg"],
+          thumbnails: [
+            "/shnider1.jpeg",
+            "/shnider2.jpeg",
+            "/shnider3.jpeg"
+          ]
         },
         {
           id: 5,
@@ -103,10 +116,10 @@ const eventsContent = {
             "/team.webp",
             "/ahmed hamada.webp",
             "/engineer-Nabila.webp",
-            "/hussenAbdulnasserEtis.webp",
-          ],
-        },
-      ],
+            "/hussenAbdulnasserEtis.webp"
+          ]
+        }
+      ]
     },
     ar: {
       events: [
@@ -121,7 +134,7 @@ const eventsContent = {
             "/honeywell2025-1.jpeg",
             "/honeywell2025-2.jpeg",
             "/honeywell2025-4.jpeg"
-          ],
+          ]
         },
         {
           id: 1,
@@ -138,8 +151,8 @@ const eventsContent = {
             "/platinum-4.jpeg",
             "/platinum-5.jpeg",
             "/platinum-7.jpeg",
-            "/platinum-8.jpeg",
-          ],
+            "/platinum-8.jpeg"
+          ]
         },
         {
           id: 6,
@@ -163,8 +176,8 @@ const eventsContent = {
             "/13.jpeg",
             "/14.jpeg",
             "/15.jpeg",
-            "/16.jpeg",
-          ],
+            "/16.jpeg"
+          ]
         },
         {
           id: 2,
@@ -172,7 +185,11 @@ const eventsContent = {
           description: "إنجاز ناجح آخر لعائلة إيتس للتحكم الآلي في تنمية الأعمال مع هونيول في مصر، حيث تم الاعتراف بنا كشريك تكنولوجي جديد لهونيول ألرتون BMS لعام 2023 وكوننا الشريك الذهبي في السوق المصري.",
           link: "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
           location: "موريشيوس",
-          thumbnails: ["/golden.webp", "/contract.webp", "/ghazy.webp"],
+          thumbnails: [
+            "/golden.webp",
+            "/contract.webp",
+            "/ghazy.webp"
+          ]
         },
         {
           id: 3,
@@ -180,7 +197,11 @@ const eventsContent = {
           description: "إنجاز ناجح آخر لعائلة إيتس للتحكم الآلي في توسيع وجودنا في السوق المصري. نحن فخورون بالاعتراف بنا رسمياً كشريك تكنولوجي جديد من قبل سونتاي. تميز هذا الإنجاز بحضور الرئيس التنفيذي في مقر سونتاي في المملكة المتحدة، مما يعكس قوة شراكتنا والتزامنا المستمر بتقديم حلول متطورة إلى مصر.",
           link: "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
           location: "المملكة المتحدة",
-          thumbnails: ["/sontay3.jpeg", "/sontay1.jpeg", "/sontay2.jpeg"],
+          thumbnails: [
+            "/sontay3.jpeg",
+            "/sontay1.jpeg",
+            "/sontay2.jpeg"
+          ]
         },
         {
           id: 7,
@@ -188,7 +209,9 @@ const eventsContent = {
           description: "التقى المدير التنفيذي م. محمد غازي مع وزير الصحة وكبار مسؤولي هونيول في مصر لمناقشة أحدث الإنجازات في تطوير قطاع الرعاية الصحية وتعزيز جهود التنمية في جميع أنحاء البلاد.",
           link: "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
           location: "مصر",
-          thumbnails: ["minstry.jpeg"],
+          thumbnails: [
+            "minstry.jpeg"
+          ]
         },
         {
           id: 4,
@@ -196,7 +219,11 @@ const eventsContent = {
           description: "كان لشركة إيتس للتحكم الآلي شرف المشاركة في فعالية شنايدر إلكتريك الأخيرة التي أقيمت في فندق بارون. تميز الحدث بحضور مقدم تلفزيوني معروف من برنامج 'الجدعان'، مما يبرز أهمية وتزايد الاعتراف بمساهماتنا في قطاع الأتمتة والتحكم.",
           link: "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
           location: "مصر",
-          thumbnails: ["/shnider1.jpeg", "/shnider2.jpeg", "/shnider3.jpeg"],
+          thumbnails: [
+            "/shnider1.jpeg",
+            "/shnider2.jpeg",
+            "/shnider3.jpeg"
+          ]
         },
         {
           id: 5,
@@ -208,10 +235,10 @@ const eventsContent = {
             "/team.webp",
             "/ahmed hamada.webp",
             "/engineer-Nabila.webp",
-            "/hussenAbdulnasserEtis.webp",
-          ],
-        },
-      ],
+            "/hussenAbdulnasserEtis.webp"
+          ]
+        }
+      ]
     },
     fr: {
       events: [
@@ -226,7 +253,7 @@ const eventsContent = {
             "/honeywell2025-1.jpeg",
             "/honeywell2025-2.jpeg",
             "/honeywell2025-4.jpeg"
-          ],
+          ]
         },
         {
           id: 1,
@@ -243,8 +270,8 @@ const eventsContent = {
             "/platinum-4.jpeg",
             "/platinum-5.jpeg",
             "/platinum-7.jpeg",
-            "/platinum-8.jpeg",
-          ],
+            "/platinum-8.jpeg"
+          ]
         },
         {
           id: 6,
@@ -268,8 +295,8 @@ const eventsContent = {
             "/13.jpeg",
             "/14.jpeg",
             "/15.jpeg",
-            "/16.jpeg",
-          ],
+            "/16.jpeg"
+          ]
         },
         {
           id: 2,
@@ -277,7 +304,11 @@ const eventsContent = {
           description: "Une autre étape réussie pour la famille Eits Automation Control dans le développement des affaires avec Honeywell en Égypte, étant reconnue comme \"Nouveau Partenaire Technologique\" pour Honeywell Alerton BMS pour les résultats 2023 et devenant Partenaire Or sur le Marché Égyptien.",
           link: "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
           location: "Maurice",
-          thumbnails: ["/golden.webp", "/contract.webp", "/ghazy.webp"],
+          thumbnails: [
+            "/golden.webp",
+            "/contract.webp",
+            "/ghazy.webp"
+          ]
         },
         {
           id: 3,
@@ -285,7 +316,11 @@ const eventsContent = {
           description: "Une autre étape réussie pour la famille EITS Automation Control dans l'expansion de notre présence sur le marché égyptien. Nous sommes fiers d'être officiellement reconnus comme 'Nouveau Partenaire Technologique' par Sontay. Cette réalisation a été marquée par la présence de notre PDG au siège de Sontay au Royaume-Uni, reflétant la force de notre partenariat et notre engagement continu à apporter des solutions de pointe en Égypte.",
           link: "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
           location: "Royaume-Uni",
-          thumbnails: ["/sontay3.jpeg", "/sontay1.jpeg", "/sontay2.jpeg"],
+          thumbnails: [
+            "/sontay3.jpeg",
+            "/sontay1.jpeg",
+            "/sontay2.jpeg"
+          ]
         },
         {
           id: 7,
@@ -293,7 +328,9 @@ const eventsContent = {
           description: "Notre Directeur Général, Ing. Mohamed Ghazy, a rencontré le Ministre de la Santé et les dirigeants de Honeywell en Égypte pour discuter des dernières réalisations dans l'avancement du secteur de la santé et l'amélioration des efforts de développement à travers le pays.",
           link: "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
           location: "Égypte",
-          thumbnails: ["minstry.jpeg"],
+          thumbnails: [
+            "minstry.jpeg"
+          ]
         },
         {
           id: 4,
@@ -301,7 +338,11 @@ const eventsContent = {
           description: "EITS Automation Control a eu l'honneur de participer au récent événement Schneider Electric organisé à l'Hôtel Baron. L'événement a été marqué par la présence d'un présentateur TV bien connu de l'émission 'El-Geda3an', démontrant l'importance et la reconnaissance croissante de nos contributions dans le secteur de l'automatisation et du contrôle.",
           link: "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
           location: "Égypte",
-          thumbnails: ["/shnider1.jpeg", "/shnider2.jpeg", "/shnider3.jpeg"],
+          thumbnails: [
+            "/shnider1.jpeg",
+            "/shnider2.jpeg",
+            "/shnider3.jpeg"
+          ]
         },
         {
           id: 5,
@@ -313,10 +354,10 @@ const eventsContent = {
             "/team.webp",
             "/ahmed hamada.webp",
             "/engineer-Nabila.webp",
-            "/hussenAbdulnasserEtis.webp",
-          ],
-        },
-      ],
+            "/hussenAbdulnasserEtis.webp"
+          ]
+        }
+      ]
     },
     es: {
       events: [
@@ -331,7 +372,7 @@ const eventsContent = {
             "/honeywell2025-1.jpeg",
             "/honeywell2025-2.jpeg",
             "/honeywell2025-4.jpeg"
-          ],
+          ]
         },
         {
           id: 1,
@@ -348,8 +389,8 @@ const eventsContent = {
             "/platinum-4.jpeg",
             "/platinum-5.jpeg",
             "/platinum-7.jpeg",
-            "/platinum-8.jpeg",
-          ],
+            "/platinum-8.jpeg"
+          ]
         },
         {
           id: 6,
@@ -373,8 +414,8 @@ const eventsContent = {
             "/13.jpeg",
             "/14.jpeg",
             "/15.jpeg",
-            "/16.jpeg",
-          ],
+            "/16.jpeg"
+          ]
         },
         {
           id: 2,
@@ -382,7 +423,11 @@ const eventsContent = {
           description: "Otro hito exitoso para la familia Eits Automation Control en el crecimiento del negocio junto con Honeywell en Egipto, siendo reconocidos como \"Nuevo Socio Tecnológico\" para Honeywell Alerton BMS para los resultados de 2023 y siendo Socio Oro en el Mercado Egipcio.",
           link: "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
           location: "Mauricio",
-          thumbnails: ["/golden.webp", "/contract.webp", "/ghazy.webp"],
+          thumbnails: [
+            "/golden.webp",
+            "/contract.webp",
+            "/ghazy.webp"
+          ]
         },
         {
           id: 3,
@@ -390,7 +435,11 @@ const eventsContent = {
           description: "Otro hito exitoso para la familia EITS Automation Control en la expansión de nuestra presencia en el mercado egipcio. Estamos orgullosos de ser reconocidos oficialmente como 'Nuevo Socio Tecnológico' por Sontay. Este logro fue marcado por la presencia de nuestro CEO en la sede de Sontay en el Reino Unido, reflejando la fortaleza de nuestra asociación y nuestro compromiso continuo de llevar soluciones de vanguardia a Egipto.",
           link: "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
           location: "Reino Unido",
-          thumbnails: ["/sontay3.jpeg", "/sontay1.jpeg", "/sontay2.jpeg"],
+          thumbnails: [
+            "/sontay3.jpeg",
+            "/sontay1.jpeg",
+            "/sontay2.jpeg"
+          ]
         },
         {
           id: 7,
@@ -398,7 +447,9 @@ const eventsContent = {
           description: "Nuestro Director General, Ing. Mohamed Ghazy, se reunió con el Ministro de Salud y los ejecutivos senior de Honeywell en Egipto para discutir los últimos logros en el avance del sector de la salud y la mejora de los esfuerzos de desarrollo en todo el país.",
           link: "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
           location: "Egipto",
-          thumbnails: ["minstry.jpeg"],
+          thumbnails: [
+            "minstry.jpeg"
+          ]
         },
         {
           id: 4,
@@ -406,7 +457,11 @@ const eventsContent = {
           description: "EITS Automation Control tuvo el honor de participar en el reciente evento de Schneider Electric celebrado en el Hotel Baron. El evento fue destacado por la asistencia de un conocido presentador de TV del programa 'El-Geda3an', mostrando la importancia y el creciente reconocimiento de nuestras contribuciones en el sector de la automatización y el control.",
           link: "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
           location: "Egipto",
-          thumbnails: ["/shnider1.jpeg", "/shnider2.jpeg", "/shnider3.jpeg"],
+          thumbnails: [
+            "/shnider1.jpeg",
+            "/shnider2.jpeg",
+            "/shnider3.jpeg"
+          ]
         },
         {
           id: 5,
@@ -418,12 +473,11 @@ const eventsContent = {
             "/team.webp",
             "/ahmed hamada.webp",
             "/engineer-Nabila.webp",
-            "/hussenAbdulnasserEtis.webp",
-          ],
-        },
-      ],
-    },
+            "/hussenAbdulnasserEtis.webp"
+          ]
+        }
+      ]
+    }
   },
-} satisfies Dictionary;
-
-export default eventsContent; 
+  filePath: "src\\content\\events.content.ts"
+} as const;

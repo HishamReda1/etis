@@ -1,19 +1,41 @@
 "use client";
 import React from "react";
-
-
 import Image from "next/image";
-
+import { useParams } from "next/navigation";
+import sparklesContent from "@/src/content/sparkles.content";
+import { cn } from "@/lib/utils";
 
 export function SparklesPreview() {
+  const params = useParams();
+  const locale = params?.locale as keyof typeof sparklesContent.content || "en";
+  const content = sparklesContent;
+  const validLocale = locale in content.content ? locale : "en";
+  const t = content.content[validLocale];
+  const isRTL = validLocale === "ar";
+
   return (
     <div className="w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
-      <h3 className="md:text-2xl font-bold text-center text-gray-800 dark:text-white relative z-20 py-4 flex items-center justify-center gap-2">
-        we are
-        <span>
-          <Image src="/honey-word.png" alt="honeywell" width={200} height={100} />
-        </span>
-        the power of connected partner in Egypt
+      <h3 className={cn(
+        "md:text-2xl font-bold text-center text-gray-800 dark:text-white relative z-20 py-4 flex items-center justify-center gap-2",
+        isRTL ? "flex-row-reverse" : "flex-row"
+      )}>
+        {isRTL ? (
+          <>
+            {t.title}
+            <span>
+              <Image src="/honey-word.png" alt="honeywell" width={200} height={100} />
+            </span>
+            {t.subtitle}
+          </>
+        ) : (
+          <>
+            {t.title}
+            <span>
+              <Image src="/honey-word.png" alt="honeywell" width={200} height={100} />
+            </span>
+            {t.subtitle}
+          </>
+        )}
       </h3>
 
       <div className="w-[40rem] h-40 relative">
