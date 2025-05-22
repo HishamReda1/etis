@@ -4,6 +4,9 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Html, useTexture, Stars } from "@react-three/drei";
 import { motion } from "framer-motion";
 import * as THREE from "three";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { X } from "lucide-react";
+import Image from "next/image";
 
 import CanvasLoader from "./Loading";
 
@@ -145,31 +148,89 @@ const Globe = ({ locations }: { locations: Location[] }) => {
       </Canvas>
 
       {selectedLocation && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-2">
-          <div className="bg-white/95 rounded-xl w-full max-w-md max-h-[80vh] overflow-hidden shadow-xl">
-            <div className="p-2 flex justify-between items-center border-b border-gray-200/30">
-              <div>
-                <h2 className="text-sm font-semibold text-gray-900">
-                  {selectedLocation.title}
-                </h2>
-                <p className="text-xs text-gray-600/90">{selectedLocation.description}</p>
-              </div>
+        <Dialog open onOpenChange={() => setSelectedLocation(null)}>
+          <DialogContent className="max-w-2xl p-0 overflow-y-auto rounded-2xl bg-white dark:bg-gray-900 max-h-[85vh] custom-scrollbar">
+            <style jsx global>{`
+              .custom-scrollbar::-webkit-scrollbar {
+                width: 8px;
+                height: 8px;
+              }
+              
+              .custom-scrollbar::-webkit-scrollbar-track {
+                background: rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                margin: 4px;
+              }
+              
+              .custom-scrollbar::-webkit-scrollbar-thumb {
+                background-color: rgba(0, 0, 0, 0.3);
+                border-radius: 10px;
+                border: 2px solid transparent;
+                background-clip: content-box;
+                transition: all 0.3s ease;
+              }
+              
+              .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background-color: rgba(0, 0, 0, 0.4);
+              }
+              
+              .dark .custom-scrollbar::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.1);
+              }
+              
+              .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+                background-color: rgba(255, 255, 255, 0.3);
+              }
+              
+              .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background-color: rgba(255, 255, 255, 0.4);
+              }
+              
+              .custom-scrollbar {
+                scrollbar-width: thin;
+                scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.1);
+              }
+              
+              .dark .custom-scrollbar {
+                scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
+              }
+            `}</style>
+
+            <DialogTitle className="sr-only">{selectedLocation.title}</DialogTitle>
+            
+            <div className="relative">
+              {/* Close button */}
               <button
                 onClick={() => setSelectedLocation(null)}
-                className="text-gray-500 hover:text-gray-700 p-1"
+                className="absolute top-2 right-2 z-50 p-1.5 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
               >
-                ✕
+                <X className="h-4 w-4" />
               </button>
+
+              {/* Image */}
+              <div className="relative h-[250px] sm:h-[300px] md:h-[350px] bg-gray-100 dark:bg-gray-800">
+                <Image
+                  src={selectedLocation.fullSizeUrl}
+                  alt={selectedLocation.title}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
+                    {selectedLocation.title}
+                  </h2>
+                  <p className="mt-1 sm:mt-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">
+                    {selectedLocation.description}
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="p-1 bg-gray-50 flex items-center justify-center z-50">
-              <img
-                src={selectedLocation.fullSizeUrl}
-                alt={selectedLocation.title}
-                className="max-h-[40vh] w-auto object-contain"
-              />
-            </div>
-          </div>
-        </div>
+          </DialogContent>
+        </Dialog>
       )}
     </div>
   );

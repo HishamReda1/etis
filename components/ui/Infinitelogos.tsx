@@ -25,6 +25,7 @@ export const InfiniteMovingLogos = ({
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
   const [start, setStart] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     if (!start) {
@@ -79,7 +80,9 @@ export const InfiniteMovingLogos = ({
         className={cn(
           "flex min-w-full shrink-0 gap-12 py-4 w-max flex-nowrap items-center",
           start && "animate-scroll",
-          pauseOnHover && "hover:[animation-play-state:paused]"
+          pauseOnHover && "hover:[animation-play-state:paused]",
+          !isLoaded && "opacity-0",
+          "transition-opacity duration-300"
         )}
       >
         {clientLogos.map((client, idx) => (
@@ -94,6 +97,12 @@ export const InfiniteMovingLogos = ({
               className="w-32 h-32 object-contain shadow-lg rounded-2xl"
               alt={client.name}
               priority
+              onLoad={() => {
+                if (idx === clientLogos.length - 1) {
+                  setIsLoaded(true);
+                }
+              }}
+              loading="eager"
             />
           </li>
         ))}

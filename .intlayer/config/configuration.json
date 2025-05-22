@@ -1,0 +1,100 @@
+{
+  "internationalization": {
+    "locales": [
+      "en",
+      "ar",
+      "fr",
+      "es"
+    ],
+    "requiredLocales": [],
+    "strictMode": "inclusive",
+    "defaultLocale": "en"
+  },
+  "middleware": {
+    "headerName": "x-intlayer-locale",
+    "cookieName": "INTLAYER_LOCALE",
+    "prefixDefault": false,
+    "basePath": "",
+    "serverSetCookie": "always",
+    "noPrefix": false
+  },
+  "content": {
+    "fileExtensions": [
+      ".content.ts",
+      ".content.js",
+      ".content.cjs",
+      ".content.cjx",
+      ".content.mjs",
+      ".content.mjx",
+      ".content.json",
+      ".content.tsx",
+      ".content.jsx"
+    ],
+    "baseDir": "D:\\etis",
+    "contentDirName": "src",
+    "resultDirName": ".intlayer",
+    "moduleAugmentationDirName": ".intlayer/types",
+    "dictionariesDirName": "dictionary",
+    "i18nextResourcesDirName": "i18next_resources",
+    "reactIntlMessagesDirName": "intl_messages",
+    "typeDirName": "types",
+    "mainDirName": "main",
+    "configDirName": "config",
+    "excludedPath": [
+      "node_modules"
+    ],
+    "watch": true,
+    "contentDir": "D:\\etis\\src",
+    "resultDir": "D:\\etis\\.intlayer",
+    "moduleAugmentationDir": "D:\\etis\\.intlayer\\types",
+    "dictionaryOutput": [
+      "intlayer"
+    ],
+    "dictionariesDir": "D:\\etis\\.intlayer\\dictionary",
+    "i18nextResourcesDir": "D:\\etis\\.intlayer\\i18next_resources",
+    "reactIntlMessagesDir": "D:\\etis\\.intlayer\\intl_messages",
+    "typesDir": "D:\\etis\\.intlayer\\types",
+    "mainDir": "D:\\etis\\.intlayer\\main",
+    "configDir": "D:\\etis\\.intlayer\\config",
+    "watchedFilesPattern": [
+      "/**/*.content.ts",
+      "/**/*.content.js",
+      "/**/*.content.cjs",
+      "/**/*.content.cjx",
+      "/**/*.content.mjs",
+      "/**/*.content.mjx",
+      "/**/*.content.json",
+      "/**/*.content.tsx",
+      "/**/*.content.jsx"
+    ],
+    "watchedFilesPatternWithPath": [
+      "D:\\etis\\src/**/*.content.ts",
+      "D:\\etis\\src/**/*.content.js",
+      "D:\\etis\\src/**/*.content.cjs",
+      "D:\\etis\\src/**/*.content.cjx",
+      "D:\\etis\\src/**/*.content.mjs",
+      "D:\\etis\\src/**/*.content.mjx",
+      "D:\\etis\\src/**/*.content.json",
+      "D:\\etis\\src/**/*.content.tsx",
+      "D:\\etis\\src/**/*.content.jsx"
+    ],
+    "outputFilesPatternWithPath": "D:\\etis\\.intlayer\\dictionary/**/*.json"
+  },
+  "editor": {
+    "applicationURL": "",
+    "editorURL": "http://localhost:8000",
+    "cmsURL": "https://intlayer.org",
+    "backendURL": "https://back.intlayer.org",
+    "port": 8000,
+    "enabled": true,
+    "dictionaryPriorityStrategy": "local_first",
+    "hotReload": false,
+    "openAiApiKey": "",
+    "openAiApiModel": "gpt-4o-2024-11-20",
+    "openAiApiTemperature": 0.1
+  },
+  "log": {
+    "mode": "default",
+    "prefix": "\u001b[90m[intlayer] \u001b[0m"
+  }
+}

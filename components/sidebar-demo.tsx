@@ -22,6 +22,7 @@ import { ThemeProvider, useTheme } from "@/contexts/theme-context";
 import { Logo, LogoIcon } from "@/components/ui/logo";
 import { navigationService } from "@/services/navigation-service";
 import type { NavigationLink, PageType } from "@/types";
+import { LocaleSwitcher } from "./LocaleSwitcher";
 
 const SidebarContent = () => {
   const { theme, toggleTheme } = useTheme();
@@ -92,10 +93,16 @@ const SidebarContent = () => {
       }}
     >
       <Sidebar open={open} setOpen={setOpen} theme={theme}>
-        <SidebarBody className="justify-between gap-10">
-          <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto">
+        <SidebarBody className={cn(
+          "justify-between gap-10",
+          !open && "overflow-hidden"
+        )}>
+          <div className={cn(
+            "flex flex-1 flex-col overflow-x-hidden overflow-y-auto",
+            !open && "overflow-hidden"
+          )}>
             {open ? <Logo theme={theme} /> : <LogoIcon theme={theme} />}
-            <div className="mt-8 flex flex-col gap-2">
+            <div className="mt-4 flex flex-col gap-2">
               {links.map((link, idx ) => (
                 <SidebarLink
                   key={idx}
@@ -117,8 +124,17 @@ const SidebarContent = () => {
             </div>
           </div>
           <div className="flex flex-col gap-4">
+            <div
+              className={cn(
+                "flex items-center gap-2 py-2 hover:translate-x-1 transition duration-150",
+                theme === "light" ? "text-gray-800" : "text-white"
+              )}
+            >
+              <LanguageIcon className="h-5 w-5 shrink-0" />
+              {open && <LocaleSwitcher />}
+            </div>
             <button
-            aria-label="Toggle Theme"
+              aria-label="Toggle Theme"
               onClick={toggleTheme}
               className={cn(
                 "flex items-center gap-2 py-2 hover:translate-x-1 transition duration-150",
@@ -136,12 +152,6 @@ const SidebarContent = () => {
                 </span>
               )}
             </button>
-            <div
-              className={cn(
-                "flex items-center gap-2 py-2 hover:translate-x-1 transition duration-150",
-                theme === "light" ? "text-gray-800" : "text-white"
-              )}
-            ></div>
           </div>
         </SidebarBody>
       </Sidebar>

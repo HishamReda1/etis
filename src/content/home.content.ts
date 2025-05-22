@@ -1,0 +1,41 @@
+import { type Dictionary,  } from "intlayer";
+
+const homeContent =({
+  key: "home",
+  content: {
+    en: {
+      title: 'eits',
+      subtitle: 'Energy International for Technical Solutions',
+      tagline: 'Only one touch to change your life',
+      socialMedia: {
+        alt: 'Social Icon'
+      }
+    },
+    ar: {
+      title: 'ايتس',
+      subtitle: 'إنترناشيونال للطاقة للحلول التقنية',
+      tagline: 'لمسة واحدة لتغيير حياتك',
+      socialMedia: {
+        alt: 'أيقونة التواصل الاجتماعي'
+      }
+    },
+    fr: {
+      title: 'eits',
+      subtitle: 'Energy International pour les Solutions Techniques',
+      tagline: 'Un seul toucher pour changer votre vie',
+      socialMedia: {
+        alt: 'Icône de réseau social'
+      }
+    },
+    es: {
+      title: 'eits',
+      subtitle: 'Energy International para Soluciones Técnicas',
+      tagline: 'Solo un toque para cambiar tu vida',
+      socialMedia: {
+        alt: 'Icono de red social'
+      }
+    }
+  }
+}) satisfies Dictionary;
+
+export default homeContent;

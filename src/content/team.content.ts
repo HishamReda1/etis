@@ -1,0 +1,161 @@
+import { type Dictionary } from "intlayer";
+
+const teamContent = {
+  key: "team",
+  content: {
+    en: {
+      title: "Our Team",
+      subtitle: "Meet the Experts",
+      description: "Our team of experienced professionals is dedicated to delivering excellence in every project. With decades of combined experience in engineering, technology, and management, we bring innovative solutions to complex challenges.",
+      sections: {
+        leadership: "Leadership Team",
+        engineering: "Engineering Team",
+        technical: "Technical Team",
+        management: "Management Team"
+      },
+      roles: {
+        ceo: "Chief Executive Officer",
+        cto: "Chief Technology Officer",
+        cfo: "Chief Financial Officer",
+        coo: "Chief Operations Officer",
+        developer: "Developer",
+        engineer: "Engineer",
+        manager: "Manager",
+        technician: "Technician",
+        specialist: "Specialist"
+      },
+      qualities: {
+        expertise: 'Expertise',
+        experience: 'Experience',
+        innovation: 'Innovation',
+        dedication: 'Dedication',
+        leadership: 'Leadership',
+        teamwork: 'Teamwork',
+        problemSolving: 'Problem Solving',
+        communication: 'Communication'
+      },
+      teamDescription: {
+        leadership: "Our leadership team brings together decades of industry experience and strategic vision to guide our company's growth and innovation.",
+        engineering: "Our engineering team combines technical expertise with creative problem-solving to deliver cutting-edge solutions.",
+        technical: "Our technical team ensures the highest standards of quality and performance in every project we undertake.",
+        management: "Our management team coordinates and optimizes our operations to ensure efficient project delivery."
+      }
+    },
+    ar: {
+      title: "فريقنا",
+      subtitle: "تعرف على الخبراء",
+      description: "فريقنا من المحترفين ذوي الخبرة ملتزم بتقديم التميز في كل مشروع. مع عقود من الخبرة المشتركة في الهندسة والتكنولوجيا والإدارة، نقدم حلولاً مبتكرة للتحديات المعقدة.",
+      sections: {
+        leadership: "فريق القيادة",
+        engineering: "الفريق الهندسي",
+        technical: "الفريق التقني",
+        management: "فريق الإدارة"
+      },
+      roles: {
+        ceo: "الرئيس التنفيذي",
+        cto: "الرئيس التقني",
+        cfo: "الرئيس المالي",
+        coo: "الرئيس التنفيذي للعمليات",
+        developer: "مطور",
+        engineer: "مهندس",
+        manager: "مدير",
+        technician: "فني",
+        specialist: "متخصص"
+      },
+      qualities: {
+        expertise: 'الخبرة',
+        experience: 'الخبرة العملية',
+        innovation: 'الابتكار',
+        dedication: 'الالتزام',
+        leadership: 'القيادة',
+        teamwork: 'العمل الجماعي',
+        problemSolving: 'حل المشكلات',
+        communication: 'التواصل'
+      },
+      teamDescription: {
+        leadership: "يجمع فريق القيادة لدينا عقوداً من الخبرة في الصناعة والرؤية الاستراتيجية لتوجيه نمو وابتكار شركتنا.",
+        engineering: "يجمع فريقنا الهندسي بين الخبرة التقنية وحل المشكلات الإبداعي لتقديم حلول متطورة.",
+        technical: "يضمن فريقنا التقني أعلى معايير الجودة والأداء في كل مشروع نقوم به.",
+        management: "ينسق فريق الإدارة لدينا ويحسن عملياتنا لضمان تسليم المشاريع بكفاءة."
+      }
+    },
+    fr: {
+      title: "Notre Équipe",
+      subtitle: "Rencontrez les Experts",
+      description: "Notre équipe de professionnels expérimentés est dédiée à l'excellence dans chaque projet. Avec des décennies d'expérience combinée en ingénierie, technologie et gestion, nous apportons des solutions innovantes aux défis complexes.",
+      sections: {
+        leadership: "Équipe de Direction",
+        engineering: "Équipe d'Ingénierie",
+        technical: "Équipe Technique",
+        management: "Équipe de Gestion"
+      },
+      roles: {
+        ceo: "Directeur Général",
+        cto: "Directeur Technique",
+        cfo: "Directeur Financier",
+        coo: "Directeur des Opérations",
+        developer: "Développeur",
+        engineer: "Ingénieur",
+        manager: "Gestionnaire",
+        technician: "Technicien",
+        specialist: "Spécialiste"
+      },
+      qualities: {
+        expertise: 'Expertise',
+        experience: 'Expérience',
+        innovation: 'Innovation',
+        dedication: 'Dévouement',
+        leadership: 'Leadership',
+        teamwork: 'Travail d\'équipe',
+        problemSolving: 'Résolution de problèmes',
+        communication: 'Communication'
+      },
+      teamDescription: {
+        leadership: "Notre équipe de direction réunit des décennies d'expérience dans l'industrie et une vision stratégique pour guider la croissance et l'innovation de notre entreprise.",
+        engineering: "Notre équipe d'ingénierie combine expertise technique et résolution créative de problèmes pour fournir des solutions de pointe.",
+        technical: "Notre équipe technique garantit les plus hauts standards de qualité et de performance dans chaque projet que nous entreprenons.",
+        management: "Notre équipe de gestion coordonne et optimise nos opérations pour assurer une livraison efficace des projets."
+      }
+    },
+    es: {
+      title: "Nuestro Equipo",
+      subtitle: "Conozca a los Expertos",
+      description: "Nuestro equipo de profesionales experimentados está dedicado a entregar excelencia en cada proyecto. Con décadas de experiencia combinada en ingeniería, tecnología y gestión, aportamos soluciones innovadoras a desafíos complejos.",
+      sections: {
+        leadership: "Equipo Directivo",
+        engineering: "Equipo de Ingeniería",
+        technical: "Equipo Técnico",
+        management: "Equipo de Gestión"
+      },
+      roles: {
+        ceo: "Director Ejecutivo",
+        cto: "Director Técnico",
+        cfo: "Director Financiero",
+        coo: "Director de Operaciones",
+        developer: "Desarrollador",
+        engineer: "Ingeniero",
+        manager: "Gerente",
+        technician: "Técnico",
+        specialist: "Especialista"
+      },
+      qualities: {
+        expertise: 'Experiencia',
+        experience: 'Experiencia',
+        innovation: 'Innovación',
+        dedication: 'Dedicación',
+        leadership: 'Liderazgo',
+        teamwork: 'Trabajo en equipo',
+        problemSolving: 'Resolución de problemas',
+        communication: 'Comunicación'
+      },
+      teamDescription: {
+        leadership: "Nuestro equipo directivo reúne décadas de experiencia en la industria y visión estratégica para guiar el crecimiento e innovación de nuestra empresa.",
+        engineering: "Nuestro equipo de ingeniería combina experiencia técnica y resolución creativa de problemas para entregar soluciones de vanguardia.",
+        technical: "Nuestro equipo técnico garantiza los más altos estándares de calidad y rendimiento en cada proyecto que emprendemos.",
+        management: "Nuestro equipo de gestión coordina y optimiza nuestras operaciones para asegurar una entrega eficiente de proyectos."
+      }
+    }
+  }
+} satisfies Dictionary;
+
+export default teamContent; 

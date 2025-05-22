@@ -1,42 +1,55 @@
-"use client"
+// src/app/clients/page.tsx
 
-import { cn } from "@/lib/utils"
-import { clientLogos } from "@/data";
-import React from "react";
-import { InfiniteMovingLogos } from "@/components/ui/Infinitelogos";
+"use client";
+
+import { useParams } from "next/navigation";
+import clientsContent from "@/src/content/clients.content";
+import { PageHeader } from "@/components/ui/page-header";
+import { clientLogosGrouped } from "@/data";
 import { motion } from "framer-motion";
-import StatsSection from "@/components/ui/StatsSection";
 
-export default function ClientsPage({ theme }: { theme: "light" | "dark" }) {
+type GroupKey = keyof typeof clientLogosGrouped;
+
+export default function ClientsPage() {
+  const params = useParams();
+  const locale = params?.locale as keyof typeof clientsContent.content || "en";
+  const content = clientsContent;
+  const validLocale = locale in content.content ? locale : "en";
 
   return (
-    <div className="clientSection overflow-hidden w-full h-full">
-      <h1 className={cn("text-4xl font-bold", theme === "light" ? "text-gray-800" : "text-white")}>Our  <span className="text-[#8DC63F] dark:text-[#00AEEF]"> Clients</span></h1>
+    <main className="flex min-h-screen flex-col items-center justify-between">
+      <PageHeader
+        title={content.content[validLocale].title}
+        subtitle={content.content[validLocale].subtitle}
+        description={content.content[validLocale].description}
+      />
 
-      <p className={cn("text-lg", theme === "light" ? "text-gray-700" : "text-gray-100")}>
-        We serve clients across various industries with support.
-      </p>
-
-      <section id="clients" className="py-12">
+      <div className="container mx-auto px-4 py-12">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
         >
-          <InfiniteMovingLogos
-            items={clientLogos.map(client => ({
-              img: client.img,
-              name: client.name ?? "Unknown", // Default value
-              title: client.title ?? "No Title", // Default value
-            }))} 
-            direction="left"
-            speed="normal"
-            pauseOnHover={true}   
-          />
+          {Object.entries(clientLogosGrouped).map(([category, logos]) => (
+            <div key={category} className="mb-14">
+              <h2 className="text-2xl font-semibold text-center mb-6 text-[#8DC63F] dark:text-[#00AEEF]">
+                {content.content[validLocale].groups[category as GroupKey]}
+              </h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 place-items-center">
+                {logos.map((client, index) => (
+                  <img
+                    key={index}
+                    src={client.img}
+                    alt={client.name}
+                    title={client.title}
+                    className="w-24 h-24 object-contain hover:scale-105 transition-transform duration-300"
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
         </motion.div>
-        <StatsSection />
-      </section>
-    </div>
-  )
+      </div>
+    </main>
+  );
 }
-

@@ -1,31 +1,41 @@
 "use client"
-import React, { Suspense, useRef, useState } from 'react'
+import React, { Suspense, useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Html, Environment, useGLTF, ContactShadows, OrbitControls } from '@react-three/drei'
 import { useSpring, a } from '@react-spring/three'
 import HeroPage from './HeroPage'
 import CanvasLoader from './Loading'
 import * as THREE from 'three'
+
 function Model({ hinge, open }) {
   const group = useRef()
   const { nodes, materials } = useGLTF('./models/mac-draco.glb')
-
   useFrame((state) => {
     const t = state.clock.getElapsedTime()
 
-    if (open) {
-      // إذا كان الموديل مفتوح، دعنا نتركه يتحرك كما هو
-      group.current.rotation.x = THREE.MathUtils.lerp(group.current.rotation.x, Math.cos(t / 2) / 20 + 0.25, 0.1)
-      group.current.rotation.y = THREE.MathUtils.lerp(group.current.rotation.y, Math.sin(t / 4) / 20, 0.1)
-      group.current.rotation.z = THREE.MathUtils.lerp(group.current.rotation.z, Math.sin(t / 8) / 20, 0.1)
-      group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, (-2 + Math.sin(t / 2)) / 2, 0.1)
-    } else {
-      // عند غلق الموديل، نمنع الحركة أو الهزة تمامًا
-      group.current.rotation.x = 0
-      group.current.rotation.y = 0
-      group.current.rotation.z = 0
-      group.current.position.y = 0
-    }
+    group.current.rotation.x = THREE.MathUtils.lerp(
+      group.current.rotation.x,
+      Math.cos(t / 2) / 20 + 0.25,
+      0.1
+    )
+
+    group.current.rotation.y = THREE.MathUtils.lerp(
+      group.current.rotation.y,
+      Math.sin(t / 4) / 20,
+      0.1
+    )
+
+    group.current.rotation.z = THREE.MathUtils.lerp(
+      group.current.rotation.z,
+      Math.sin(t / 8) / 20,
+      0.1
+    )
+
+    group.current.position.y = THREE.MathUtils.lerp(
+      group.current.position.y,
+      (-1 + Math.sin(t / 2)) / 3,
+      0.1
+    )
   })
 
   return (
@@ -57,22 +67,40 @@ function Model({ hinge, open }) {
 
 export default function Laptop() {
   const [open, setOpen] = useState(true)
+  const [isMobile, setIsMobile] = useState(false)
+
   const { hinge } = useSpring({
-    hinge: open ? -0.425 : 1.575, // Open or closed
+    hinge: open ? -0.425 : 1.575,
     config: { mass: 5, tension: 400, friction: 70 }
   })
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   return (
-    <Canvas camera={{ position: [-5, 0, -15], fov: 55 }}>
+    <Canvas camera={{ position: isMobile ? [-5, 0, -20] : [-5, 0, -15], fov: 55 }}>
       <pointLight position={[10, 10, 10]} intensity={1.5} />
-      <Suspense fallback={<CanvasLoader/>}>
+      <Suspense fallback={<CanvasLoader />}>
         <group rotation={[0, Math.PI, 0]} position={[0, 1, 0]} onClick={() => setOpen(!open)}>
           <Model hinge={hinge} open={open} />
         </group>
         <Environment preset="city" />
       </Suspense>
       <ContactShadows position={[0, -2, 0]} scale={15} blur={2} far={4.5} />
-      <OrbitControls enablePan={false} enableZoom={false} minPolarAngle={Math.PI / 2.2} maxPolarAngle={Math.PI / 2.2} />
+      <OrbitControls
+        enablePan={false}
+        enableZoom={false}
+        minPolarAngle={Math.PI / 2.2}
+        maxPolarAngle={Math.PI / 2.2}
+      />
     </Canvas>
   )
 }

@@ -1,11 +1,14 @@
-let userConfig = undefined
+import { withIntlayer } from "next-intlayer/server";
+
+let userConfig = undefined;
+
 try {
-  userConfig = await import('./v0-user-next.config')
+  const module = await import('./v0-user-next.config.js'); // أو .mjs أو .ts حسب الموجود عندك
+  userConfig = module.default;
 } catch (e) {
   // ignore error
 }
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
@@ -21,28 +24,27 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
-}
+};
 
-mergeConfig(nextConfig, userConfig)
+mergeConfig(nextConfig, userConfig);
 
-function mergeConfig(nextConfig, userConfig) {
-  if (!userConfig) {
-    return
-  }
+function mergeConfig(base, user) {
+  if (!user) return;
 
-  for (const key in userConfig) {
+  for (const key in user) {
     if (
-      typeof nextConfig[key] === 'object' &&
-      !Array.isArray(nextConfig[key])
+      typeof base[key] === 'object' &&
+      base[key] !== null &&
+      !Array.isArray(base[key])
     ) {
-      nextConfig[key] = {
-        ...nextConfig[key],
-        ...userConfig[key],
-      }
+      base[key] = {
+        ...base[key],
+        ...user[key],
+      };
     } else {
-      nextConfig[key] = userConfig[key]
+      base[key] = user[key];
     }
   }
 }
 
-export default nextConfig
+export default withIntlayer(nextConfig);

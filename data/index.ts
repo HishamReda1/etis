@@ -1,74 +1,18 @@
-
-
 export const navItems = [
-  
   { name: "Home", ariaLabel: "Home", link: "#home" },
   { name: "About", ariaLabel: "About", link: "#about" },
   { name: "Products", ariaLabel: "Products", link: "#products" },
   { name: "Partners", ariaLabel: "Partners", link: "#partners" },
-{ name: "Clients", ariaLabel: "Clients", link: "#clients" },
-{ name: "Projects", ariaLabel: "Projects", link: "#projects" },
-{ name: "Achievements", ariaLabel: "Achievements", link: "achievements" },
-{ name: "Team", ariaLabel: "Team", link: "team" },
+  { name: "Clients", ariaLabel: "Clients", link: "#clients" },
+  { name: "Projects", ariaLabel: "Projects", link: "#projects" },
+  { name: "Achievements", ariaLabel: "Achievements", link: "achievements" },
+  { name: "Team", ariaLabel: "Team", link: "team" },
   { name: "Contact", ariaLabel: "Contact", link: "#contact" },
-]
+];
 
+import companyHistoryContent from "@/src/content/company-history.content";
 
-
-
-
-export const companyHistory = [
-  {
-    "year": 2008,
-    "event": "Arab Corporation was established as an MEP contractor in the market.",
-    "_description": "Arab Corporation entered the market as a Mechanical, Electrical, and Plumbing contractor, focusing on delivering high-quality engineering solutions."
-  },
-  {
-    "year": 2015,
-    "event": "Power Technology was launched to specialize in motor control centers (MCC) and distribution panels (DPs).",
-    "_description": "The launch of Power Technology expanded the company's capabilities into motor control centers and distribution panels, enhancing its electrical distribution and automation services."
-  },
-  {
-    "year": 2016,
-    "event": "EITS Control was founded as a system integrator for Building Management Systems (BMS) and automation solutions.",
-    "_description": "EITS Control's establishment marked the company's foray into smart building solutions, offering integrated systems for building management and automation."
-  },
-  {
-    "year": 2018,
-    "event": "Became a registered BMS Partner with Honeywell and an indirect panel builder for Schneider Electric through MAS Electric with an initial contract value of EGP 500K.",
-    "_description": "Achieved partnerships with industry leaders Honeywell and Schneider Electric, securing an initial contract worth EGP 500K through MAS Electric."
-  },
-  {
-    "year": 2020,
-    "event": "Achieved Honeywell Gold Partner status, upgraded the indirect Schneider Electric Panel Builder contract to EGP 1M, and signed a joint venture with an authorized panel builder for ABB.",
-    "_description": "Elevated to Honeywell Gold Partner status, expanded the Schneider Electric contract to EGP 1M, and formed a joint venture with an authorized ABB panel builder, diversifying the company's partnerships."
-  },
-  {
-    "year": 2022,
-    "event": "Upgraded to Honeywell Platinum Partner status and expanded the Schneider Electric Panel Builder contract to EGP 5M.",
-    "_description": "Reached Honeywell Platinum Partner status and significantly increased the Schneider Electric contract to EGP 5M, reinforcing the company's industry presence."
-  },
-  {
-    "year": 2023,
-    "event": "Moved to the new EITS headquarters and manufacturing facility in Obour City.",
-    "_description": "Relocated to a new headquarters and manufacturing facility in Obour City, enhancing operational efficiency and production capacity."
-  },
-  {
-    "year": 2024,
-    "event": "Celebrated a milestone of 120+ employees under the company umbrella.",
-    "_description": "Achieved a significant milestone with a workforce exceeding 120 employees, reflecting the company's growth and commitment to excellence."
-  },
-  {
-    "year": 2025,
-    "event": "Became an Authorized Approved partner for SIEMENS Low Voltage Products & Control Products",
-    "_description": "Etis is an Authorized Approved partner for SIEMENS Low Voltage Products & Control Products, who has the right to use and sell Siemens products inside 3rd Party or Own Design switchgears."
-  }
-]
-;
-
-
-
-
+export const companyHistory = companyHistoryContent.content.en.history;
 
 export const logoData = {
   partners: [
@@ -126,9 +70,7 @@ export const logoData = {
         reverse: true,
       },
     },
-   
-   
-   
+
     {
       id: "greystone",
       src: "https://greystoneenergy.com/wp-content/uploads/2024/10/Greystone-Energy-Logo-2024-main-v2.png",
@@ -212,213 +154,88 @@ export const logoData = {
   },
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export const icons =[{
-  id: 'icon',
-  img: "/Logoicon.svg"
-},{
-  id: 'icon-w',
-  img: "/Logoicon-w.svg"
-}]
+export const icons = [
+  {
+    id: "icon",
+    img: "/Logoicon.svg",
+  },
+  {
+    id: "icon-w",
+    img: "/Logoicon-w.svg",
+  },
+];
 export const socialMedia = [
   {
+    name: "facebook",
     id: 1,
     img: "/fb.svg",
-      link:"https://www.facebook.com/eitscontrol/"
+    link: "https://www.facebook.com/eitscontrol/",
   },
-  
+
   {
-    id: 3,
+    name: "linkedin",
+    id: 2,
     img: "/link.svg",
-    link:"https://www.linkedin.com/company/eits-automation-control/posts/?feedView=all"
+    link: "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=all",
   },
 ];
-export const clientLogos = [
-  { img: "/must.svg", name: "MUST University", title: "MUST University" },
-  { img: "/P_G.png", name: "P&G", title: "P&G" },
-  { img: "/bue.png", name: "BUE", title: "BUE" },
-  { img: "/Cairo_University.png", name: "Cairo University", title: "Cairo University" },
-  { img: "/Edita.png", name: "Edita", title: "Edita" },
-  { img: "/henkel.png", name: "Henkel", title: "Henkel" },
-  { img: "/hilton.png", name: "Hilton", title: "Hilton" },
-  { img: "/JolieVille-Logo.png", name: "Jolie Ville", title: "Jolie Ville" },
-  { img: "/marriot.png", name: "Marriott", title: "Marriott" },
-  { img: "/midor.png", name: "Midor", title: "Midor" },
-  { img: "/ministry-of-health-egypt.png", name: "Ministry of Health", title: "Ministry of Health" },
-  { img: "/misr-italia-logo.png", name: "Misr Italia", title: "Misr Italia" },
-  { img: "/pepsico-logo.png", name: "PepsiCo", title: "PepsiCo" },
-  { img: "/petrojet-logo-white.svg", name: "Petrojet", title: "Petrojet" },
-  { img: "/telecom-egypt.png", name: "Telecom Egypt", title: "Telecom Egypt" },
-  { img: "/vox-cinema.png", name: "Vox Cinema", title: "Vox Cinema" },
-  { img: "/tanta.png", name: "Tanta Hospitals", title: "Tanta Hospitals" },
-  { img: "/ainshams.png", name: "Ain Shams Pediatric", title: "Ain Shams University Pediatric" },
-  { img: "/may.png", name: "15 May Hospital", title: "15 May Specialized Hospital" },
-  { img: "/helwan.png", name: "Helwan Hospital", title: "Helwan University Hospitals" },
-  { img: "/cairo.png", name: "Cairo University Hospitals", title: "Cairo University Hospitals" },
-  { img: "/helwan2.png", name: "Helwan National University", title: "Helwan National University" },
-  { img: "/ahlybank.png", name: "Ahly Bank Hospital", title: "Ahly Bank Hospital" },
-  { img: "/port.png", name: "Port Said University Hospitals", title: "Port Said University Hospitals" },
-  { img: "/aboelresh.png", name: "Abou El Reesh Hospital", title: "Abou El Reesh Pediatric Hospital" },
-  { img: "/demrdash.png", name: "Demerdash Hospital", title: "Demerdash Hospital" },
-  { img: "/mondelez.png", name: "Mondelez", title: "Mondelez International" },
-  { img: "/eftaa.png", name: "EFTAA", title: "EFTAA Medical Organization" },
-];
+// src/data.ts
+
+export const clientLogosGrouped = {
+  "Educational Institutions": [
+    { img: "/must.svg", name: "MUST University", title: "MUST University" },
+    { img: "/bue.png", name: "BUE", title: "BUE" },
+    { img: "/Cairo_University.png", name: "Cairo University", title: "Cairo University" },
+    { img: "/ainshams.png", name: "Ain Shams Pediatric", title: "Ain Shams University Pediatric" },
+    { img: "/tanta.png", name: "Tanta Hospitals", title: "Tanta Hospitals" },
+    { img: "/helwan.png", name: "Helwan Hospital", title: "Helwan University Hospitals" },
+    { img: "/cairo.png", name: "Cairo University Hospitals", title: "Cairo University Hospitals" },
+    { img: "/helwan2.png", name: "Helwan National University", title: "Helwan National University" },
+    { img: "/port.png", name: "Port Said University Hospitals", title: "Port Said University Hospitals" },
+  ],
+  "Hospitals & Healthcare": [
+    { img: "/may.png", name: "15 May Hospital", title: "15 May Specialized Hospital" },
+    { img: "/aboelresh.png", name: "Abou El Reesh Hospital", title: "Abou El Reesh Pediatric Hospital" },
+    { img: "/demrdash.png", name: "Demerdash Hospital", title: "Demerdash Hospital" },
+    { img: "/ministry-of-health-egypt.png", name: "Ministry of Health", title: "Ministry of Health" },
+    { img: "/ahlybank.png", name: "Ahly Bank Hospital", title: "Ahly Bank Hospital" },
+    { img: "/eftaa.png", name: "EFTAA", title: "EFTAA Medical Organization" },
+  ],
+  "Hotels & Tourism": [
+    { img: "/hilton.png", name: "Hilton", title: "Hilton" },
+    { img: "/JolieVille-Logo.png", name: "Jolie Ville", title: "Jolie Ville" },
+    { img: "/marriot.png", name: "Marriott", title: "Marriott" },
+    { img: "/vox-cinema.png", name: "Vox Cinema", title: "Vox Cinema" },
+  ],
+  "Corporates & Industry": [
+    { img: "/P_G.png", name: "P&G", title: "P&G" },
+    { img: "/Edita.png", name: "Edita", title: "Edita" },
+    { img: "/henkel.png", name: "Henkel", title: "Henkel" },
+    { img: "/pepsico-logo.png", name: "PepsiCo", title: "PepsiCo" },
+    { img: "/mondelez.png", name: "Mondelez", title: "Mondelez International" },
+    { img: "/misr-italia-logo.png", name: "Misr Italia", title: "Misr Italia" },
+    { img: "/midor.png", name: "Midor", title: "Midor" },
+    { img: "/petrojet-logo-white.svg", name: "Petrojet", title: "Petrojet" },
+  ],
+  "Telecom & Technology": [
+    { img: "/telecom-egypt.png", name: "Telecom Egypt", title: "Telecom Egypt" },
+  ]
+};
 
 
 
-export const events = [
-  {
-    "id": 1,
-    "title": "Being the Platinum Partner in the Egyptian Market for Honeywell Alerton BMS.",
-    "description": "Another Successful Milestone for Eits Automation Control Automation Contro Family in growing the business along with Honeywell in Egypt being recognized as “New Technology Partner ” for Honeywell Alerton BMS for 2024 results & being the GOLD Parter in the Egyptian Market.",
-    "link": "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
-    "location":"mauritius",
-   "thumbnails": [
-    "/platinum.jpeg",
-    "/platinum-6.jpeg",
-  "/platinum-1.jpeg",
-  "/platinum-2.jpeg",
-  "/platinum-3.jpeg",
-  "/platinum-4.jpeg",
-  "/platinum-5.jpeg",
-  
-  "/platinum-7.jpeg",
-  "/platinum-8.jpeg"
-]
-
-  },
-  {
-    "id": 2,
-    "title": "Being the GOLD Partner in the Egyptian Market for Honeywell Alerton BMS.",
-    "description": "Another Successful Milestone for Eits Automation Control Automation Contro Family in growing the business along with Honeywell in Egypt being recognized as “New Technology Partner ” for Honeywell Alerton BMS for 2023 results & being the GOLD Parter in the Egyptian Market.",
-    "link": "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
-    "location":"mauritius",
-    "thumbnails": [
-      "/golden.webp",
-      "/contract.webp",
-      
-      "/ghazy.webp",
-      
-    ]
-  },
-  {
-    "id": 3,
-    "title": "the presence of our CEO at Sontay's headquarters in the UK",
-    "description": "Another successful milestone for the EITS Automation Control family in expanding our presence in the Egyptian market. We are proud to be officially recognized as a 'New Technology Partner' by Sontay. This achievement was marked by the presence of our CEO at Sontay's headquarters in the UK, reflecting the strength of our partnership and our continuous commitment to bringing cutting-edge solutions to Egypt.",
-    "link": "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
-    "location":"UK",
-    "thumbnails": [
-      "/sontay3.jpeg",
-      "/sontay1.jpeg",
-      "/sontay2.jpeg"
-    ]
-  }
-  ,
-  {
-    "id": 7,
-    "title": "Our Managing Director Eng. Mohamed Ghazy with the Minister of Health and Honeywell's Executives in Egypt",
-    "description": "Our Managing Director, Eng. Mohamed Ghazy, met with the Minister of Health and Honeywell's senior executives in Egypt to discuss the latest achievements in advancing the healthcare sector and enhancing development efforts across the country.",
-    "link": "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
-    "location": "Egypt",
-    "thumbnails": [
-      "minstry.jpeg"
-    ]
-  }
-,
-
-  {
-    "id": 4,
-    "title": "Participation in Schneider Electric Event at Baron Hotel.",
-    "description": "EITS Automation Control had the honor to participate in the recent Schneider Electric event held at Baron Hotel. The event was highlighted by the attendance of a well-known TV presenter from the show 'El-Geda3an', showcasing the importance and growing recognition of our contributions in the automation and control sector.",
-    "link": "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
-    "location":"Egypt",
-    "thumbnails": [
-      
-      "/shnider1.jpeg",
-      "/shnider2.jpeg",
-      "/shnider3.jpeg"
-    ]
-  }
-  
-,
-  {
-    "id": 5,
-    "title": "Eits Control Annual Event 2022",
-    "description": "Eits family got together at “ jewel sports city hotel “ to celebrate the achievements and successes of the year and to talk about future plans. What a great opportunity to end the year on such a high note.",
-    "link": "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
-    "location":"Egypt",
-    "thumbnails": [  
-      "/team.webp",
-      "/ahmed hamada.webp",
-      "/engineer-Nabila.webp",
-      "/hussenAbdulnasserEtis.webp"
-      
-    ,
-    ]
-  },
-  {
-    "id": 6,
-    "title": "Eits Control Annual Event 2024",
-    "description": "Eits family got together at “ Ain Elhayah resort hotel “ to celebrate the achievements and successes of the year and to talk about future plans. What a great opportunity to end the year on such a high note.",
-    "link": "https://www.linkedin.com/company/eits-automation-control/posts/?feedView=images",
-    "location":"Egypt",
-    "thumbnails": [
-  "/17.jpeg",
-  "/2.jpeg",
-  "/3.jpeg",
-  "/4.jpeg",
-  "/5.jpeg",
-  "/6.jpeg",
-  "/7.jpeg",
-  "/8.jpeg",
-  "/9.jpeg",
-  "/10.jpeg",
-  "/11.jpeg",
-  "/12.jpeg",
-  "/13.jpeg",
-  "/14.jpeg",
-  "/15.jpeg",
-  "/16.jpeg",
-]
-
-  }
-  ,
-
-  
-
-];
 // Define the Project type for better type safety
 export interface Project {
-  id: number
-  title: string
-  description: string
-  imageUrl: string
-  category: string
-  contractor: string
-  application: string
-  link :string
+  id: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+  category: string;
+  contractor: string;
+  application: string;
+  link: string;
 }
 
-
-// Complete list of all 80 projects from the provided tables
 export const allProjects: Project[] = [
   // Image 1 - Page 9
   {
@@ -1346,4 +1163,3 @@ export const allProjects: Project[] = [
 
 
 ]
-

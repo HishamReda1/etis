@@ -1,184 +1,199 @@
 'use client'
 import React, { Suspense, useState } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { Environment, OrbitControls } from '@react-three/drei';
+import { Canvas} from '@react-three/fiber';
+import { ContactShadows, Environment, OrbitControls } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import CanvasLoader from '@/components/Loading';
-import Karim from '@/components/Karim';
+
 import Developer from '@/components/Developer';
-import Hussein from '@/components/Hussein';
+
 import Mohamed from '@/components/Mohamed';
 import Mostafa from '@/components/Mostafa';
 import { cn } from '@/lib/utils';
 import Ahmed from '@/components/Ahmed';
 import Roz from '@/components/Roz';
 import Mina from '@/components/Mina';
-import Alaa from '@/components/Alaa';
+
 import Ghazy from '@/components/Ghazy';
 import Ceo from '@/components/Ceo';
+import { EffectComposer,Bloom } from '@react-three/postprocessing'
+import Ground from '@/components/Ground';
+import { useParams } from 'next/navigation';
+import teamContent from '@/src/content/team.content';
+
+
 interface Skill {
-  title: string;
+  key: string;
   level: number;
 }
 
 interface TeamMember {
   name: string;
-  role: string;
+  roleKey: string;
   Component: React.ComponentType<JSX.IntrinsicElements['mesh']>;
   skills: Skill[];
   image: string;
 }
 
-const TeamPage: React.FC = () => {
-  const characters: TeamMember[] = [
+const teamNames = {
+  en: {
+    'Alaa Omar': 'Alaa Omar',
+    'Mohamed Ghazy': 'Mohamed Ghazy',
+    'Hisham Reda': 'Hisham Reda',
+    
+    'Mohamed Hamada': 'Mohamed Hamada',
+    'Mostafa Bakry': 'Mostafa Bakry',
+    'Ahmed Hamada': 'Ahmed Hamada',
+    'Hussien Amr': 'Hussien Amr',
+    'Mina Assaad': 'Mina Assaad',
+ 
+  },
+  ar: {
+    'Alaa Omar': 'علاء عمر',
+    'Mohamed Ghazy': 'محمد غازي',
+    'Hisham Reda': 'هشام رضا',
+    'Karim Mahmoud': 'كريم محمود',
+    'Mohamed Hamada': 'محمد حمادة',
+    'Mostafa Bakry': 'مصطفى بكري',
+    'Ahmed Hamada': 'أحمد حمادة',
+    'Hussien Amr': 'حسين عمرو',
+    'Mina Assaad': 'مينا أسعد',
+  
+  },
+  fr: {
+    'Alaa Omar': 'Alaa Omar',
+    'Mohamed Ghazy': 'Mohamed Ghazy',
+    'Hisham Reda': 'Hisham Reda',
+   
+    'Mohamed Hamada': 'Mohamed Hamada',
+    'Mostafa Bakry': 'Mostafa Bakry',
+    'Ahmed Hamada': 'Ahmed Hamada',
+    'Hussien Amr': 'Hussien Amr',
+    'Mina Assaad': 'Mina Assaad',
+   
+  },
+  es: {
+    'Alaa Omar': 'Alaa Omar',
+    'Mohamed Ghazy': 'Mohamed Ghazy',
+    'Hisham Reda': 'Hisham Reda',
+   
+    'Mohamed Hamada': 'Mohamed Hamada',
+    'Mostafa Bakry': 'Mostafa Bakry',
+    'Ahmed Hamada': 'Ahmed Hamada',
+    'Hussien Amr': 'Hussien Amr',
+    'Mina Assaad': 'Mina Assaad',
+ 
+  },
+};
 
+const TeamPage: React.FC = () => {
+  const params = useParams();
+  const locale = params?.locale as keyof typeof teamContent.content || "en";
+  const content = teamContent;
+  const validLocale = locale in content.content ? locale : "en";
+  const t = content.content[validLocale];
+  const names = teamNames[validLocale];
+
+  const characters: TeamMember[] = [
     {
       name: 'Alaa Omar',
-      role: 'CEO',
+      roleKey: 'ceo',
       Component: Ceo,
       image: '/team/ceo.jpeg',
       skills: [
-        { title: 'Strategic Planning', level: 95 },
-        { title: 'Leadership', level: 92 },
-        { title: 'Business Development', level: 90 },
-        { title: 'Decision Making', level: 88 },
-        { title: 'Financial Management', level: 85 },
-    
+        { key: 'strategicPlanning', level: 95 },
+        { key: 'leadership', level: 92 },
+        { key: 'businessDevelopment', level: 90 },
+        { key: 'decisionMaking', level: 88 },
+        { key: 'financialManagement', level: 85 },
       ],
-    }
-    ,
-
-
+    },
     {
       name: 'Mohamed Ghazy',
-      role: 'Managing Director',
+      roleKey: 'manager',
       Component: Ghazy,
       image: '/team/ghazy.jpg',
       skills: [
-        { title: 'Strategic Planning', level: 95 },
-        { title: 'Leadership', level: 92 },
-        { title: 'Business Development', level: 90 },
-        { title: 'Decision Making', level: 88 },
-        { title: 'Financial Management', level: 85 },
-    
-    
+        { key: 'strategicPlanning', level: 95 },
+        { key: 'leadership', level: 92 },
+        { key: 'businessDevelopment', level: 90 },
+        { key: 'decisionMaking', level: 88 },
+        { key: 'financialManagement', level: 85 },
       ],
-    }
-,
-
-
+    },
     {
       name: 'Hisham Reda',
-      role: 'Frontend Developer- Multimedia designer',
+      roleKey: 'frontendDeveloper',
       Component: Developer,
       image: '/team/hisham.jpg',
       skills: [
-        { title: 'Next.js', level: 90 },
-        { title: 'React js', level: 85 },
-        { title: 'Photoshop', level: 80 },
-        { title: 'Illustrator', level: 75 },
-        { title: 'After Effects', level: 65 },
+        { key: 'nextjs', level: 90 },
+        { key: 'reactjs', level: 85 },
+        { key: 'photoshop', level: 80 },
+        { key: 'illustrator', level: 75 },
+        { key: 'afterEffects', level: 65 },
       ],
     },
-    {
-      name: 'Karim Mahmoud',
-      role: 'BMS Engineer',
-      Component: Karim,
-      image: '/team/karim.jpeg',
-      skills: [
-        { title: 'BMS Systems', level: 88 },
-        { title: 'Alerton Compass', level: 75 },
-        { title: 'Communication Protocol', level: 82 },
-        { title: 'System Design', level: 80 },
-      ],
-    },
-    // {
-    //   name: 'Hussein Abdulnasser',
-    //   role: 'Project Manager',
-    //   Component: Hussein,
-    //   image: '/team/hussein.jpg',
-    //   skills: [
-    //     { title: 'Project Management', level: 90 },
-    //     { title: 'Team Management', level: 85 },
-    //     { title: 'Risk Management', level: 90 },
-    //     { title: 'Communication', level: 90 },
-    //     { title: 'Leadership', level: 85 },
-    //     { title: 'Problem Solving', level: 80 },
-    //   ],
-    // },
+   
     {
       name: 'Mohamed Hamada',
-      role: 'Supply Chain Manager',
+      roleKey: 'supplyChainManager',
       Component: Mohamed,
       image: '/team/mohamed.jpg',
       skills: [
-        { title: 'Supply Chain Management', level: 88 },
-        { title: 'Inventory Management', level: 75 },
-        { title: 'Procurement', level: 82 },
-        { title: 'Logistics', level: 80 },
+        { key: 'supplyChainManagement', level: 88 },
+        { key: 'inventoryManagement', level: 75 },
+        { key: 'procurement', level: 82 },
+        { key: 'logistics', level: 80 },
       ],
     },
     {
       name: 'Mostafa Bakry',
-      role: 'Technical Office Engineer',
+      roleKey: 'technicalOfficeEngineer',
       Component: Mostafa,
       image: '/team/mostafa.jpeg',
       skills: [
-        { title: 'Technical Office', level: 88 },
-        { title: 'Shop Drawings', level: 75 },
+        { key: 'technicalOffice', level: 88 },
+        { key: 'shopDrawings', level: 75 },
       ],
     },
     {
-      name: 'Ahmed Hamada',        
-      role: 'Technical Office - DC Engineer',
+      name: 'Ahmed Hamada',
+      roleKey: 'technicalOfficeEngineer',
       Component: Ahmed,
       image: '/team/ahmed.jpeg',
       skills: [
-        { title: 'AutoCAD', level: 88 },
-        { title: 'Technical Office', level: 88 },
-        { title: 'Electrical Engineering', level: 75 }
+        { key: 'autocad', level: 88 },
+        { key: 'technicalOffice', level: 88 },
+        { key: 'electricalEngineering', level: 75 },
       ],
     },
     {
       name: 'Hussien Amr',
-      role: 'Accountant',
+      roleKey: 'accountant',
       Component: Roz,
       image: '/team/roz.jpeg',
       skills: [
-        { title: 'Accounting', level: 88 },
-        { title: 'Financial Reporting', level: 75 },
-        { title: 'Tax Compliance', level: 82 },
-        { title: 'Financial Analysis', level: 80 },
+        { key: 'accounting', level: 88 },
+        { key: 'financialReporting', level: 75 },
+        { key: 'taxCompliance', level: 82 },
+        { key: 'financialAnalysis', level: 80 },
       ],
     },
     {
       name: 'Mina Assaad',
-      role: 'Sales Engineer',
+      roleKey: 'salesEngineer',
       Component: Mina,
       image: '/team/mina.jpg',
       skills: [
-        { title: 'Client Consultation', level: 88 },
-        { title: 'Technical Presentation', level: 75 },
-        { title: 'Sales', level: 82 },
-        { title: 'Communication', level: 80 },
-        { title: 'Negotiation', level: 80 },
+        { key: 'clientConsultation', level: 88 },
+        { key: 'technicalPresentation', level: 75 },
+        { key: 'sales', level: 82 },
+        { key: 'communication', level: 80 },
+        { key: 'negotiation', level: 80 },
       ],
     },
-
-    {
-      name: 'Alaa Nabil',
-      role: 'Storekeeper',
-      Component: Alaa,
-      image: '/team/alaa.jpeg',
-      skills: [
-        { title: 'Inventory Management', level: 88 },
-        { title: 'Stock Control', level: 75 },
-        { title: 'Warehouse Organization', level: 82 },
-       
-      ],
-    },
-
-
+   
   ];
 
   const [current, setCurrent] = useState<number>(0);
@@ -186,42 +201,59 @@ const TeamPage: React.FC = () => {
   const CharacterComponent = character.Component;
 
   return (
-    <div className="relative py-10">
+    <div className={cn("relative py-10", validLocale === "ar" && "rtl")}>
       <div className="space-y-4 mb-8">
         <h1 className="text-4xl font-bold tracking-tight text-gray-800 dark:text-white">
-          Our <span className="text-[#8DC63F] dark:text-[#00AEEF]">Team</span>
+          {t.title} <span className="text-[#8DC63F] dark:text-[#00AEEF]">{t.subtitle}</span>
         </h1>
         <p className="text-gray-600 dark:text-gray-300 max-w-3xl">
-          Meet the dedicated professionals behind our innovative solutions, combining technical expertise with passion for excellence.
+          {t.description}
         </p>
       </div>
+    
+      <div className="flex flex-col lg:flex-row gap-8 items-stretch">
 
-      <div className="flex flex-col lg:flex-row gap-8 items-center lg:items-start">
-        <div className="w-full lg:w-1/2 h-[400px] md:h-[500px] relative">
+        <div className="w-full lg:w-1/3 relative h-[500px] lg:h-auto">
           <div className={cn(
             "absolute inset-0 rounded-3xl backdrop-blur-sm",
-          "dark:bg-gradient-to-br dark:from-[#001e30] dark:via-[#003a5c] dark:to-[#005b94] dark:border-[#005b94]/30",
-          "bg-gradient-to-br from-[#a8e063] via-[#78c850] to-[#56ab2f] border-[#56ab2f]/30"
+            "dark:bg-gradient-to-br dark:from-[#001e30] dark:via-[#003a5c] dark:to-[#005b94] dark:border-[#005b94]/30",
+            "bg-gradient-to-br from-[#a8e063] via-[#78c850] to-[#56ab2f] border-[#56ab2f]/30"
           )} />
-        <Canvas className="h-full w-full">
-  {/* خفّض شدة الـ ambient light علشان ماتغطيش على الـ Environment */}
+      <Canvas className="h-full w-full rounded-3xl ">
   <ambientLight intensity={0.3} />
   <directionalLight position={[5, 5, 5]} intensity={0.4} />
-  
-  <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
-  
   <Suspense fallback={<CanvasLoader />}>
-    <CharacterComponent position={[0, -3, 0]} scale={3} />
-    
-    {/* خلي الـ environment زي Avaturn */}
-    <Environment preset="apartment" />
+    <CharacterComponent position={[0, -4, 0]} scale={3} />
+    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -3.01, 0]} receiveShadow>
+      <planeGeometry args={[500, 500]} />
+      <shadowMaterial opacity={0.3} />
+    </mesh>
+    <ContactShadows renderOrder={2} frames={1} resolution={1024} scale={120} blur={2} opacity={0.6} far={100} />
+    {/* <Environment files="/old_depot_2k.hdr" ground={{ height: 35, radius: 200, scale: 200 }} /> */}
+    <Environment preset='sunset'/>
+    <EffectComposer multisampling={8}>
+  <Bloom
+    luminanceThreshold={5}
+    mipmapBlur
+    luminanceSmoothing={0.2}
+    intensity={6}
+  />
+</EffectComposer>
+<Ground/>
+    <OrbitControls
+      enableZoom={true}
+      enablePan={false}
+      minPolarAngle={0}
+      maxPolarAngle={Math.PI / 2.25}
+      makeDefault
+    />
   </Suspense>
 </Canvas>
 
         </div>
 
         <div className={cn(
-          "w-full lg:w-1/2 rounded-3xl border shadow-xl p-6",
+          "w-full lg:w-2/3 rounded-3xl border shadow-xl p-6",
           "dark:bg-gradient-to-br dark:from-[#001e30] dark:via-[#003a5c] dark:to-[#005b94] dark:border-[#005b94]/30",
           "bg-gradient-to-br from-[#a8e063] via-[#78c850] to-[#56ab2f] border-[#56ab2f]/30"
         )}>
@@ -232,17 +264,17 @@ const TeamPage: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-2xl font-bold dark:text-white text-gray-800 mb-3">
-              {character.name}
+              {names[character.name]}
             </h2>
             <h3 className="text-xl font-semibold dark:text-white/80 text-gray-800 mb-6">
-              {character.role}
+              {t.roles[character.roleKey] || character.roleKey}
             </h3>
 
             <div className="mt-6 space-y-3">
               {character.skills.map((skill, index) => (
                 <div className="w-full" key={index}>
                   <h4 className="text-base font-semibold dark:text-white/90 text-gray-800 mb-1">
-                    {skill.title}
+                    {t.qualities[skill.key] || skill.key}
                   </h4>
                   <div className="h-2 w-full bg-white/20 rounded-full mt-1 relative">
                     <motion.div
@@ -274,12 +306,11 @@ const TeamPage: React.FC = () => {
                   )}
                   onClick={() => setCurrent(index)}
                 >
-               <img
-  src={member.image}
-  alt={member.name}
-  className="w-full aspect-square object-cover"
-/>
-
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full aspect-square object-cover"
+                  />
                 </motion.div>
               ))}
             </div>

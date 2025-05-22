@@ -3,49 +3,55 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FaHospital, FaBuilding, FaServer, FaPills } from "react-icons/fa6";
+import achievementsContent from "@/src/content/achievements.content";
 
-const stats = [
-  { value: 120, label: "Hospitals & Care Centers", icon: FaHospital },
-  { value: 70, label: "Commercial", icon: FaBuilding },
-  { value: 40, label: "Datacenters", icon: FaServer },
-  { value: 15, label: "Pharma", icon: FaPills },
-];
+interface StatsSectionProps {
+  locale: string;
+}
 
-const Counter = ({ value }: { value: number }) => {
+const StatsSection = ({ locale }: StatsSectionProps) => {
+  const content = achievementsContent.content[locale as keyof typeof achievementsContent.content];
 
-  const [count, setCount] = useState(0);
+  const stats = [
+    { value: 120, label: content.sections.hospitals, icon: FaHospital },
+    { value: 70, label: content.sections.commercial, icon: FaBuilding },
+    { value: 40, label: content.sections.datacenters, icon: FaServer },
+    { value: 15, label: content.sections.pharma, icon: FaPills },
+  ];
 
-  useEffect(() => {
-    const duration = 2; // مدة العد بالثواني
-    let start = 0;
-    const increment = value / (duration * 60); // تحديث كل 16ms تقريبًا
+  const Counter = ({ value }: { value: number }) => {
+    const [count, setCount] = useState(0);
 
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= value) {
-        setCount(value);
-        clearInterval(timer);
-      } else {
-        setCount(Math.ceil(start));
-      }
-    }, 16);
+    useEffect(() => {
+      const duration = 2;
+      let start = 0;
+      const increment = value / (duration * 60);
 
-    return () => clearInterval(timer);
-  }, [value]);
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= value) {
+          setCount(value);
+          clearInterval(timer);
+        } else {
+          setCount(Math.ceil(start));
+        }
+      }, 16);
 
-  return (
-    <motion.p
-      className="text-5xl font-bold"
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-    >
-      {count}+
-    </motion.p>
-  );
-};
+      return () => clearInterval(timer);
+    }, [value]);
 
-const StatsSection = () => {
+    return (
+      <motion.p
+        className="text-5xl font-bold"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        {count}+
+      </motion.p>
+    );
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0.5, y: 100 }}
