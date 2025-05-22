@@ -1,10 +1,11 @@
 import type { NextLayoutIntlayer } from "next-intlayer";
-import { Inter } from "next/font/google";
+import { Inter, Cairo } from "next/font/google";
 import { getHTMLTextDir } from "intlayer";
 import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
+const cairo = Cairo({ subsets: ["arabic"] });
 
 export const metadata = {
   title: "EITS | BMS Systems, Lighting Control & Electrical Solutions in Egypt",
@@ -24,6 +25,8 @@ export const viewport = {
 
 const LocaleLayout: NextLayoutIntlayer = async ({ children, params }) => {
   const { locale } = await params;
+  const font = locale === "ar" ? cairo : inter;
+  
   return (
     <html lang={locale} dir={getHTMLTextDir(locale)} suppressHydrationWarning>
       <head>
@@ -61,7 +64,7 @@ const LocaleLayout: NextLayoutIntlayer = async ({ children, params }) => {
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={font.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

@@ -2,200 +2,48 @@
   "key": "navigation",
   "content": {
     "en": {
-      "navItems": [
-        {
-          "name": "Home",
-          "ariaLabel": "Home",
-          "link": "#home"
-        },
-        {
-          "name": "About",
-          "ariaLabel": "About",
-          "link": "#about"
-        },
-        {
-          "name": "Products",
-          "ariaLabel": "Products",
-          "link": "#products"
-        },
-        {
-          "name": "Partners",
-          "ariaLabel": "Partners",
-          "link": "#partners"
-        },
-        {
-          "name": "Clients",
-          "ariaLabel": "Clients",
-          "link": "#clients"
-        },
-        {
-          "name": "Projects",
-          "ariaLabel": "Projects",
-          "link": "#projects"
-        },
-        {
-          "name": "Achievements",
-          "ariaLabel": "Achievements",
-          "link": "achievements"
-        },
-        {
-          "name": "Team",
-          "ariaLabel": "Team",
-          "link": "team"
-        },
-        {
-          "name": "Contact",
-          "ariaLabel": "Contact",
-          "link": "#contact"
-        }
-      ]
+      "home": "Home",
+      "about": "About",
+      "products": "Products",
+      "partners": "Partners",
+      "clients": "Clients",
+      "projects": "Projects",
+      "achievements": "Achievements",
+      "team": "Team",
+      "contact": "Contact"
     },
     "ar": {
-      "navItems": [
-        {
-          "name": "الرئيسية",
-          "ariaLabel": "الرئيسية",
-          "link": "#home"
-        },
-        {
-          "name": "من نحن",
-          "ariaLabel": "من نحن",
-          "link": "#about"
-        },
-        {
-          "name": "المنتجات",
-          "ariaLabel": "المنتجات",
-          "link": "#products"
-        },
-        {
-          "name": "شركاؤنا",
-          "ariaLabel": "شركاؤنا",
-          "link": "#partners"
-        },
-        {
-          "name": "العملاء",
-          "ariaLabel": "العملاء",
-          "link": "#clients"
-        },
-        {
-          "name": "المشاريع",
-          "ariaLabel": "المشاريع",
-          "link": "#projects"
-        },
-        {
-          "name": "الإنجازات",
-          "ariaLabel": "الإنجازات",
-          "link": "achievements"
-        },
-        {
-          "name": "الفريق",
-          "ariaLabel": "الفريق",
-          "link": "team"
-        },
-        {
-          "name": "اتصل بنا",
-          "ariaLabel": "اتصل بنا",
-          "link": "#contact"
-        }
-      ]
+      "home": "الرئيسية",
+      "about": "من نحن",
+      "products": "المنتجات",
+      "partners": "الشركاء",
+      "clients": "العملاء",
+      "projects": "المشاريع",
+      "achievements": "الإنجازات",
+      "team": "الفريق",
+      "contact": "تواصل معنا"
     },
     "fr": {
-      "navItems": [
-        {
-          "name": "Accueil",
-          "ariaLabel": "Accueil",
-          "link": "#home"
-        },
-        {
-          "name": "À Propos",
-          "ariaLabel": "À Propos",
-          "link": "#about"
-        },
-        {
-          "name": "Produits",
-          "ariaLabel": "Produits",
-          "link": "#products"
-        },
-        {
-          "name": "Partenaires",
-          "ariaLabel": "Partenaires",
-          "link": "#partners"
-        },
-        {
-          "name": "Clients",
-          "ariaLabel": "Clients",
-          "link": "#clients"
-        },
-        {
-          "name": "Projets",
-          "ariaLabel": "Projets",
-          "link": "#projects"
-        },
-        {
-          "name": "Réalisations",
-          "ariaLabel": "Réalisations",
-          "link": "achievements"
-        },
-        {
-          "name": "Équipe",
-          "ariaLabel": "Équipe",
-          "link": "team"
-        },
-        {
-          "name": "Contact",
-          "ariaLabel": "Contact",
-          "link": "#contact"
-        }
-      ]
+      "home": "Accueil",
+      "about": "À propos",
+      "products": "Produits",
+      "partners": "Partenaires",
+      "clients": "Clients",
+      "projects": "Projets",
+      "achievements": "Réalisations",
+      "team": "Équipe",
+      "contact": "Contact"
     },
     "es": {
-      "navItems": [
-        {
-          "name": "Inicio",
-          "ariaLabel": "Inicio",
-          "link": "#home"
-        },
-        {
-          "name": "Nosotros",
-          "ariaLabel": "Nosotros",
-          "link": "#about"
-        },
-        {
-          "name": "Productos",
-          "ariaLabel": "Productos",
-          "link": "#products"
-        },
-        {
-          "name": "Socios",
-          "ariaLabel": "Socios",
-          "link": "#partners"
-        },
-        {
-          "name": "Clientes",
-          "ariaLabel": "Clientes",
-          "link": "#clients"
-        },
-        {
-          "name": "Proyectos",
-          "ariaLabel": "Proyectos",
-          "link": "#projects"
-        },
-        {
-          "name": "Logros",
-          "ariaLabel": "Logros",
-          "link": "achievements"
-        },
-        {
-          "name": "Equipo",
-          "ariaLabel": "Equipo",
-          "link": "team"
-        },
-        {
-          "name": "Contacto",
-          "ariaLabel": "Contacto",
-          "link": "#contact"
-        }
-      ]
+      "home": "Inicio",
+      "about": "Sobre nosotros",
+      "products": "Productos",
+      "partners": "Socios",
+      "clients": "Clientes",
+      "projects": "Proyectos",
+      "achievements": "Logros",
+      "team": "Equipo",
+      "contact": "Contacto"
     }
   },
   "filePath": "src\\content\\navigation.content.ts"

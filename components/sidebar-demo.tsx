@@ -23,12 +23,16 @@ import { Logo, LogoIcon } from "@/components/ui/logo";
 import { navigationService } from "@/services/navigation-service";
 import type { NavigationLink, PageType } from "@/types";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+import { useLocale } from "next-intlayer";
+import navigationContent from "@/src/content/navigation.content";
 
 const SidebarContent = () => {
   const { theme, toggleTheme } = useTheme();
   const [open, setOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState<PageType>("home");
   const [activeLink, setActiveLink] = useState<string>("home");
+  const { locale } = useLocale();
+  const navLabels = navigationContent.content[locale] || navigationContent.content.en;
 
   // Handle page navigation
   const handleNavigation = (page: string) => {
@@ -70,14 +74,13 @@ const SidebarContent = () => {
   };
 
   const links: NavigationLink[] = navItems.map((item) => ({
-    label: item.name,
+    label: navLabels[item.name.toLowerCase()] || item.name,
     href: item.link,
-    ariaLabel: item.ariaLabel,
+    ariaLabel: navLabels[item.name.toLowerCase()] || item.ariaLabel,
     icon: getIconForNavItem(item.name),
-    onClick: () => {  
-
+    onClick: () => {
       setActiveLink(item.name.toLowerCase());
-      handleNavigation(item.link.replace("#", ""));  // استبدال "#" بالقيمة الصحيحة للصفحة
+      handleNavigation(item.link.replace("#", ""));
     },
     isActive: activeLink === item.name.toLowerCase(),
   }));

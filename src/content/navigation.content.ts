@@ -1,5 +1,6 @@
-/* eslint-disable */
-export default {
+import { type Dictionary } from "intlayer";
+
+const navigationContent = {
   key: "navigation",
   content: {
     en: {
@@ -46,6 +47,7 @@ export default {
       team: "Equipo",
       contact: "Contacto"
     }
-  },
-  filePath: "src\\content\\navigation.content.ts"
-} as const;
+  }
+} satisfies Dictionary;
+
+export default navigationContent; 
