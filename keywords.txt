@@ -1,0 +1,79 @@
+# Keywords in Multiple Languages
+
+## English
+- BMS
+- EITS
+- Building Management Systems
+- Egypt
+- Honeywell
+- Lighting Control
+- Electricity
+- Siemens
+- ABB
+- Surveillance Cameras
+- Technological Solutions
+
+## العربية
+- أنظمة إدارة المباني
+- EITS
+- BMS
+- مصر
+- هانيويل
+- التحكم في الإضاءة
+- كهرباء
+- سيمنز
+- ABB
+- كاميرات مراقبة
+- حلول تكنولوجية
+
+## Français
+- BMS
+- EITS
+- Systèmes de Gestion de Bâtiments
+- Égypte
+- Honeywell
+- Contrôle d'Éclairage
+- Électricité
+- Siemens
+- ABB
+- Caméras de Surveillance
+- Solutions Technologiques
+
+## Español
+- BMS
+- EITS
+- Sistemas de Gestión de Edificios
+- Egipto
+- Honeywell
+- Control de Iluminación
+- Electricidad
+- Siemens
+- ABB
+- Cámaras de Vigilancia
+- Soluciones Tecnológicas
+
+## Deutsch
+- BMS
+- EITS
+- Gebäudemanagementsysteme
+- Ägypten
+- Honeywell
+- Lichtsteuerung
+- Elektrizität
+- Siemens
+- ABB
+- Überwachungskameras
+- Technologische Lösungen
+
+## 中文
+- BMS
+- EITS
+- 楼宇管理系统
+- 埃及
+- 霍尼韦尔
+- 照明控制
+- 电力
+- 西门子
+- ABB
+- 监控摄像头
+- 技术解决方案 
