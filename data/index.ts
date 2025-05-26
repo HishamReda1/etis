@@ -206,7 +206,6 @@ export const clientLogosGrouped = {
     { img: "/JolieVille-Logo.png", name: "Jolie Ville", title: "Jolie Ville", link: "https://www.jolieville.com/" },
     { img: "/marriot.png", name: "Marriott", title: "Marriott", link: "https://www.marriott.com/" },
     { img: "/vox-cinema.png", name: "Vox Cinema", title: "Vox Cinema", link: "https://www.voxcinema.com/" },
-    
     { img: "/burak.png", name: "CZN Burak", title: "CZN Burak Restaurant", link: "https://www.cznburakegypt.com/" },
   ],
  

@@ -12,6 +12,7 @@ export type NavigationLink = {
   ariaLabel: string;
   onClick: () => void;
   isActive: boolean;
+  icon?: React.ReactNode;
 };
 
 

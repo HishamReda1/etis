@@ -59,7 +59,7 @@ const SidebarContent = () => {
   const [currentPage, setCurrentPage] = useState<PageType>("home");
   const [activeLink, setActiveLink] = useState<string>("home");
   const { locale } = useLocale();
-  const navLabels = navigationContent.content[locale] || navigationContent.content.en;
+  const navLabels = navigationContent.content[locale as 'en' | 'ar' | 'fr' | 'es' | 'de' | 'zh'] || navigationContent.content.en;
   const currentThemeLabels = themeLabels[locale as keyof typeof themeLabels] || themeLabels.en;
 
   // Handle page navigation
@@ -102,9 +102,9 @@ const SidebarContent = () => {
   };
 
   const links: NavigationLink[] = navItems.map((item) => ({
-    label: navLabels[item.name.toLowerCase()] || item.name,
+    label: navLabels[item.name.toLowerCase() as keyof typeof navLabels] || item.name,
     href: item.link,
-    ariaLabel: navLabels[item.name.toLowerCase()] || item.ariaLabel,
+    ariaLabel: navLabels[item.name.toLowerCase() as keyof typeof navLabels] || item.ariaLabel,
     icon: getIconForNavItem(item.name),
     onClick: () => {
       setActiveLink(item.name.toLowerCase());
@@ -137,11 +137,11 @@ const SidebarContent = () => {
               {links.map((link, idx ) => (
                 <SidebarLink
                   key={idx}
+                  aria-label={link.ariaLabel}
                   link={{
                     ...link,
                     icon: link.icon,
                     label: link.label,
-                    ariaLabel: link.ariaLabel,
                   }}
                   theme={theme}
                   className={cn(

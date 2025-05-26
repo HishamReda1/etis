@@ -137,13 +137,13 @@ MobileSidebar.displayName = "MobileSidebar"
 export const SidebarLink = forwardRef<
   HTMLAnchorElement,
   {
-    ariaLabel: string
+    "aria-label": string
     link: NavigationLink
     className?: string
     theme?: "light" | "dark"
     onClick?: () => void
   }
->(({ link, className, theme = "light", onClick, ...props }, ref) => {
+>(({ link, className, theme = "light", onClick, "aria-label": ariaLabel, ...props }, ref) => {
   const { open, animate } = useSidebar()
 
   const handleClick = (e: React.MouseEvent) => {
@@ -159,6 +159,7 @@ export const SidebarLink = forwardRef<
       href={link.href}
       className={cn("flex items-center justify-start gap-2 group/sidebar py-1", className)}
       onClick={handleClick}
+      aria-label={ariaLabel}
       {...props}
     >
       {link.icon}
@@ -170,7 +171,7 @@ export const SidebarLink = forwardRef<
         }}
         className={cn(
           "text-sm font-medium group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0",
-          theme === "light" ? "text-gray-800" : "text-white",
+          className
         )}
       >
         {link.label}
