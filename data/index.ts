@@ -522,7 +522,7 @@ export const allProjects: Project[] = [
     id: 28,
     title: "IMAGE MALL",
     description: "Commercial mall systems integration",
-    imageUrl: "https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/369719885_592727993074124_2329159330957894723_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeH-Y0CH0u600zSGpGtvLsQhuF0Ox5bjkuK4XQ7HluOS4mWyRJpR1ymiwVP96JIE5yZa/d94If-L+6XZyRlkVAQk&_nc_ohc=6t3-7NKIRKAQ7kNvwHoKZkU&_nc_oc=Adk2S6cnkctoQ88J0hiud7H5wMx2je35tqtHzwKV257vYHSx0mMlrksCM04xFNphk08&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=4Zz-PWuQVmtvjV7OlYRMlg&oh=00_AfGpqdR6lNnkuOcn9A_zVugT_kgMOQlyyytqGivhWLLgeQ&oe=680AE57E",
+    imageUrl: "/imagemall.jpg",
     category: "Malls",
     contractor: "HORSE FOR ENG.",
     application: "MCC",
