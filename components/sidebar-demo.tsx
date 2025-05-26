@@ -26,6 +26,33 @@ import { LocaleSwitcher } from "./LocaleSwitcher";
 import { useLocale } from "next-intlayer";
 import navigationContent from "@/src/content/navigation.content";
 
+const themeLabels = {
+  en: {
+    light: "Light Mode",
+    dark: "Dark Mode"
+  },
+  ar: {
+    light: "الوضع الفاتح",
+    dark: "الوضع الداكن"
+  },
+  fr: {
+    light: "Mode Clair",
+    dark: "Mode Sombre"
+  },
+  es: {
+    light: "Modo Claro",
+    dark: "Modo Oscuro"
+  },
+  de: {
+    light: "Heller Modus",
+    dark: "Dunkler Modus"
+  },
+  zh: {
+    light: "浅色模式",
+    dark: "深色模式"
+  }
+};
+
 const SidebarContent = () => {
   const { theme, toggleTheme } = useTheme();
   const [open, setOpen] = useState(false);
@@ -33,6 +60,7 @@ const SidebarContent = () => {
   const [activeLink, setActiveLink] = useState<string>("home");
   const { locale } = useLocale();
   const navLabels = navigationContent.content[locale] || navigationContent.content.en;
+  const currentThemeLabels = themeLabels[locale as keyof typeof themeLabels] || themeLabels.en;
 
   // Handle page navigation
   const handleNavigation = (page: string) => {
@@ -151,7 +179,7 @@ const SidebarContent = () => {
               )}
               {open && (
                 <span className="text-sm font-medium">
-                  {theme === "light" ? "Dark Mode" : "Light Mode"}
+                  {theme === "light" ? currentThemeLabels.light : currentThemeLabels.dark}
                 </span>
               )}
             </button>

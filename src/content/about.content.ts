@@ -70,6 +70,40 @@ const aboutContent = {
         title: 'Nuestra Visión',
         description: 'Ser el proveedor líder de soluciones técnicas en el sector energético'
       }
+    },
+    de: {
+      title: 'Über Uns',
+      subtitle: 'Wer Wir Sind',
+      description: 'Erfahren Sie mehr über unser Unternehmen und unsere Mission',
+      companyTitle: 'Unser Unternehmen',
+      companySubtitle: 'Innovation Heute für eine Intelligentere, Nachhaltigere Zukunft',
+      companyDescription: 'EITS hat strategische Partnerschaften mit weltweit führenden Entwicklern und Herstellern von Software (Front-End-Überwachungssysteme) und Hardware (einschließlich Sensoren, Steuerventile, Aktuatoren, Wasserventile, Filter und mehr) aufgebaut. Neben einer umfassenden Produktpalette ermöglichen uns diese Kooperationen, jegliche Anforderungen an die Gebäudeautomatisierung zu erfüllen, unabhängig von ihrer Komplexität. Unser tiefes Wissen, unsere umfangreiche Erfahrung und unser kontinuierliches Bewusstsein für Entwicklungen in diesem Bereich ermöglichen es uns, vollständige und maßgeschneiderte Lösungen für jeden Bedarf zu liefern.',
+      globalPresence: 'EITS Automation Control erweitert kontinuierlich seine Präsenz in Ägypten, Dubai und Großbritannien. Mit prestigeträchtigen Auszeichnungen wie unserer Position als Platin- und Gold-Partner für Honeywell Alerton BMS in Ägypten und Dubai, unserem strategischen Besuch im Hauptsitz von Sontay in Großbritannien und unserer aktiven Teilnahme an wichtigen Veranstaltungen wie dem Schneider Electric Forum im Baron Hotel — demonstrieren wir stolz unser Engagement für Innovation, starke internationale Partnerschaften und Führungsstärke in Automatisierungs- und Steuerungslösungen.',
+      mission: {
+        title: 'Unsere Mission',
+        description: 'Innovative technische Lösungen bereitzustellen, die Unternehmen und Einzelpersonen stärken'
+      },
+      vision: {
+        title: 'Unsere Vision',
+        description: 'Der führende Anbieter technischer Lösungen im Energiesektor zu sein'
+      }
+    },
+    zh: {
+      title: '关于我们',
+      subtitle: '我们是谁',
+      description: '了解更多关于我们公司和使命的信息',
+      companyTitle: '我们的公司',
+      companySubtitle: '今日创新，共创更智能、更可持续的明天',
+      companyDescription: 'EITS已与世界领先的软件（前端监控系统）和硬件（包括传感器、控制阀、执行器、水阀、过滤器等）开发商和制造商建立了战略合作伙伴关系。除了全面的产品系列外，这些合作使我们能够满足任何建筑自动化需求，无论其复杂性如何。我们深厚的知识、丰富的经验和对该领域发展的持续关注使我们能够为每个需求提供完整和量身定制的解决方案。',
+      globalPresence: 'EITS自动化控制继续扩大其在埃及、迪拜和英国的业务范围。凭借在埃及和迪拜作为霍尼韦尔Alerton BMS的铂金和黄金合作伙伴的声望，我们对英国Sontay总部的战略访问，以及在Baron酒店举行的施耐德电气论坛等重要活动中的积极参与 — 我们自豪地展示了我们对创新、强大的国际合作伙伴关系以及在自动化和控制解决方案领域的领导地位的承诺。',
+      mission: {
+        title: '我们的使命',
+        description: '提供创新的技术解决方案，赋能企业和个人'
+      },
+      vision: {
+        title: '我们的愿景',
+        description: '成为能源领域技术解决方案的领先提供商'
+      }
     }
   }
 } satisfies Dictionary;

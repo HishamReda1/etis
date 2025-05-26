@@ -310,6 +310,160 @@ const productsContent = {
           icon: "Wrench"
         }
       }
+    },
+    de: {
+      title: "Unsere Produkte",
+      subtitle: "Innovative Lösungen",
+      description: "Entdecken Sie unsere Palette an modernsten Produkten, die auf Ihre Bedürfnisse zugeschnitten sind.",
+      features: {
+        title: 'Produkteigenschaften',
+      },
+      products: {
+        building_management_system: {
+          name: "Gebäudemanagementsystem",
+          description: "Technologische Lösungen entfesselt, Integration perfektioniert",
+          features: [
+            "Autorisierter/Zertifizierter Partner für Honeywell für das Gebäudemanagementsystem von Alerton (USA).",
+            "Autorisierter Partner für Honeywell-Kritische Umgebungsluftventillösungen von Phoenix Controls (USA), spezialisiert auf Gesundheits- und Pharma-Anwendungen.",
+            "Zertifizierter Partner für Honeywell-spezialisierte SPS für die kritische kommerzielle Infrastruktur von SAIA BURGESS 'SBC' (Schweiz).",
+            "Autorisierter Händler für Dwyer für BMS- und Steuerungsinstrumentierungsgeräte.",
+            "Der einzige Platinum-Partner für Honeywell in Ägypten."
+          ],
+          images: [
+            "./bms.webp",
+            "./honeywell5.avif",
+            "./honeywell9.webp",
+            "./honeywell8.avif",
+            "./honeywell6.avif",
+            "./honeywell3.webp",
+            "./honeywell2.webp",
+            "./honywell1.webp",
+            "https://honeywell.scene7.com/is/image/honeywell/HBT-BMS-AL-Product-Page-Tile-2-2880x1440",
+            "https://honeywell.scene7.com/is/image/honeywell/HBT-BMS-AL-Product-Page-Tile-3-2880x1440",
+            "https://honeywell.scene7.com/is/image/honeywell/HBT-BMS-AL-Product-Page-Tile-4-2880x1440",
+            "https://honeywell.scene7.com/is/image/honeywell/HBT-BMS-AL-Product-Page-Tile-5-2880x1440",
+            "https://honeywell.scene7.com/is/image/honeywell/HBT-BMS-AL-Product-Page-Tile-6-2880x1440",
+            "https://honeywell.scene7.com/is/image/honeywell/HBT-BMS-AL-Product-Page-Tile-7-2880x1440",
+            "https://honeywell.scene7.com/is/image/honeywell/HBT-BMS-AL-Product-Page-Tile-8-2880x1440",
+            "https://honeywell.scene7.com/is/image/honeywell/HBT-BMS-AL-Product-Page-Tile-9-2880x1440"
+          ],
+          icon: "MonitorCog"
+        },
+        elv_lighting_control_solutions: {
+          name: "ELV & Beleuchtungssteuerungslösungen",
+          description: "Technologische Lösungen entfesselt, Integration perfektioniert",
+          features: [
+            "Autorisierter Partner für Honeywell in der kommerziellen Beleuchtungssteuerung von EX-OR (UK).",
+            "Kürzlich autorisierter Systemintegrator für die physische Sicherheit von Hanwha Vision (Südkorea), umfassend Videosurveillance, Zugangskontrolle und öffentliche Adressierung."
+          ],
+          images: [
+            "./ELV.webp",
+            "https://son04-live-0559e086fe33459f92ce8a277429-ab9e917.divio-media.org/filer_public_thumbnails/images/ll-cc-rgb-72dpi.png__800x600_q90_subsampling-2_upscale.png.webp",
+            "https://www.hanwhavision.com/wp-content/uploads/2017/02/X200_01_M-600x600.png",
+            "https://www.hanwhavision.com/wp-content/uploads/2025/03/XNO-A9084RA8084R_01_M-600x600.png"
+          ],
+          icon: "Lightbulb"
+        },
+        electrical_solutions: {
+          name: "Elektrische Lösungen",
+          description: "Technologische Lösungen entfesselt, Integration perfektioniert",
+          features: [
+            "MCC & LV-Schalttafeln-Anbieter für ABB auf dem ägyptischen Markt.",
+            "MCC & LV-Schalttafeln-Anbieter für Siemens Electric.",
+            "VFD-Schalttafeln-Anbieter (ABB, Siemens Electric & Honeywell)."
+          ],
+          images: ["./electrical.webp", "./install.webp", "./electric2.webp"],
+          icon: "Zap"
+        },
+        installation_repair_center: {
+          name: "Installations- & Reparaturzentrum",
+          description: "Technologische Lösungen entfesselt, Integration perfektioniert",
+          features: [
+            "Unsere professionellen Teams zeichnen sich in MEP-Installationen aus und decken alle Phasen von der Erstinstallation bis zu den endgültigen Fixierungen ab. Die Expertise umfasst umfassende Kabelungslösungen, Kabeltrassen, Leitungen, Kabelkanäle und Leitergerüstinstallationen.",
+            "Als spezialisiertes Unternehmen für HVAC-Installation haben wir einen starken Fußabdruck in kritischen Anwendungen wie dem Gesundheits- und Gastgewerbesektor etabliert.",
+            "Wir verfügen auch über ein dediziertes internes Reparaturzentrum für alle Steuerungs- und BMS-Produkte, besetzt mit erfahrenen Ingenieuren, um erstklassigen Service und Zuverlässigkeit zu gewährleisten."
+          ],
+          images: ["./HVAC.webp", "./install.webp"],
+          icon: "Wrench"
+        }
+      }
+    },
+    zh: {
+      title: "我们的产品",
+      subtitle: "创新解决方案",
+      description: "探索我们专为满足您需求而设计的尖端产品系列。",
+      features: {
+        title: '产品特点',
+      },
+      products: {
+        building_management_system: {
+          name: "楼宇管理系统",
+          description: "技术解决方案释放，完美集成",
+          features: [
+            "霍尼韦尔楼宇管理系统Alerton（美国）的授权/认证合作伙伴。",
+            "霍尼韦尔关键环境空气阀门解决方案的授权合作伙伴，来自Phoenix Controls（美国），专注于医疗保健和制药应用。",
+            "霍尼韦尔专业PLC的认证合作伙伴，用于SAIA BURGESS 'SBC'（瑞士）的关键商业基础设施。",
+            "Dwyer BMS和控制仪表设备的授权经销商。",
+            "霍尼韦尔在埃及唯一的白金合作伙伴。"
+          ],
+          images: [
+            "./bms.webp",
+            "./honeywell5.avif",
+            "./honeywell9.webp",
+            "./honeywell8.avif",
+            "./honeywell6.avif",
+            "./honeywell3.webp",
+            "./honeywell2.webp",
+            "./honywell1.webp",
+            "https://honeywell.scene7.com/is/image/honeywell/HBT-BMS-AL-Product-Page-Tile-2-2880x1440",
+            "https://honeywell.scene7.com/is/image/honeywell/HBT-BMS-AL-Product-Page-Tile-3-2880x1440",
+            "https://honeywell.scene7.com/is/image/honeywell/HBT-BMS-AL-Product-Page-Tile-4-2880x1440",
+            "https://honeywell.scene7.com/is/image/honeywell/HBT-BMS-AL-Product-Page-Tile-5-2880x1440",
+            "https://honeywell.scene7.com/is/image/honeywell/HBT-BMS-AL-Product-Page-Tile-6-2880x1440",
+            "https://honeywell.scene7.com/is/image/honeywell/HBT-BMS-AL-Product-Page-Tile-7-2880x1440",
+            "https://honeywell.scene7.com/is/image/honeywell/HBT-BMS-AL-Product-Page-Tile-8-2880x1440",
+            "https://honeywell.scene7.com/is/image/honeywell/HBT-BMS-AL-Product-Page-Tile-9-2880x1440"
+          ],
+          icon: "MonitorCog"
+        },
+        elv_lighting_control_solutions: {
+          name: "弱电和照明控制解决方案",
+          description: "技术解决方案释放，完美集成",
+          features: [
+            "霍尼韦尔商业照明控制的授权合作伙伴，来自EX-OR（英国）。",
+            "最近成为韩华视觉（韩国）物理安全的授权系统集成商，涵盖视频监控、门禁控制和公共广播。"
+          ],
+          images: [
+            "./ELV.webp",
+            "https://son04-live-0559e086fe33459f92ce8a277429-ab9e917.divio-media.org/filer_public_thumbnails/images/ll-cc-rgb-72dpi.png__800x600_q90_subsampling-2_upscale.png.webp",
+            "https://www.hanwhavision.com/wp-content/uploads/2017/02/X200_01_M-600x600.png",
+            "https://www.hanwhavision.com/wp-content/uploads/2025/03/XNO-A9084RA8084R_01_M-600x600.png"
+          ],
+          icon: "Lightbulb"
+        },
+        electrical_solutions: {
+          name: "电气解决方案",
+          description: "技术解决方案释放，完美集成",
+          features: [
+            "埃及市场ABB的MCC和低压配电盘供应商。",
+            "西门子电气的MCC和低压配电盘供应商。",
+            "变频器面板供应商（ABB、西门子电气和霍尼韦尔）。"
+          ],
+          images: ["./electrical.webp", "./install.webp", "./electric2.webp"],
+          icon: "Zap"
+        },
+        installation_repair_center: {
+          name: "安装和维修中心",
+          description: "技术解决方案释放，完美集成",
+          features: [
+            "我们的专业团队在MEP安装方面表现出色，涵盖从初始设置到最终修复的所有阶段。专业知识包括全面的布线解决方案、线槽、导管、主干和梯架安装。",
+            "作为专业的暖通空调安装公司，我们已在医疗保健和酒店等关键应用领域建立了强大的影响力。",
+            "我们还拥有一个专门的内置维修中心，用于所有控制和BMS产品，由经验丰富的工程师组成，确保一流的服务和可靠性。"
+          ],
+          images: ["./HVAC.webp", "./install.webp"],
+          icon: "Wrench"
+        }
+      }
     }
   }
 } satisfies Dictionary;

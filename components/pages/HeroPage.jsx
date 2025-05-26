@@ -3,6 +3,7 @@ import { FaYoutube } from 'react-icons/fa6';
 import { AiOutlineLike } from 'react-icons/ai';
 import moment from 'moment'; 
 import { useEffect } from 'react';
+import { useParams } from 'next/navigation';
 
 const getRandomDate = () => {
   const currentDate = new Date();
@@ -17,32 +18,93 @@ const getRandomDate = () => {
   return pastDate;
 };
 
-const initialClientComments = [
-  { img: "/must.svg", name: "MUST University", comment: "أفضل أنظمة BMS جربناها!", time: getRandomDate() },
-  { img: "/P_G.png", name: "P&G", comment: "كفاءة عالية وفريق محترف من EITS.", time: getRandomDate() },
-  { img: "/bue.png", name: "BUE", comment: "أنظمة موثوقة وتحكم ذكي.", time: getRandomDate() },
-  { img: "/Cairo_University.png", name: "Cairo University", comment: "دقة وتنفيذ رائع في أنظمة التحكم.", time: getRandomDate() },
-  { img: "/Edita.png", name: "Edita", comment: "تحكم كامل بالأجهزة والإضاءة.", time: getRandomDate() },
-  { img: "/henkel.png", name: "Henkel", comment: "خدمة ممتازة بعد التركيب.", time: getRandomDate() },
-  { img: "/hilton.png", name: "Hilton", comment: "مستوى عالمي في تنفيذ أنظمة BMS.", time: getRandomDate() },
-  { img: "/JolieVille-Logo.png", name: "Jolie Ville", comment: "مرونة في التحكم وسهولة في الاستخدام.", time: getRandomDate() },
-  { img: "/marriot.png", name: "Marriott", comment: "فريق EITS من أفضل الشركات اللي تعاملنا معاها.", time: getRandomDate() },
-  { img: "/midor.png", name: "Midor", comment: "أنظمة متكاملة توفر الطاقة وتزيد الأمان.", time: getRandomDate() },
-  { img: "/ministry-of-health-egypt.png", name: "Ministry of Health", comment: "دقة وسرعة في تنفيذ أنظمة المباني.", time: getRandomDate() },
-  { img: "/misr-italia-logo.png", name: "Misr Italia", comment: "إدارة متكاملة للمباني الذكية.", time: getRandomDate() },
-  { img: "/pepsico-logo.png", name: "PepsiCo", comment: "أداء ثابت ونظام تحكم متميز.", time: getRandomDate() },
-  { img: "/petrojet-logo-white.svg", name: "Petrojet", comment: "أنظمة BMS ساعدتنا نوفر طاقة ووقت.", time: getRandomDate() },
-  { img: "/telecom-egypt.png", name: "Telecom Egypt", comment: "تكنولوجيا متقدمة وسهلة الاستخدام.", time: getRandomDate() },
-  { img: "/vox-cinema.png", name: "Vox Cinema", comment: "تحكم رائع بالإضاءة والتهوية والتكييف.", time: getRandomDate() },
-];
+const clientComments = {
+  en: [
+    { img: "/midor.png", name: "Midor", comment: "Integrated systems that save energy and increase safety.", time: getRandomDate() },
+    { img: "/ministry-of-health-egypt.png", name: "Ministry of Health", comment: "Accuracy and speed in implementing building systems.", time: getRandomDate() },
+    { img: "/misr-italia-logo.png", name: "Misr Italia", comment: "Integrated management of smart buildings.", time: getRandomDate() },
+    { img: "/pepsico-logo.png", name: "PepsiCo", comment: "Consistent performance and excellent control system.", time: getRandomDate() },
+    { img: "/petrojet-logo-white.svg", name: "Petrojet", comment: "BMS systems helped us save energy and time.", time: getRandomDate() },
+    { img: "/telecom-egypt.png", name: "Telecom Egypt", comment: "Advanced and easy-to-use technology.", time: getRandomDate() },
+    { img: "/vox-cinema.png", name: "Vox Cinema", comment: "Excellent control of lighting, ventilation and air conditioning.", time: getRandomDate() },
+  ],
+  ar: [
+    { img: "/midor.png", name: "Midor", comment: "أنظمة متكاملة توفر الطاقة وتزيد الأمان.", time: getRandomDate() },
+    { img: "/ministry-of-health-egypt.png", name: "Ministry of Health", comment: "دقة وسرعة في تنفيذ أنظمة المباني.", time: getRandomDate() },
+    { img: "/misr-italia-logo.png", name: "Misr Italia", comment: "إدارة متكاملة للمباني الذكية.", time: getRandomDate() },
+    { img: "/pepsico-logo.png", name: "PepsiCo", comment: "أداء ثابت ونظام تحكم متميز.", time: getRandomDate() },
+    { img: "/petrojet-logo-white.svg", name: "Petrojet", comment: "أنظمة BMS ساعدتنا نوفر طاقة ووقت.", time: getRandomDate() },
+    { img: "/telecom-egypt.png", name: "Telecom Egypt", comment: "تكنولوجيا متقدمة وسهلة الاستخدام.", time: getRandomDate() },
+    { img: "/vox-cinema.png", name: "Vox Cinema", comment: "تحكم رائع بالإضاءة والتهوية والتكييف.", time: getRandomDate() },
+  ],
+  de: [
+    { img: "/midor.png", name: "Midor", comment: "Integrierte Systeme, die Energie sparen und die Sicherheit erhöhen.", time: getRandomDate() },
+    { img: "/ministry-of-health-egypt.png", name: "Ministry of Health", comment: "Präzision und Geschwindigkeit bei der Implementierung von Gebäudesystemen.", time: getRandomDate() },
+    { img: "/misr-italia-logo.png", name: "Misr Italia", comment: "Integriertes Management von Smart Buildings.", time: getRandomDate() },
+    { img: "/pepsico-logo.png", name: "PepsiCo", comment: "Konstante Leistung und ausgezeichnetes Kontrollsystem.", time: getRandomDate() },
+    { img: "/petrojet-logo-white.svg", name: "Petrojet", comment: "BMS-Systeme halfen uns, Energie und Zeit zu sparen.", time: getRandomDate() },
+    { img: "/telecom-egypt.png", name: "Telecom Egypt", comment: "Fortschrittliche und benutzerfreundliche Technologie.", time: getRandomDate() },
+    { img: "/vox-cinema.png", name: "Vox Cinema", comment: "Ausgezeichnete Steuerung von Beleuchtung, Belüftung und Klimatisierung.", time: getRandomDate() },
+  ],
+  zh: [
+    { img: "/midor.png", name: "Midor", comment: "集成系统节省能源并提高安全性。", time: getRandomDate() },
+    { img: "/ministry-of-health-egypt.png", name: "Ministry of Health", comment: "建筑系统实施的准确性和速度。", time: getRandomDate() },
+    { img: "/misr-italia-logo.png", name: "Misr Italia", comment: "智能建筑的集成管理。", time: getRandomDate() },
+    { img: "/pepsico-logo.png", name: "PepsiCo", comment: "稳定的性能和出色的控制系统。", time: getRandomDate() },
+    { img: "/petrojet-logo-white.svg", name: "Petrojet", comment: "BMS系统帮助我们节省能源和时间。", time: getRandomDate() },
+    { img: "/telecom-egypt.png", name: "Telecom Egypt", comment: "先进且易于使用的技术。", time: getRandomDate() },
+    { img: "/vox-cinema.png", name: "Vox Cinema", comment: "出色的照明、通风和空调控制。", time: getRandomDate() },
+  ]
+};
 
+const interfaceText = {
+  en: {
+    like: "Like",
+    comment: "Comment",
+    addComment: "Add a comment...",
+    comments: "Comments"
+  },
+  ar: {
+    like: "إعجاب",
+    comment: "تعليق",
+    addComment: "أضف تعليقاً...",
+    comments: "التعليقات"
+  },
+  fr: {
+    like: "J'aime",
+    comment: "Commenter",
+    addComment: "Ajouter un commentaire...",
+    comments: "Commentaires"
+  },
+  es: {
+    like: "Me gusta",
+    comment: "Comentar",
+    addComment: "Añadir un comentario...",
+    comments: "Comentarios"
+  },
+  de: {
+    like: "Gefällt mir",
+    comment: "Kommentar",
+    addComment: "Kommentar hinzufügen...",
+    comments: "Kommentare"
+  },
+  zh: {
+    like: "赞",
+    comment: "评论",
+    addComment: "添加评论...",
+    comments: "评论"
+  }
+};
 
 const YouTubeInterface = () => {
   const [likes, setLikes] = useState(0);
   const [commentText, setCommentText] = useState('');
   const [comments, setComments] = useState(
-    initialClientComments.map(c => ({ ...c, time: new Date(), likes: Math.floor(Math.random() * 100), id: Math.random() }))
+    clientComments.en.map(c => ({ ...c, time: new Date(), likes: Math.floor(Math.random() * 100), id: Math.random() }))
   );
+  const params = useParams();
+  const locale = params?.locale || "en";
+  const t = interfaceText[locale] || interfaceText.en;
 
   const handleLike = () => setLikes(likes + 1);
 
@@ -75,7 +137,7 @@ const YouTubeInterface = () => {
   }, [comments]);
 
   return (
-    <div className="max-w-4xl mx-auto p-4 font-sans  text-black">
+    <div className="max-w-4xl mx-auto p-4 font-sans text-black">
       {/* Header */}
       <div className="flex items-center gap-2 mb-4">
         <FaYoutube className="text-3xl text-red-600" />
@@ -84,16 +146,16 @@ const YouTubeInterface = () => {
 
       {/* Video */}
       <div className="mb-4">
-      <div className="relative" style={{ paddingTop: "56.25%" }}>
-  <iframe
-    src="https://player.vimeo.com/video/1084162752?badge=0&autopause=0&player_id=0&app_id=58479"
-    frameBorder="0"
-    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-    allowFullScreen
-    title="eits"
-    className="absolute top-0 left-0 w-full h-full rounded-xl"
-  ></iframe>
-</div>
+        <div className="relative" style={{ paddingTop: "56.25%" }}>
+          <iframe
+            src="https://player.vimeo.com/video/1084162752?badge=0&autopause=0&player_id=0&app_id=58479"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            allowFullScreen
+            title="eits"
+            className="absolute top-0 left-0 w-full h-full rounded-xl"
+          ></iframe>
+        </div>
       </div>
 
       {/* Like + Comment Input */}
@@ -103,7 +165,7 @@ const YouTubeInterface = () => {
           className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-full border transform transition duration-300 ease-in-out hover:scale-105"
         >
           <AiOutlineLike className="text-xl" />
-          <span className="font-medium">Like</span>
+          <span className="font-medium">{t.like}</span>
           <span>({likes})</span>
         </button>
 
@@ -112,21 +174,21 @@ const YouTubeInterface = () => {
             type="text"
             value={commentText}
             onChange={(e) => setCommentText(e.target.value)}
-            placeholder="Add a comment..."
+            placeholder={t.addComment}
             className="flex-1 border rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <button
             onClick={handleComment}
             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
           >
-            Comment
+            {t.comment}
           </button>
         </div>
       </div>
 
       {/* Comments */}
       <div className="border-t pt-4">
-        <h2 className="text-lg font-semibold mb-4">Comments</h2>
+        <h2 className="text-lg font-semibold mb-4">{t.comments}</h2>
         <ul className="space-y-5">
           {comments.map((comment, idx) => (
             <li key={comment.id} className="flex items-start gap-3 fade-in opacity-0 transition-opacity duration-500">
@@ -152,7 +214,7 @@ const YouTubeInterface = () => {
                   className="flex items-center text-sm text-gray-600 hover:text-blue-600 transition duration-300 ease-in-out"
                 >
                   <AiOutlineLike className="mr-1" />
-                  Like ({comment.likes})
+                  {t.like} ({comment.likes})
                 </button>
               </div>
             </li>

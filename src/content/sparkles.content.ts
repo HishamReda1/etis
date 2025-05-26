@@ -18,6 +18,14 @@ const sparklesContent = {
     es: {
       title: "somos",
       subtitle: "el poder del socio conectado en Egipto"
+    },
+    de: {
+      title: "wir sind",
+      subtitle: "die Kraft des vernetzten Partners in Ägypten"
+    },
+    zh: {
+      title: "我们是",
+      subtitle: "埃及互联合作伙伴的力量"
     }
   }
 } satisfies Dictionary;

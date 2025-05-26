@@ -206,6 +206,108 @@ const companyHistoryContent = {
           description: "Etis es un socio aprobado autorizado para productos de baja tensión y control de SIEMENS, con derecho a usar y vender productos Siemens dentro de armarios de distribución de terceros o de diseño propio."
         }
       ]
+    },
+    de: {
+      title: "Unsere Reise",
+      description: "Eine Zeitleiste unseres Unternehmenswachstums und unserer Erfolge",
+      history: [
+        {
+          year: 2008,
+          event: "Arab Corporation wurde als MEP-Auftragnehmer auf dem Markt gegründet.",
+          description: "Arab Corporation trat als mechanischer, elektrischer und sanitäter Auftragnehmer in den Markt ein und konzentrierte sich auf hochwertige Ingenieurlösungen."
+        },
+        {
+          year: 2015,
+          event: "Power Technology wurde gegründet, um sich auf Motorsteuerungszentren (MCC) und Verteilungsanlagen (DPs) zu spezialisieren.",
+          description: "Die Gründung von Power Technology erweiterte die Fähigkeiten des Unternehmens in Motorsteuerungszentren und Verteilungsanlagen und verbesserte seine elektrischen Verteilungs- und Automatisierungsdienste."
+        },
+        {
+          year: 2016,
+          event: "EITS Control wurde als Systemintegrator für Gebäudemanagementsysteme (BMS) und Automatisierungslösungen gegründet.",
+          description: "Die Gründung von EITS Control markierte den Einstieg des Unternehmens in intelligente Gebäudelösungen mit integrierten Systemen für Gebäudemanagement und Automatisierung."
+        },
+        {
+          year: 2018,
+          event: "Wurde registrierter BMS-Partner von Honeywell und indirekter Schaltschrankhersteller für Schneider Electric über MAS Electric mit einem anfänglichen Vertragswert von 500K EGP.",
+          description: "Erzielte Partnerschaften mit Branchenführern Honeywell und Schneider Electric und sicherte einen anfänglichen Vertrag im Wert von 500K EGP über MAS Electric."
+        },
+        {
+          year: 2020,
+          event: "Erreichte den Honeywell Gold Partner-Status, verbesserte den Schneider Electric Schaltschrankhersteller-Vertrag auf 1M EGP und unterzeichnete ein Joint Venture mit einem autorisierten ABB-Schaltschrankhersteller.",
+          description: "Erhielt den Honeywell Gold Partner-Status, erweiterte den Schneider Electric-Vertrag auf 1M EGP und bildete ein Joint Venture mit einem autorisierten ABB-Schaltschrankhersteller, was die Partnerschaften des Unternehmens diversifizierte."
+        },
+        {
+          year: 2022,
+          event: "Aufgestiegen zum Honeywell Platinum Partner-Status und erweitert den Schneider Electric Schaltschrankhersteller-Vertrag auf 5M EGP.",
+          description: "Erreichte den Honeywell Platinum Partner-Status und erhöhte den Schneider Electric-Vertrag signifikant auf 5M EGP, was die Präsenz des Unternehmens in der Branche stärkte."
+        },
+        {
+          year: 2023,
+          event: "Umzug zum neuen EITS-Hauptsitz und zur Fertigungsstätte in Obour City.",
+          description: "Verlagerte sich zu einem neuen Hauptsitz und einer Fertigungsstätte in Obour City, was die betriebliche Effizienz und Produktionskapazität verbesserte."
+        },
+        {
+          year: 2024,
+          event: "Feierte einen Meilenstein von über 120 Mitarbeitern unter dem Unternehmensdach.",
+          description: "Erreichte einen bedeutenden Meilenstein mit einer Belegschaft von über 120 Mitarbeitern, was das Wachstum des Unternehmens und sein Engagement für Exzellenz widerspiegelt."
+        },
+        {
+          year: 2025,
+          event: "Wurde autorisierter Partner für SIEMENS Niederspannungsprodukte und Steuerungsprodukte",
+          description: "Etis ist ein autorisierter Partner für SIEMENS Niederspannungsprodukte und Steuerungsprodukte, der das Recht hat, Siemens-Produkte in Schaltschränken von Drittanbietern oder Eigenkonstruktionen zu verwenden und zu verkaufen."
+        }
+      ]
+    },
+    zh: {
+      title: "我们的历程",
+      description: "我们公司发展和成就的时间线",
+      history: [
+        {
+          year: 2008,
+          event: "Arab Corporation作为MEP承包商进入市场。",
+          description: "Arab Corporation作为机械、电气和管道承包商进入市场，专注于提供高质量的工程解决方案。"
+        },
+        {
+          year: 2015,
+          event: "Power Technology成立，专注于电机控制中心(MCC)和配电盘(DPs)。",
+          description: "Power Technology的成立扩展了公司在电机控制中心和配电盘方面的能力，增强了其电气配电和自动化服务。"
+        },
+        {
+          year: 2016,
+          event: "EITS Control成立，作为楼宇管理系统(BMS)和自动化解决方案的系统集成商。",
+          description: "EITS Control的成立标志着公司进入智能建筑解决方案领域，提供集成的楼宇管理和自动化系统。"
+        },
+        {
+          year: 2018,
+          event: "成为霍尼韦尔注册BMS合作伙伴，并通过MAS Electric成为施耐德电气的间接面板制造商，初始合同价值50万埃及镑。",
+          description: "与行业领导者霍尼韦尔和施耐德电气建立合作伙伴关系，通过MAS Electric获得50万埃及镑的初始合同。"
+        },
+        {
+          year: 2020,
+          event: "获得霍尼韦尔金牌合作伙伴地位，将施耐德电气面板制造商合同提升至100万埃及镑，并与ABB授权面板制造商签署合资协议。",
+          description: "提升为霍尼韦尔金牌合作伙伴，将施耐德电气合同扩展至100万埃及镑，并与ABB授权面板制造商组建合资企业，实现公司合作伙伴关系的多元化。"
+        },
+        {
+          year: 2022,
+          event: "晋升为霍尼韦尔白金合作伙伴，并将施耐德电气面板制造商合同扩展至500万埃及镑。",
+          description: "达到霍尼韦尔白金合作伙伴地位，并将施耐德电气合同大幅增加至500万埃及镑，加强了公司在行业中的影响力。"
+        },
+        {
+          year: 2023,
+          event: "迁至位于奥布尔市的新EITS总部和制造工厂。",
+          description: "搬迁至奥布尔市的新总部和制造工厂，提高了运营效率和生产能力。"
+        },
+        {
+          year: 2024,
+          event: "庆祝公司员工人数突破120人的里程碑。",
+          description: "实现重要里程碑，员工人数超过120人，反映了公司的增长和对卓越的承诺。"
+        },
+        {
+          year: 2025,
+          event: "成为西门子低压产品和控制产品的授权合作伙伴",
+          description: "Etis是西门子低压产品和控制产品的授权合作伙伴，有权在第三方或自主设计的开关柜中使用和销售西门子产品。"
+        }
+      ]
     }
   }
 } satisfies Dictionary;

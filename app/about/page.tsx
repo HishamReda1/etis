@@ -23,7 +23,9 @@ export default function AboutPage({ theme }: { theme: "light" | "dark" }) {
   const content = aboutContent;
   const validLocale = locale in content.content ? locale : "en";
   const t = content.content[validLocale];
-  const events = eventsContent.content[validLocale].events;
+  const events = (validLocale === "en" || validLocale === "ar" || validLocale === "fr" || validLocale === "de" || validLocale === "zh") 
+    ? eventsContent.content[validLocale].events 
+    : eventsContent.content.en.events;
   const isRTL = validLocale === "ar";
 
   return (

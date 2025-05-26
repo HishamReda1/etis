@@ -88,6 +88,7 @@ export default function Certificates({ theme = "light", locale }: CertificatesPr
     { src: "/10.webp", alt: t.certificates.alerton.alt, title: t.certificates.alerton.title },
     { src: "/11.webp", alt: t.certificates.alerton.alt, title: t.certificates.alerton.title },
     { src: "/12.webp", alt: t.certificates.alerton.alt, title: t.certificates.alerton.title },
+    { src: "/Certificate15.jpeg", alt: t.certificates.certificate15.alt, title: t.certificates.certificate15.title },
   ];
 
   return (

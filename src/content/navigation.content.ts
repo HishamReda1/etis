@@ -46,6 +46,28 @@ const navigationContent = {
       achievements: "Logros",
       team: "Equipo",
       contact: "Contacto"
+    },
+    de: {
+      home: "Startseite",
+      about: "Über uns",
+      products: "Produkte",
+      partners: "Partner",
+      clients: "Kunden",
+      projects: "Projekte",
+      achievements: "Erfolge",
+      team: "Team",
+      contact: "Kontakt"
+    },
+    zh: {
+      home: "首页",
+      about: "关于我们",
+      products: "产品",
+      partners: "合作伙伴",
+      clients: "客户",
+      projects: "项目",
+      achievements: "成就",
+      team: "团队",
+      contact: "联系我们"
     }
   }
 } satisfies Dictionary;

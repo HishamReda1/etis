@@ -1,19 +1,16 @@
 'use client'
-import React, { Suspense, useState } from 'react';
+import React, { JSX, Suspense, useState } from 'react';
 import { Canvas} from '@react-three/fiber';
 import { ContactShadows, Environment, OrbitControls } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import CanvasLoader from '@/components/Loading';
-
 import Developer from '@/components/Developer';
-
 import Mohamed from '@/components/Mohamed';
 import Mostafa from '@/components/Mostafa';
 import { cn } from '@/lib/utils';
 import Ahmed from '@/components/Ahmed';
 import Roz from '@/components/Roz';
 import Mina from '@/components/Mina';
-
 import Ghazy from '@/components/Ghazy';
 import Ceo from '@/components/Ceo';
 import { EffectComposer,Bloom } from '@react-three/postprocessing'
@@ -35,54 +32,75 @@ interface TeamMember {
   image: string;
 }
 
-const teamNames = {
+interface TeamNames {
+  en: Record<string, string>;
+  ar: Record<string, string>;
+  fr: Record<string, string>;
+  es: Record<string, string>;
+  de: Record<string, string>;
+  zh: Record<string, string>;
+}
+
+const teamNames: TeamNames = {
   en: {
     'Alaa Omar': 'Alaa Omar',
     'Mohamed Ghazy': 'Mohamed Ghazy',
     'Hisham Reda': 'Hisham Reda',
-    
     'Mohamed Hamada': 'Mohamed Hamada',
     'Mostafa Bakry': 'Mostafa Bakry',
     'Ahmed Hamada': 'Ahmed Hamada',
     'Hussien Amr': 'Hussien Amr',
     'Mina Assaad': 'Mina Assaad',
- 
   },
   ar: {
     'Alaa Omar': 'علاء عمر',
     'Mohamed Ghazy': 'محمد غازي',
     'Hisham Reda': 'هشام رضا',
-    'Karim Mahmoud': 'كريم محمود',
     'Mohamed Hamada': 'محمد حمادة',
     'Mostafa Bakry': 'مصطفى بكري',
     'Ahmed Hamada': 'أحمد حمادة',
     'Hussien Amr': 'حسين عمرو',
     'Mina Assaad': 'مينا أسعد',
-  
   },
   fr: {
     'Alaa Omar': 'Alaa Omar',
     'Mohamed Ghazy': 'Mohamed Ghazy',
     'Hisham Reda': 'Hisham Reda',
-   
     'Mohamed Hamada': 'Mohamed Hamada',
     'Mostafa Bakry': 'Mostafa Bakry',
     'Ahmed Hamada': 'Ahmed Hamada',
     'Hussien Amr': 'Hussien Amr',
     'Mina Assaad': 'Mina Assaad',
-   
   },
   es: {
     'Alaa Omar': 'Alaa Omar',
     'Mohamed Ghazy': 'Mohamed Ghazy',
     'Hisham Reda': 'Hisham Reda',
-   
     'Mohamed Hamada': 'Mohamed Hamada',
     'Mostafa Bakry': 'Mostafa Bakry',
     'Ahmed Hamada': 'Ahmed Hamada',
     'Hussien Amr': 'Hussien Amr',
     'Mina Assaad': 'Mina Assaad',
- 
+  },
+  de: {
+    'Alaa Omar': 'Alaa Omar',
+    'Mohamed Ghazy': 'Mohamed Ghazy',
+    'Hisham Reda': 'Hisham Reda',
+    'Mohamed Hamada': 'Mohamed Hamada',
+    'Mostafa Bakry': 'Mostafa Bakry',
+    'Ahmed Hamada': 'Ahmed Hamada',
+    'Hussien Amr': 'Hussien Amr',
+    'Mina Assaad': 'Mina Assaad',
+  },
+  zh: {
+    'Alaa Omar': 'Alaa Omar',
+    'Mohamed Ghazy': 'Mohamed Ghazy',
+    'Hisham Reda': 'Hisham Reda',
+    'Mohamed Hamada': 'Mohamed Hamada',
+    'Mostafa Bakry': 'Mostafa Bakry',
+    'Ahmed Hamada': 'Ahmed Hamada',
+    'Hussien Amr': 'Hussien Amr',
+    'Mina Assaad': 'Mina Assaad',
   },
 };
 
@@ -220,35 +238,34 @@ const TeamPage: React.FC = () => {
             "bg-gradient-to-br from-[#a8e063] via-[#78c850] to-[#56ab2f] border-[#56ab2f]/30"
           )} />
       <Canvas className="h-full w-full rounded-3xl ">
-  <ambientLight intensity={0.3} />
-  <directionalLight position={[5, 5, 5]} intensity={0.4} />
-  <Suspense fallback={<CanvasLoader />}>
-    <CharacterComponent position={[0, -4, 0]} scale={3} />
-    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -3.01, 0]} receiveShadow>
-      <planeGeometry args={[500, 500]} />
-      <shadowMaterial opacity={0.3} />
-    </mesh>
-    <ContactShadows renderOrder={2} frames={1} resolution={1024} scale={120} blur={2} opacity={0.6} far={100} />
-    {/* <Environment files="/old_depot_2k.hdr" ground={{ height: 35, radius: 200, scale: 200 }} /> */}
-    <Environment preset='sunset'/>
-    <EffectComposer multisampling={8}>
-  <Bloom
-    luminanceThreshold={5}
-    mipmapBlur
-    luminanceSmoothing={0.2}
-    intensity={6}
-  />
-</EffectComposer>
-<Ground/>
-    <OrbitControls
-      enableZoom={true}
-      enablePan={false}
-      minPolarAngle={0}
-      maxPolarAngle={Math.PI / 2.25}
-      makeDefault
-    />
-  </Suspense>
-</Canvas>
+        <Suspense fallback={<CanvasLoader />}>
+          <ambientLight intensity={0.3} />
+          <directionalLight position={[5, 5, 5]} intensity={0.4} />
+          <CharacterComponent position={[0, -4, 0]} scale={3} />
+          <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -3.01, 0]} receiveShadow>
+            <planeGeometry args={[500, 500]} />
+            <shadowMaterial opacity={0.3} />
+          </mesh>
+          <ContactShadows renderOrder={2} frames={1} resolution={1024} scale={120} blur={2} opacity={0.6} far={100} />
+          <Environment preset="sunset" />
+          <EffectComposer multisampling={8}>
+            <Bloom
+              luminanceThreshold={5}
+              mipmapBlur
+              luminanceSmoothing={0.2}
+              intensity={6}
+            />
+          </EffectComposer>
+          <Ground />
+          <OrbitControls
+            enableZoom={true}
+            enablePan={false}
+            minPolarAngle={0}
+            maxPolarAngle={Math.PI / 2.25}
+            makeDefault
+          />
+        </Suspense>
+      </Canvas>
 
         </div>
 
@@ -264,17 +281,17 @@ const TeamPage: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-2xl font-bold dark:text-white text-gray-800 mb-3">
-              {names[character.name]}
+              {names[character.name as keyof typeof names] || character.name}
             </h2>
             <h3 className="text-xl font-semibold dark:text-white/80 text-gray-800 mb-6">
-              {t.roles[character.roleKey] || character.roleKey}
+              {t.roles[character.roleKey as keyof typeof t.roles] || character.roleKey}
             </h3>
 
             <div className="mt-6 space-y-3">
               {character.skills.map((skill, index) => (
                 <div className="w-full" key={index}>
                   <h4 className="text-base font-semibold dark:text-white/90 text-gray-800 mb-1">
-                    {t.qualities[skill.key] || skill.key}
+                    {t.qualities[skill.key as keyof typeof t.qualities] || skill.key}
                   </h4>
                   <div className="h-2 w-full bg-white/20 rounded-full mt-1 relative">
                     <motion.div

@@ -54,6 +54,32 @@ const clientsContent = {
         "Telecom & Technology": "Telecomunicaciones y Tecnología",
         "Religious Institutions": "Instituciones Religiosas"
       }
+    },
+    de: {
+      title: "Unsere Kunden",
+      subtitle: "Vertrauenswürdige Partner",
+      description: "Wir sind stolz darauf, eine vielfältige Palette von Kunden in verschiedenen Branchen zu bedienen.",
+      groups: {
+        "Educational Institutions": "Bildungseinrichtungen",
+        "Hospitals & Healthcare": "Krankenhäuser & Gesundheitswesen",
+        "Hotels & Tourism": "Hotels & Tourismus",
+        "Corporates & Industry": "Unternehmen & Industrie",
+        "Telecom & Technology": "Telekommunikation & Technologie",
+        "Religious Institutions": "Religiöse Einrichtungen"
+      }
+    },
+    zh: {
+      title: "我们的客户",
+      subtitle: "值得信赖的合作伙伴",
+      description: "我们很自豪能为各个行业的多元化客户提供服务。",
+      groups: {
+        "Educational Institutions": "教育机构",
+        "Hospitals & Healthcare": "医院和医疗保健",
+        "Hotels & Tourism": "酒店和旅游业",
+        "Corporates & Industry": "企业和工业",
+        "Telecom & Technology": "电信和技术",
+        "Religious Institutions": "宗教机构"
+      }
     }
   }
 } satisfies Dictionary;

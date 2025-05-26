@@ -98,7 +98,7 @@ export default function AchievementsPage({ theme }: { theme: "light" | "dark" })
               <div className={cn("inline-block px-3 py-1 rounded-full text-sm font-semibold mb-2", theme === "dark" ? "bg-[#005b94]/30 text-white" : "bg-[#56ab2f]/30 text-gray-800")}>
                 {achievement.year}
               </div>
-            </motion.div>
+        
             <div className={cn("p-6 rounded-lg backdrop-blur-md border", theme === "dark" ? "bg-[#005b94]/20 border-[#005b94]/30" : "bg-[#56ab2f]/20 border-[#56ab2f]/30")}>
               <h3 className={cn("text-xl font-semibold mb-2", theme === "light" ? "text-gray-800" : "text-white")}>
                 {achievement.event}
@@ -106,7 +106,7 @@ export default function AchievementsPage({ theme }: { theme: "light" | "dark" })
               <p className={cn(theme === "light" ? "text-gray-700" : "text-gray-200")}>
                 {achievement.description}
               </p>
-            </div>
+            </div>    </motion.div>
           </div>
         ))}
       </div>

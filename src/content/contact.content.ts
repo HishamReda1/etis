@@ -158,6 +158,84 @@ const contactContent = {
           error: "Error al enviar el mensaje. Por favor intente nuevamente."
         }
       }
+    },
+    de: {
+      title: "Kontakt",
+      subtitle: "Uns",
+      description: "Kontaktieren Sie unser Team für Anfragen und Unterstützung.",
+      contactInfo: {
+        title: "Kontaktinformationen",
+        address: "Adresse",
+        addressValue: "72 Straße, 1. Industriegebiet, Obour Stadt, Ägypten",
+        phone: "Telefon",
+        phoneValue: "+20 109 002 0981, 02 44 891 304, +20 111 511 4445",
+        email: "E-Mail",
+        emailValue: "info@eits-egypt.com",
+        hours: "Öffnungszeiten",
+        hoursValue: "Sonntag-Donnerstag, 9:00 - 17:00 Uhr"
+      },
+      location: {
+        title: "Unser Standort"
+      },
+      form: {
+        title: "Nachricht senden",
+        name: "Name",
+        email: "E-Mail",
+        message: "Nachricht",
+        submit: "Nachricht senden",
+        captcha: "Sicherheitsüberprüfung",
+        errors: {
+          name: "Bitte geben Sie Ihren Namen ein",
+          email: "Bitte geben Sie Ihre E-Mail-Adresse ein",
+          emailInvalid: "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+          message: "Bitte geben Sie Ihre Nachricht ein",
+          captcha: "Sicherheitsüberprüfung fehlgeschlagen. Bitte vervollständigen Sie die Überprüfung."
+        },
+        status: {
+          sending: "Wird gesendet...",
+          success: "Nachricht erfolgreich gesendet!",
+          error: "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
+        }
+      }
+    },
+    zh: {
+      title: "联系",
+      subtitle: "我们",
+      description: "联系我们的团队获取咨询和支持。",
+      contactInfo: {
+        title: "联系信息",
+        address: "地址",
+        addressValue: "埃及奥布尔市第一工业区72街",
+        phone: "电话",
+        phoneValue: "+20 109 002 0981, 02 44 891 304, +20 111 511 4445",
+        email: "电子邮件",
+        emailValue: "info@eits-egypt.com",
+        hours: "营业时间",
+        hoursValue: "周日-周四，上午9:00 - 下午5:00"
+      },
+      location: {
+        title: "我们的位置"
+      },
+      form: {
+        title: "发送消息",
+        name: "姓名",
+        email: "电子邮件",
+        message: "消息",
+        submit: "发送消息",
+        captcha: "安全验证",
+        errors: {
+          name: "请输入您的姓名",
+          email: "请输入您的电子邮件",
+          emailInvalid: "请输入有效的电子邮件地址",
+          message: "请输入您的消息",
+          captcha: "安全验证失败。请完成验证。"
+        },
+        status: {
+          sending: "发送中...",
+          success: "消息发送成功！",
+          error: "消息发送失败。请重试。"
+        }
+      }
     }
   }
 } satisfies Dictionary;
