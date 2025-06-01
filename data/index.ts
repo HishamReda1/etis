@@ -5,9 +5,10 @@ export const navItems = [
   { name: "Partners", ariaLabel: "Partners", link: "#partners" },
   { name: "Clients", ariaLabel: "Clients", link: "#clients" },
   { name: "Projects", ariaLabel: "Projects", link: "#projects" },
-  { name: "Achievements", ariaLabel: "Achievements", link: "achievements" },
-  { name: "Team", ariaLabel: "Team", link: "team" },
-  { name: "Contact", ariaLabel: "Contact", link: "#contact" },
+  { name: "Achievements", ariaLabel: "Achievements", link: "#achievements" },
+  { name: "Team", ariaLabel: "Team", link: "#team" },
+  { name: "Blog", ariaLabel: "Blog", link: "#blog" },
+  { name: "Contact", ariaLabel: "Contact", link: "#contact" }
 ];
 
 import companyHistoryContent from "@/src/content/company-history.content";
@@ -90,21 +91,21 @@ export const logoData = {
       },
     },
     {
-      id: "nvent-hoffman",
-      src: "https://www.nvent.com/themes/custom/particle/dist/app-drupal/assets/images/logo-hoffman.svg",
-      link: "https://www.nvent.com/",
+      id: "sontay",
+      src: "https://son04-live-0559e086fe33459f92ce8a277429-ab9e917.divio-media.org/filer_public_thumbnails/filer_public/11/88/11883920-fef8-4359-b638-0a342ae6aa66/sontay_logo-white-academy.png__800x500_q90_crop_subsampling-2_upscale.png.webp",
+      link: "https://www.sontay.com/en-gb/",
       quote:
-        "nVent HOFFMAN provides electrical enclosures and solutions for industrial and commercial applications.",
-      alt: "nVent HOFFMAN",
+        "Sontay provides control peripherals and field devices for building management systems, enhancing energy efficiency.",
+      alt: "Sontay",
       width: 60,
       height: 60,
       className: "size-24 p-2 z-20",
-      position: "bottom-right",
+      position: "bottom-left",
       beam: {
-        curvature: 50,
-        startXOffset: -20,
-        endXOffset: 20,
-        reverse: true,
+        curvature: -50,
+        startXOffset: 20,
+        endXOffset: -20,
+        reverse: false,
       },
     },
     {
@@ -125,22 +126,23 @@ export const logoData = {
         reverse: true,
       },
     },
+   
     {
-      id: "sontay",
-      src: "https://son04-live-0559e086fe33459f92ce8a277429-ab9e917.divio-media.org/filer_public_thumbnails/filer_public/11/88/11883920-fef8-4359-b638-0a342ae6aa66/sontay_logo-white-academy.png__800x500_q90_crop_subsampling-2_upscale.png.webp",
-      link: "https://www.sontay.com/en-gb/",
+      id: "nvent-hoffman",
+      src: "https://www.nvent.com/themes/custom/particle/dist/app-drupal/assets/images/logo-hoffman.svg",
+      link: "https://www.nvent.com/",
       quote:
-        "Sontay provides control peripherals and field devices for building management systems, enhancing energy efficiency.",
-      alt: "Sontay",
+        "nVent HOFFMAN provides electrical enclosures and solutions for industrial and commercial applications.",
+      alt: "nVent HOFFMAN",
       width: 60,
       height: 60,
       className: "size-24 p-2 z-20",
-      position: "bottom-left",
+      position: "bottom-right",
       beam: {
-        curvature: -50,
-        startXOffset: 20,
-        endXOffset: -20,
-        reverse: false,
+        curvature: 50,
+        startXOffset: -20,
+        endXOffset: 20,
+        reverse: true,
       },
     },
   ],
@@ -186,12 +188,10 @@ export const clientLogosGrouped = {
     { img: "/must.svg", name: "MUST University", title: "MUST University", link: "https://www.must.edu.eg/" },
     { img: "/bue.png", name: "BUE", title: "BUE", link: "https://www.bue.edu.eg/" },
     { img: "/Cairo_University.png", name: "Cairo University", title: "Cairo University", link: "https://cu.edu.eg/" },
-    { img: "/ainshams.png", name: "Ain Shams Pediatric", title: "Ain Shams University Pediatric", link: "https://www.asu.edu.eg/" },
-    { img: "/tanta.png", name: "Tanta Hospitals", title: "Tanta Hospitals", link: "https://www.tanta.edu.eg/" },
-    { img: "/helwan.png", name: "Helwan Hospital", title: "Helwan University Hospitals", link: "https://www.helwan.edu.eg/" },
-    { img: "/cairo.png", name: "Cairo University Hospitals", title: "Cairo University Hospitals", link: "https://cu.edu.eg/" },
-    { img: "/helwan2.png", name: "Helwan National University", title: "Helwan National University", link: "https://www.helwan.edu.eg/" },
-    { img: "/port.png", name: "Port Said University Hospitals", title: "Port Said University Hospitals", link: "https://www.psu.edu.eg/" },
+
+   
+  
+   
   ],
   "Hospitals & Healthcare": [
     { img: "/may.png", name: "15 May Hospital", title: "15 May Specialized Hospital", link: "https://www.mohp.gov.eg/" },
@@ -199,6 +199,12 @@ export const clientLogosGrouped = {
     { img: "/demrdash.png", name: "Demerdash Hospital", title: "Demerdash Hospital", link: "https://www.asu.edu.eg/" },
     { img: "/ministry-of-health-egypt.png", name: "Ministry of Health", title: "Ministry of Health", link: "https://www.mohp.gov.eg/" },
     { img: "/ahlybank.png", name: "Ahly Bank Hospital", title: "Ahly Bank Hospital", link: "https://www.ahlybank.com/" },
+    { img: "/ainshams.png", name: "Ain Shams Pediatric", title: "Ain Shams University Pediatric", link: "https://www.asu.edu.eg/" },
+    { img: "/tanta.png", name: "Tanta Hospitals", title: "Tanta Hospitals", link: "https://www.tanta.edu.eg/" },
+    { img: "/helwan2.png", name: "Helwan National University", title: "Helwan National University", link: "https://www.helwan.edu.eg/" },
+    { img: "/port.png", name: "Port Said University Hospitals", title: "Port Said University Hospitals", link: "https://www.psu.edu.eg/" },
+    { img: "/helwan.png", name: "Helwan Hospital", title: "Helwan University Hospitals", link: "https://www.helwan.edu.eg/" },
+    { img: "/cairo.png", name: "Cairo University Hospitals", title: "Cairo University Hospitals", link: "https://cu.edu.eg/" },
 
   ],
   "Hotels & Tourism": [
@@ -208,19 +214,20 @@ export const clientLogosGrouped = {
     { img: "/vox-cinema.png", name: "Vox Cinema", title: "Vox Cinema", link: "https://www.voxcinema.com/" },
     { img: "/burak.png", name: "CZN Burak", title: "CZN Burak Restaurant", link: "https://www.cznburakegypt.com/" },
   ],
- 
   "Religious Institutions": [
-    { img: "/eftaa.png", name: "EFTAA", title: "EFTAA Medical Organization", link: "https://www.dar-alifta.org/" },
+    { img: "/eftaa.png", name: "EFTAA", title: "EFTAA Religious Institution", link: "https://www.dar-alifta.org/" },
   ]
  , "Corporates & Industry": [
-    { img: "/edita.png", name: "Edita", title: "Edita Food Industries", link: "https://edita.com.eg/" },
+    { img: "https://edita.com.eg/wp-content/uploads/2023/03/edita-new-logo.png", name: "Edita", title: "Edita Food Industries", link: "https://edita.com.eg/" },
     { img: "/P_G.png", name: "P&G", title: "P&G", link: "https://www.pg.com/" },
     { img: "/henkel.png", name: "Henkel", title: "Henkel", link: "https://www.henkel.com/" },
     { img: "/pepsico-logo.png", name: "PepsiCo", title: "PepsiCo", link: "https://www.pepsico.com/" },
+    { img: "/Harvest.png", name: "Harvest", title: "Harvest", link: "https://www.linkedin.com/company/harvest-foods-egypt/?originalSubdomain=eg" },
     { img: "/misr-italia-logo.png", name: "Misr Italia", title: "Misr Italia Properties", link: "https://www.misritaliaproperties.com/" },
     { img: "/mondelez.png", name: "Mondelez", title: "Mondelez International", link: "https://www.mondelezinternational.com/" },
     { img: "/midor.png", name: "Midor", title: "Midor", link: "https://www.midor.com/" },
     { img: "/petrojet-logo-white.svg", name: "Petrojet", title: "Petrojet", link: "https://www.petrojet.com/" },
+    { img: "/ExxonMobil.png", name: "ExxonMobil", title: "ExxonMobil", link: "https://corporate.exxonmobil.com/" },
   ],
   "Telecom & Technology": [
     { img: "/telecom-egypt.png", name: "Telecom Egypt", title: "Telecom Egypt", link: "https://www.te.eg/" },
@@ -1092,6 +1099,7 @@ export const allProjects: Project[] = [
     contractor: "T&S",
     application: "DDC",
     link: "https://handballegypt2021.com/en/venues/2/New-Capital-Sports-Hall,-Cairo",
+    
   },
   {
     id: 85,
@@ -1112,8 +1120,8 @@ export const allProjects: Project[] = [
     contractor: "ELHAMD",
     application: "DDC",
     link: "",
-  },
-  {
+  },                              
+  {     
     id: 87,
     title: "Blood bank (Tanta)",
     description: "Blood bank management and control",
@@ -1163,8 +1171,5 @@ export const allProjects: Project[] = [
     application: "DDC-MCC",
     link: "https://www.google.com/search?sca_esv=c7370d0d94b48ee2&sxsrf=AHTn8zpXrEBWObBm-szcMfH1DBPgOfleZQ:1745244339564&q=%D9%85%D8%AF%D9%8A%D9%86%D8%A9+%D9%86%D8%B5%D8%B1+%D8%A7%D9%84%D9%8A%D9%88%D9%85+%D8%A7%D9%84%D9%88%D8%A7%D8%AD%D8%AF&udm=2&fbs=ABzOT_CWdhQLP1FcmU5B0fn3xuWpA-dk4wpBWOGsoR7DG5zJBjLjqIC1CYKD9D-DQAQS3Z7jD_sfq51a5p71nGORyf6pMeWR8h7KFirG_407YbNvbLGNepxlRSQCfHxIQ-8ltOU0t5YmJuCTT-U_OznYuNFUYPetWXc-HAxcfnz3mvqvzXoWx7u6HYxt3E6lO+FJYWN-kyxZUYYTBZtH1vO6l3H_VePKNQ&sa=X&ved=2ahUKEwiQw5_npemMAxXtdaQEHazTCI8QtKgLegQIEBAB&biw=1242&bih=552&dpr=1.1#vhid=CXHDNBqTqal4fM&vssid=mosaic",
   },
-
-
-
 
 ]

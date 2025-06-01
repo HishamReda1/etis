@@ -12,7 +12,8 @@ const navigationContent = {
       projects: "Projects",
       achievements: "Achievements",
       team: "Team",
-      contact: "Contact"
+      contact: "Contact",
+      blog: "Blog"
     },
     ar: {
       home: "الرئيسية",
@@ -23,7 +24,8 @@ const navigationContent = {
       projects: "المشاريع",
       achievements: "الإنجازات",
       team: "الفريق",
-      contact: "تواصل معنا"
+      contact: "تواصل معنا",
+      blog: "المدونة"
     },
     fr: {
       home: "Accueil",
@@ -34,7 +36,8 @@ const navigationContent = {
       projects: "Projets",
       achievements: "Réalisations",
       team: "Équipe",
-      contact: "Contact"
+      contact: "Contact",
+      blog: "Blog"
     },
     es: {
       home: "Inicio",
@@ -45,7 +48,8 @@ const navigationContent = {
       projects: "Proyectos",
       achievements: "Logros",
       team: "Equipo",
-      contact: "Contacto"
+      contact: "Contacto",
+      blog: "Blog"
     },
     de: {
       home: "Startseite",
@@ -56,7 +60,8 @@ const navigationContent = {
       projects: "Projekte",
       achievements: "Erfolge",
       team: "Team",
-      contact: "Kontakt"
+      contact: "Kontakt",
+      blog: "Blog"
     },
     zh: {
       home: "首页",
@@ -67,7 +72,8 @@ const navigationContent = {
       projects: "项目",
       achievements: "成就",
       team: "团队",
-      contact: "联系我们"
+      contact: "联系我们",
+      blog: "博客"
     }
   }
 } satisfies Dictionary;

@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaYoutube } from 'react-icons/fa6';
 import { AiOutlineLike } from 'react-icons/ai';
+import { IoMdClose } from 'react-icons/io';
 import moment from 'moment'; 
-import { useEffect } from 'react';
 import { useParams } from 'next/navigation';
+import { createPortal } from 'react-dom';
 
 const getRandomDate = () => {
   const currentDate = new Date();
   const pastDate = new Date();
-  const yearsAgo = Math.floor(Math.random() * 5) + 1; // Random number between 1 and 5 years
+  const yearsAgo = Math.floor(Math.random() * 5) + 1; 
   pastDate.setFullYear(currentDate.getFullYear() - yearsAgo);
-  const randomMonth = Math.floor(Math.random() * 12); // Random month
-  const randomDay = Math.floor(Math.random() * 28); // Random day (28 days for simplicity)
+  const randomMonth = Math.floor(Math.random() * 12);
+  const randomDay = Math.floor(Math.random() * 28); 
   pastDate.setMonth(randomMonth);
   pastDate.setDate(randomDay);
 
@@ -96,6 +97,34 @@ const interfaceText = {
   }
 };
 
+const VideoModal = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  return createPortal(
+    <div className="fixed inset-0 z-[9999] bg-black bg-opacity-90 flex items-center justify-center">
+      <div className="relative w-full h-full max-w-7xl mx-auto p-4">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-white hover:text-gray-300 z-[10000]"
+        >
+          <IoMdClose className="text-3xl" />
+        </button>
+        <div className="relative w-full h-full">
+          <iframe
+            src="https://player.vimeo.com/video/1084162752?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            allowFullScreen
+            title="eits"
+            className="w-full h-full rounded-xl"
+          ></iframe>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+};
+
 const YouTubeInterface = () => {
   const [likes, setLikes] = useState(0);
   const [commentText, setCommentText] = useState('');
@@ -105,6 +134,8 @@ const YouTubeInterface = () => {
   const params = useParams();
   const locale = params?.locale || "en";
   const t = interfaceText[locale] || interfaceText.en;
+
+  const videoContainerRef = useRef(null);
 
   const handleLike = () => setLikes(likes + 1);
 
@@ -145,16 +176,14 @@ const YouTubeInterface = () => {
       </div>
 
       {/* Video */}
-      <div className="mb-4">
-        <div className="relative" style={{ paddingTop: "56.25%" }}>
+      <div className="mb-4 relative">
+        <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
           <iframe
             src="https://player.vimeo.com/video/1084162752?badge=0&autopause=0&player_id=0&app_id=58479"
-            frameBorder="0"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-            allowFullScreen
-            title="eits"
-            className="absolute top-0 left-0 w-full h-full rounded-xl"
-          ></iframe>
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+            title="eits-introduction"
+          />
         </div>
       </div>
 
@@ -225,4 +254,5 @@ const YouTubeInterface = () => {
   );
 };
 
+export { VideoModal };
 export default YouTubeInterface;

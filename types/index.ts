@@ -20,7 +20,7 @@ export interface ThemeProps {
   theme: "light" | "dark"
 }
 
-export type PageType = "home" | "about" | "partners" | "clients" | "contact"| "achievements"| "projects" | "products"| "team"
+export type PageType = "home" | "about" | "partners" | "clients" | "contact"| "achievements"| "projects" | "products"| "team" | "blog"
 
 export interface SidebarContextProps {
   open: boolean

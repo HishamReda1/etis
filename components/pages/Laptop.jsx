@@ -4,6 +4,7 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { Html, Environment, useGLTF, ContactShadows, OrbitControls } from '@react-three/drei'
 import { useSpring, a } from '@react-spring/three'
 import HeroPage from './HeroPage'
+import VideoMaximizeButton from './VideoMaximizeButton'
 import CanvasLoader from './Loading'
 import * as THREE from 'three'
 
@@ -86,21 +87,24 @@ export default function Laptop() {
   }, [])
 
   return (
-    <Canvas camera={{ position: isMobile ? [-5, 0, -20] : [-5, 0, -15], fov: 55 }}>
-      <pointLight position={[10, 10, 10]} intensity={1.5} />
-      <Suspense fallback={<CanvasLoader />}>
-        <group rotation={[0, Math.PI, 0]} position={[0, 1, 0]} onClick={() => setOpen(!open)}>
-          <Model hinge={hinge} open={open} />
-        </group>
+    <>
+      <Canvas camera={{ position: isMobile ? [-5, 0, -20] : [-5, 0, -15], fov: 55 }}>
+        <pointLight position={[10, 10, 10]} intensity={1.5} />
+        <Suspense fallback={<CanvasLoader />}>
+          <group rotation={[0, Math.PI, 0]} position={[0, 1, 0]} onClick={() => setOpen(!open)}>
+            <Model hinge={hinge} open={open} />
+          </group>
         <Environment preset="city" />
-      </Suspense>
-      <ContactShadows position={[0, -2, 0]} scale={15} blur={2} far={4.5} />
-      <OrbitControls
-        enablePan={false}
-        enableZoom={false}
-        minPolarAngle={Math.PI / 2.2}
-        maxPolarAngle={Math.PI / 2.2}
-      />
-    </Canvas>
+        </Suspense>
+        <ContactShadows position={[0, -2, 0]} scale={15} blur={2} far={4.5} />
+        <OrbitControls
+          enablePan={false}
+          enableZoom={false}
+          minPolarAngle={Math.PI / 2.2}
+          maxPolarAngle={Math.PI / 2.2}
+        />
+      </Canvas>
+      <VideoMaximizeButton />
+    </>
   )
 }

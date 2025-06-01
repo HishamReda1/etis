@@ -41,7 +41,6 @@ const FactoryCanvas = () => {
         </group>
       </Suspense>
       <OrbitControls enableDamping maxPolarAngle={Math.PI / 2} autoRotate autoRotateSpeed={0.3} />
-     
     </Canvas>
   );
 };

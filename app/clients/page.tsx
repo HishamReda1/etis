@@ -12,7 +12,7 @@ import Link from 'next/link';
 
 type GroupKey = "Educational Institutions" | "Hospitals & Healthcare" | "Hotels & Tourism" | "Corporates & Industry" | "Telecom & Technology" | "Religious Institutions";
 
-export default function ClientsPage() {
+export default function ClientsPage({ theme }: { theme: "light" | "dark" }) {
   const params = useParams();
   const locale = params?.locale as keyof typeof clientsContent.content || "en";
   const content = clientsContent;
@@ -25,7 +25,6 @@ export default function ClientsPage() {
         subtitle={content.content[validLocale].subtitle}
         description={content.content[validLocale].description}
       />
-
       <div className="container mx-auto px-4 py-12 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 100 }}

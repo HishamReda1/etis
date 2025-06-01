@@ -136,10 +136,10 @@ const projectsContent = {
       }
     },
     ar: {
-      title: "مشاريعنا",
+      title: "معــرض",
       subtitle: "قصص النجاح",
       description: "استكشف محفظة مشاريعنا الناجحة في مختلف القطاعات.",
-      portfolio: "المحفظة",
+      portfolio: "أعمالــنا",
       showing: "عرض",
       of: "من",
       projects: "مشاريع",

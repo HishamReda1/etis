@@ -8,7 +8,6 @@ const robots = (): MetadataRoute.Robots => ({
   rules: {
     userAgent: "*",
     allow: ["/"],
-    disallow: getAllMultilingualUrls(["/login", "/register"]),
   },
   host: "https://eits-egypt.com",
   sitemap: `https://eits-egypt.com/sitemap.xml`,

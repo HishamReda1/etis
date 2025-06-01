@@ -25,6 +25,7 @@ import type { NavigationLink, PageType } from "@/types";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { useLocale } from "next-intlayer";
 import navigationContent from "@/src/content/navigation.content";
+import { LiaNewspaperSolid } from "react-icons/lia";
 
 const themeLabels = {
   en: {
@@ -96,6 +97,8 @@ const SidebarContent = () => {
         return <ProductsIcon className={`h-5 w-5 shrink-0 ${activeClass}`} />;
       case "team":
         return <UsersIcon className={`h-5 w-5 shrink-0 ${activeClass}`} />;
+      case "blog":
+        return <LiaNewspaperSolid className={`h-5 w-5 shrink-0 ${activeClass}`} />;
       default:
         return <HomeIcon className={`h-5 w-5 shrink-0 ${activeClass}`} />;
     }

@@ -12,7 +12,7 @@ const homeContent =({
       }
     },
     ar: {
-      title: 'ايتس',
+      title: 'eits',
       subtitle: 'العالمية للطاقة للحلول التقنية',
       tagline: 'لمسة واحدة لتغيير حياتك',
       socialMedia: {

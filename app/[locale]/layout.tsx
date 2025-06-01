@@ -8,10 +8,53 @@ const inter = Inter({ subsets: ["latin"] });
 const cairo = Cairo({ subsets: ["arabic"] });
 
 export const metadata = {
-  title: "EITS | BMS Systems, Lighting Control & Electrical Solutions in Egypt",
-  description:
-    "EITS - رواد أنظمة إدارة المباني (BMS) والتحكم الذكي في الإضاءة، وأنظمة الكهرباء، وحلول الحماية والمراقبة في مصر. شريك معتمد لهوني ويل (Honeywell) وABB وSiemens. خدماتنا تشمل: تركيب الأنظمة، مراكز صيانة، لوحات كهربائية، كاميرات مراقبة، وأنظمة HVAC للمستشفيات والفنادق. EITS is a certified Honeywell Platinum Partner in Egypt, providing BMS, smart lighting control, electrical panels, CCTV, HVAC installation, and repair services. Your building, smarter and safer with EITS. EITS - Leader des systèmes de gestion de bâtiments (BMS) et du contrôle intelligent de l'éclairage, des systèmes électriques et des solutions de sécurité et de surveillance en Égypte. Partenaire certifié de Honeywell, ABB et Siemens. EITS - Líder en sistemas de gestión de edificios (BMS) y control inteligente de iluminación, sistemas eléctricos y soluciones de seguridad y vigilancia en Egipto. EITS - Führender Anbieter von Gebäudemanagementsystemen (BMS), intelligenter Lichtsteuerung, elektrischen Systemen sowie Sicherheits- und Überwachungslösungen in Ägypten. EITS - 埃及领先的楼宇管理系统(BMS)、智能照明控制、电气系统和安防监控解决方案提供商。",
+  title: "EITS | Leading BMS Systems & Smart Solutions in Egypt | Honeywell Partner",
+  description: "EITS - مصر's leading BMS, smart lighting control, and electrical solutions provider. Certified Honeywell Platinum Partner offering comprehensive building management systems, HVAC solutions, and security systems. Trusted by major hotels and hospitals across Egypt.",
   metadataBase: new URL("https://eits-egypt.com"),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en': '/en',
+      'ar': '/ar',
+      'fr': '/fr',
+      'es': '/es',
+      'de': '/de',
+      'zh': '/zh',
+    },
+  },
+  openGraph: {
+    title: 'EITS | Smart Building Solutions in Egypt',
+    description: 'Leading provider of BMS, smart lighting, and electrical solutions in Egypt. Certified Honeywell Partner.',
+    url: 'https://eits-egypt.com',
+    siteName: 'EITS Egypt',
+    images: [
+      {
+        url: 'https://eits-egypt.com/Logoicon.svg',
+        width: 1200,
+        height: 630,
+        alt: 'EITS Smart Solutions',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'EITS | Smart Building Solutions in Egypt',
+    description: 'Leading provider of BMS, smart lighting, and electrical solutions in Egypt.',
+    images: ['https://eits-egypt.com/twitter-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export const viewport = {
@@ -21,6 +64,8 @@ export const viewport = {
   ],
   width: "device-width",
   initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
 };
 
 const LocaleLayout: NextLayoutIntlayer = async ({ children, params }) => {
@@ -35,7 +80,11 @@ const LocaleLayout: NextLayoutIntlayer = async ({ children, params }) => {
           content="1kRDd_DudAg8ZCwRGJb_DXs1yD6drrAyX9K4MRZPDW0"
         />
         <link rel="icon" href="/favicon-16x16.png" type="image/svg+xml" />
-        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={`https://eits-egypt.com/${locale}`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="author" content="EITS Egypt" />
+        <meta name="geo.region" content="EG" />
+        <meta name="geo.placename" content="Cairo, Egypt" />
         <meta
           name="keywords"
           content="BMS, EITS, Building Management Systems, Egypt, Honeywell, Lighting Control, Electricity, Siemens, ABB, Surveillance Cameras, Technological Solutions, أنظمة إدارة المباني, التحكم في الإضاءة, كهرباء, سيمنز, كاميرات مراقبة, حلول تكنولوجية, Systèmes de Gestion de Bâtiments, Contrôle d'Éclairage, Électricité, Caméras de Surveillance, Solutions Technologiques, Sistemas de Gestión de Edificios, Control de Iluminación, Electricidad, Cámaras de Vigilancia, Soluciones Tecnológicas, Gebäudemanagementsysteme, Lichtsteuerung, Elektrizität, Überwachungskameras, Technologische Lösungen, 楼宇管理系统, 照明控制, 电力, 监控摄像头, 技术解决方案"
@@ -46,20 +95,42 @@ const LocaleLayout: NextLayoutIntlayer = async ({ children, params }) => {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
+              "@id": "https://eits-egypt.com/#organization",
               name: "EITS",
               url: "https://eits-egypt.com",
-              logo: "https://eits-egypt.com/logo.png",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://eits-egypt.com/logo.png",
+                width: "112",
+                height: "112"
+              },
               sameAs: [
                 "https://www.linkedin.com/company/eits-automation-control/",
-                "https://www.facebook.com/eitscontrol/",
+                "https://www.facebook.com/eitscontrol/"
               ],
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+20 109 002 0981",
                 contactType: "Customer Service",
                 areaServed: "EG",
-                availableLanguage: ["Arabic", "English", "French", "Spanish","German,Chinese"],
+                availableLanguage: ["Arabic", "English", "French", "Spanish", "German", "Chinese"],
+                email: "info@eits-egypt.com"
               },
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "EG",
+                addressLocality: "Cairo",
+                addressRegion: "Cairo"
+              },
+              description: "Leading provider of BMS, smart lighting control, and electrical solutions in Egypt. Certified Honeywell Partner.",
+              foundingDate: "2008",
+              knowsAbout: [
+                "Building Management Systems",
+                "Smart Lighting Control",
+                "Electrical Solutions",
+                "HVAC Systems",
+                "Security Systems"
+              ]
             }),
           }}
         />

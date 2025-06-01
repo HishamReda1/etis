@@ -117,17 +117,14 @@
   height: 216px;
   background: #f0f0f0;
   border-radius: 3px;
-  overflow-y: auto;
-  overflow-x: hidden; /* هنا بنخفي سكرول X */
-  padding: 0;
+  overflow: auto; /* استخدام auto بدلاً من تحديد اتجاه معين */
 }
 
 .wrapper {
   padding: 10px;
-  width: 668px;
-  height: 432px;
-  transform: scale(0.5);
-  transform-origin: top left;
+  width: 100%; /* استخدام العرض الكامل للعنصر الأب */
+  height: 100%;
+  /* إزالة تحويل التحجيم هنا */
 }
 @layer components {
   /* Custom scrollbar styling */

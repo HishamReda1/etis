@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { SparklesPreview } from "@/components/SparklesPreview";
 import { EnhancedGallery } from "@/components/pages/enhanced-gallery";
-
 import { useParams } from "next/navigation";
 import aboutContent from "@/src/content/about.content";
 import eventsContent from "@/src/content/events.content";
@@ -75,8 +74,6 @@ export default function AboutPage({ theme }: { theme: "light" | "dark" }) {
           <WorldMapDemo />
         </div>
       </section>
-
-      {/* Sparkles section */}
       <SparklesPreview />
     </div>
   );

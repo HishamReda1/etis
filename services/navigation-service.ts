@@ -24,6 +24,8 @@ export const navigationService = {
         return "team";
       case "products":
         return "products";
+        case "blog":
+          return "blog";
       default:
         return "home"; // القيمة الافتراضية في حالة لم يتوافق الاسم مع أي صفحة
     }

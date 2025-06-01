@@ -1,5 +1,5 @@
 "use client"
-import { companyHistory } from "@/data";
+
 import { cn } from "@/lib/utils";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import { motion } from "framer-motion";
@@ -31,9 +31,9 @@ export default function AchievementsPage({ theme }: { theme: "light" | "dark" })
     <div className={cn("space-y-6", validLocale === "ar" && "rtl")}>
       <h1 className={cn("text-4xl font-bold", theme === "light" ? "text-gray-800" : "text-white")}>
         <span className="text-[#8DC63F] dark:text-[#00AEEF]">{t.title}</span>
-      </h1>
-      
+      </h1> 
       <Accordion>
+
         {/* Revenue Section */}
         <AccordionItem title={t.sections.revenue} theme={theme}>
           <motion.div initial={{ opacity: 0.5, y: 100 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.8, ease: "easeInOut" }}>
@@ -83,11 +83,9 @@ export default function AchievementsPage({ theme }: { theme: "light" | "dark" })
           </motion.div>
         </AccordionItem>
       </Accordion>
-
       <p className={cn("text-lg", theme === "light" ? "text-gray-700" : "text-gray-100")}>
         {t.description}
       </p>
-      
       <div className={cn("relative mt-8 pl-8 border-l-2 space-y-10 md:pl-10 md:space-y-12", validLocale === "ar" && "border-r-2 border-l-0 pl-0 pr-8 md:pr-10")}>
         {historyContent.history.map((achievement, index) => (
           <div key={`achievement-${index}`} className="relative">
@@ -98,7 +96,6 @@ export default function AchievementsPage({ theme }: { theme: "light" | "dark" })
               <div className={cn("inline-block px-3 py-1 rounded-full text-sm font-semibold mb-2", theme === "dark" ? "bg-[#005b94]/30 text-white" : "bg-[#56ab2f]/30 text-gray-800")}>
                 {achievement.year}
               </div>
-        
             <div className={cn("p-6 rounded-lg backdrop-blur-md border", theme === "dark" ? "bg-[#005b94]/20 border-[#005b94]/30" : "bg-[#56ab2f]/20 border-[#56ab2f]/30")}>
               <h3 className={cn("text-xl font-semibold mb-2", theme === "light" ? "text-gray-800" : "text-white")}>
                 {achievement.event}
@@ -106,7 +103,8 @@ export default function AchievementsPage({ theme }: { theme: "light" | "dark" })
               <p className={cn(theme === "light" ? "text-gray-700" : "text-gray-200")}>
                 {achievement.description}
               </p>
-            </div>    </motion.div>
+            </div>
+           </motion.div>
           </div>
         ))}
       </div>

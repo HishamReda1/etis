@@ -9,7 +9,7 @@ const sparklesContent = {
     },
     ar: {
       title: "في مصر",
-      subtitle: "نحن الشريك القوي المتصل لدى"
+      subtitle: "نحن الشريك البلاتيني الوحيد القوي المتصل لدى"
     },
     fr: {
       title: "nous sommes",

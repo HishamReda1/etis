@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Wrench, Lightbulb, MonitorCog, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,7 +11,6 @@ import { cn } from "@/lib/utils";
 import { useParams } from "next/navigation";
 import productsContent from "@/src/content/products.content";
 
-// Map of icon components
 const iconMap = {
   Wrench,
   Lightbulb,
@@ -27,7 +26,6 @@ export default function ProductShowcase() {
   const content = productsContent;
   const validLocale = locale in content.content ? locale : "en";
 
-  // Function to handle contact via WhatsApp
   const handleContact = (productName: string) => {
     window.open(
       `https://wa.me/+201090020981?text=I'm interested in your ${encodeURIComponent(
@@ -111,6 +109,7 @@ export default function ProductShowcase() {
                                dark:bg-gradient-to-r dark:from-[#005b94] dark:to-[#00AEEF] 
                                bg-gradient-to-r from-[#78c850] to-[#a8e063] 
                                hover:opacity-90 hover:scale-105 transition-all duration-200 ease-in-out"
+                               
                     onClick={() => handleContact(product.name)}
                   >
                     <svg

@@ -27,7 +27,9 @@ const teamContent = {
         frontendDeveloper: "Frontend Developer",
         supplyChainManager: "Supply Chain Manager",
         accountant: "Accountant",
-        salesEngineer: "Sales Engineer"
+        salesEngineer: "Sales Engineer",
+        bmsEngineer: "BMS Engineer",
+        bmsTeamLeader: "BMS Team Leader"
       },
       qualities: {
         expertise: 'Expertise',
@@ -62,7 +64,12 @@ const teamContent = {
         clientConsultation: 'Client Consultation',
         technicalPresentation: 'Technical Presentation',
         sales: 'Sales',
-        negotiation: 'Negotiation'
+        negotiation: 'Negotiation',
+        bmsSystems: 'BMS Systems',
+        automation: 'Automation',
+        systemIntegration: 'System Integration',
+        energyManagement: 'Energy Management',
+        technicalSupport: 'Technical Support'
       },
       teamDescription: {
         leadership: "Our leadership team brings together decades of industry experience and strategic vision to guide our company's growth and innovation.",
@@ -95,7 +102,9 @@ const teamContent = {
         frontendDeveloper: "مطور واجهات أمامية",
         supplyChainManager: "مدير سلسلة التوريد",
         accountant: "محاسب",
-        salesEngineer: "مهندس مبيعات"
+        salesEngineer: "مهندس مبيعات",
+        bmsEngineer: "مهندس أنظمة إدارة المباني",
+        bmsTeamLeader: "قائد فريق أنظمة إدارة المباني"
       },
       qualities: {
         expertise: 'الخبرة',
@@ -130,7 +139,12 @@ const teamContent = {
         clientConsultation: 'استشارة العملاء',
         technicalPresentation: 'العرض التقني',
         sales: 'المبيعات',
-        negotiation: 'المفاوضات'
+        negotiation: 'المفاوضات',
+        bmsSystems: 'أنظمة إدارة المباني',
+        automation: 'الأتمتة',
+        systemIntegration: 'تكامل الأنظمة',
+        energyManagement: 'إدارة الطاقة',
+        technicalSupport: 'الدعم الفني'
       },
       teamDescription: {
         leadership: "يجمع فريق القيادة لدينا عقوداً من الخبرة في الصناعة والرؤية الاستراتيجية لتوجيه نمو وابتكار شركتنا.",
@@ -163,7 +177,9 @@ const teamContent = {
         frontendDeveloper: "Développeur Frontend",
         supplyChainManager: "Responsable de la Chaîne d'Approvisionnement",
         accountant: "Comptable",
-        salesEngineer: "Ingénieur Commercial"
+        salesEngineer: "Ingénieur Commercial",
+        bmsEngineer: "Ingénieur GTC",
+        bmsTeamLeader: "Chef d'Équipe GTC"
       },
       qualities: {
         expertise: 'Compétence Technique',
@@ -198,7 +214,12 @@ const teamContent = {
         clientConsultation: 'Consultation Client',
         technicalPresentation: 'Présentation Technique',
         sales: 'Ventes',
-        negotiation: 'Négociation'
+        negotiation: 'Négociation',
+        bmsSystems: 'Systèmes GTC',
+        automation: 'Automatisation',
+        systemIntegration: 'Intégration Système',
+        energyManagement: 'Gestion de l\'Énergie',
+        technicalSupport: 'Support Technique'
       },
       teamDescription: {
         leadership: "Notre équipe de direction réunit des décennies d'expérience dans l'industrie et une vision stratégique pour guider la croissance et l'innovation de notre entreprise.",
@@ -231,7 +252,9 @@ const teamContent = {
         frontendDeveloper: "Desarrollador Frontend",
         supplyChainManager: "Gerente de Cadena de Suministro",
         accountant: "Contador",
-        salesEngineer: "Ingeniero Comercial"
+        salesEngineer: "Ingeniero Comercial",
+        bmsEngineer: "Ingeniero BMS",
+        bmsTeamLeader: "Líder de Equipo BMS"
       },
       qualities: {
         expertise: 'Competencia Técnica',
@@ -266,7 +289,12 @@ const teamContent = {
         clientConsultation: 'Consulta con Clientes',
         technicalPresentation: 'Presentación Técnica',
         sales: 'Ventas',
-        negotiation: 'Negociación'
+        negotiation: 'Negociación',
+        bmsSystems: 'Sistemas BMS',
+        automation: 'Automatización',
+        systemIntegration: 'Integración de Sistemas',
+        energyManagement: 'Gestión de Energía',
+        technicalSupport: 'Soporte Técnico'
       },
       teamDescription: {
         leadership: "Nuestro equipo directivo reúne décadas de experiencia en la industria y visión estratégica para guiar el crecimiento e innovación de nuestra empresa.",
@@ -299,7 +327,9 @@ const teamContent = {
         frontendDeveloper: "Frontend-Entwickler",
         supplyChainManager: "Supply Chain Manager",
         accountant: "Buchhalter",
-        salesEngineer: "Vertriebsingenieur"
+        salesEngineer: "Vertriebsingenieur",
+        bmsEngineer: "Gebäudeautomationsingenieur",
+        bmsTeamLeader: "Gebäudeautomationsteamleiter"
       },
       qualities: {
         expertise: 'Fachwissen',
@@ -334,7 +364,12 @@ const teamContent = {
         clientConsultation: 'Kundenberatung',
         technicalPresentation: 'Technische Präsentation',
         sales: 'Vertrieb',
-        negotiation: 'Verhandlung'
+        negotiation: 'Verhandlung',
+        bmsSystems: 'Gebäudeautomationssysteme',
+        automation: 'Automatisierung',
+        systemIntegration: 'Systemintegration',
+        energyManagement: 'Energiemanagement',
+        technicalSupport: 'Technischer Support'
       },
       teamDescription: {
         leadership: "Unser Führungsteam vereint jahrzehntelange Branchenerfahrung und strategische Vision, um das Wachstum und die Innovation unseres Unternehmens zu leiten.",
@@ -367,7 +402,9 @@ const teamContent = {
         frontendDeveloper: "前端开发工程师",
         supplyChainManager: "供应链经理",
         accountant: "会计师",
-        salesEngineer: "销售工程师"
+        salesEngineer: "销售工程师",
+        bmsEngineer: "楼宇管理系统工程师",
+        bmsTeamLeader: "楼宇管理系统团队负责人"
       },
       qualities: {
         expertise: '专业知识',
@@ -402,7 +439,12 @@ const teamContent = {
         clientConsultation: '客户咨询',
         technicalPresentation: '技术演示',
         sales: '销售',
-        negotiation: '谈判'
+        negotiation: '谈判',
+        bmsSystems: '楼宇管理系统',
+        automation: '自动化',
+        systemIntegration: '系统集成',
+        energyManagement: '能源管理',
+        technicalSupport: '技术支持'
       },
       teamDescription: {
         leadership: "我们的领导团队汇集了数十年的行业经验和战略愿景，以指导公司的增长和创新。",

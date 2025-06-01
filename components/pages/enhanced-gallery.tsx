@@ -24,13 +24,9 @@ export function EnhancedGallery({ events }: EnhancedGalleryProps) {
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null)
 
   return (
-    <section className="">
+    <section >
       <div className="container mx-auto">
-        <div className="text-center ">
-         
-         
-        </div>
-
+        
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           initial={{ opacity: 0 }}

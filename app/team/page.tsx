@@ -13,6 +13,8 @@ import Roz from '@/components/Roz';
 import Mina from '@/components/Mina';
 import Ghazy from '@/components/Ghazy';
 import Ceo from '@/components/Ceo';
+import Sagan from '@/components/Sagan';
+import Taha from '@/components/Taha';
 import { EffectComposer,Bloom } from '@react-three/postprocessing'
 import Ground from '@/components/Ground';
 import { useParams } from 'next/navigation';
@@ -51,6 +53,8 @@ const teamNames: TeamNames = {
     'Ahmed Hamada': 'Ahmed Hamada',
     'Hussien Amr': 'Hussien Amr',
     'Mina Assaad': 'Mina Assaad',
+    'Ahmed Sagan': 'Ahmed Sagan',
+    'Taha': 'Taha',
   },
   ar: {
     'Alaa Omar': 'علاء عمر',
@@ -61,6 +65,8 @@ const teamNames: TeamNames = {
     'Ahmed Hamada': 'أحمد حمادة',
     'Hussien Amr': 'حسين عمرو',
     'Mina Assaad': 'مينا أسعد',
+    'Ahmed Sagan': 'أحمد سجان',
+    'Taha': 'طه',
   },
   fr: {
     'Alaa Omar': 'Alaa Omar',
@@ -71,6 +77,8 @@ const teamNames: TeamNames = {
     'Ahmed Hamada': 'Ahmed Hamada',
     'Hussien Amr': 'Hussien Amr',
     'Mina Assaad': 'Mina Assaad',
+    'Ahmed Sagan': 'Ahmed Sagan',
+    'Taha': 'Taha',
   },
   es: {
     'Alaa Omar': 'Alaa Omar',
@@ -81,6 +89,8 @@ const teamNames: TeamNames = {
     'Ahmed Hamada': 'Ahmed Hamada',
     'Hussien Amr': 'Hussien Amr',
     'Mina Assaad': 'Mina Assaad',
+    'Ahmed Sagan': 'Ahmed Sagan',
+    'Taha': 'Taha',
   },
   de: {
     'Alaa Omar': 'Alaa Omar',
@@ -91,6 +101,8 @@ const teamNames: TeamNames = {
     'Ahmed Hamada': 'Ahmed Hamada',
     'Hussien Amr': 'Hussien Amr',
     'Mina Assaad': 'Mina Assaad',
+    'Ahmed Sagan': 'Ahmed Sagan',
+    'Taha': 'Taha',
   },
   zh: {
     'Alaa Omar': 'Alaa Omar',
@@ -101,6 +113,8 @@ const teamNames: TeamNames = {
     'Ahmed Hamada': 'Ahmed Hamada',
     'Hussien Amr': 'Hussien Amr',
     'Mina Assaad': 'Mina Assaad',
+    'Ahmed Sagan': 'Ahmed Sagan',
+    'Taha': 'Taha',
   },
 };
 
@@ -211,7 +225,33 @@ const TeamPage: React.FC = () => {
         { key: 'negotiation', level: 80 },
       ],
     },
-   
+    {
+      name: 'Ahmed Sagan',
+      roleKey: 'bmsEngineer',
+      Component: Sagan,
+      image: '/team/sagan.jpg',
+      skills: [
+        { key: 'bmsSystems', level: 95 },
+        { key: 'automation', level: 90 },
+        { key: 'systemIntegration', level: 88 },
+        { key: 'energyManagement', level: 85 },
+        { key: 'technicalSupport', level: 82 },
+      ],
+    },
+    {
+      name: 'Taha',
+      roleKey: 'bmsTeamLeader',
+      Component: Taha,
+      image: '/team/taha.jpg',
+      skills: [
+        { key: 'bmsSystems', level: 98 },
+        { key: 'automation', level: 95 },
+        { key: 'systemIntegration', level: 92 },
+        { key: 'energyManagement', level: 90 },
+        { key: 'leadership', level: 90 },
+        { key: 'technicalSupport', level: 85 },
+      ],
+    },
   ];
 
   const [current, setCurrent] = useState<number>(0);
@@ -238,22 +278,24 @@ const TeamPage: React.FC = () => {
             "bg-gradient-to-br from-[#a8e063] via-[#78c850] to-[#56ab2f] border-[#56ab2f]/30"
           )} />
       <Canvas className="h-full w-full rounded-3xl ">
-        <Suspense fallback={<CanvasLoader />}>
-          <ambientLight intensity={0.3} />
-          <directionalLight position={[5, 5, 5]} intensity={0.4} />
+        <Suspense fallback={null}>
+          <ambientLight intensity={1} />
+          <directionalLight position={[5, 5, 5]} intensity={5} />
           <CharacterComponent position={[0, -4, 0]} scale={3} />
           <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -3.01, 0]} receiveShadow>
             <planeGeometry args={[500, 500]} />
             <shadowMaterial opacity={0.3} />
           </mesh>
           <ContactShadows renderOrder={2} frames={1} resolution={1024} scale={120} blur={2} opacity={0.6} far={100} />
-          <Environment preset="sunset" />
+          <Suspense fallback={null}>
+            <Environment preset="sunset" />
+          </Suspense>
           <EffectComposer multisampling={8}>
             <Bloom
               luminanceThreshold={5}
               mipmapBlur
               luminanceSmoothing={0.2}
-              intensity={6}
+              intensity={10}
             />
           </EffectComposer>
           <Ground />
