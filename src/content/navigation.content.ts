@@ -78,4 +78,4 @@ const navigationContent = {
   }
 } satisfies Dictionary;
 
-export default navigationContent; 
+export default navigationContent;     

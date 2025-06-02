@@ -278,7 +278,7 @@ const TeamPage: React.FC = () => {
             "bg-gradient-to-br from-[#a8e063] via-[#78c850] to-[#56ab2f] border-[#56ab2f]/30"
           )} />
       <Canvas className="h-full w-full rounded-3xl ">
-        <Suspense fallback={null}>
+        <Suspense fallback={<CanvasLoader />}>
           <ambientLight intensity={1} />
           <directionalLight position={[5, 5, 5]} intensity={5} />
           <CharacterComponent position={[0, -4, 0]} scale={3} />
@@ -287,9 +287,9 @@ const TeamPage: React.FC = () => {
             <shadowMaterial opacity={0.3} />
           </mesh>
           <ContactShadows renderOrder={2} frames={1} resolution={1024} scale={120} blur={2} opacity={0.6} far={100} />
-          <Suspense fallback={null}>
+     
             <Environment preset="sunset" />
-          </Suspense>
+         
           <EffectComposer multisampling={8}>
             <Bloom
               luminanceThreshold={5}
